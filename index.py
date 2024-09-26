@@ -12,7 +12,7 @@ from apps import home
 from apps import blankpage
 
 from apps.headers import aboutus, rooms, activities, amenities, booking, contactus, events, packages
-
+ 
 # Layout definition
 CONTENT_STYLE = {
     "margin-top" : "1em",  
