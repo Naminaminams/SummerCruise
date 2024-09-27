@@ -4,7 +4,7 @@ import pandas as pd
 def getdblocation():
     db = psycopg2.connect(
         host = 'localhost',
-        database = 'LARA-database',
+        database = 'SC_database',
         user = 'postgres',
         port = 5432,
         password = 'nat31602'

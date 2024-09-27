@@ -12,7 +12,9 @@ from apps import home
 from apps import blankpage
 
 from apps.headers import aboutus, rooms, activities, amenities, booking, contactus, events, packages
- 
+from apps.admin import adminrooms, calendar
+
+
 # Layout definition
 CONTENT_STYLE = {
     "margin-top" : "1em",  
@@ -93,9 +95,9 @@ def displaypage(pathname, sessionlogout, user_id, accesstype, search):
             elif pathname == '/rooms':
                 returnlayout = rooms.layout
             elif pathname == '/activities':
-                returnlayout = activities.layout
+                returnlayout = adminrooms.layout
             elif pathname == '/amenities':
-                returnlayout = amenities.layout
+                returnlayout = calendar.layout
             elif pathname == '/booking':
                 returnlayout = booking.layout
             elif pathname == '/contactus':
