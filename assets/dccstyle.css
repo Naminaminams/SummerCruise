@@ -107,6 +107,11 @@
     color: rgb(19, 3, 81); /* Change font color to black */
 }
 
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2); /* Light white background */
+    color: white; /* Ensure text remains white */
+}
+
 
 .custom-carousel img {
     width: 100%;       /* Ensure image fills the carousel width */

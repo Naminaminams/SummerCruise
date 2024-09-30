@@ -9,102 +9,172 @@ from apps import dbconnect as db
 from apps import commonmodules as cm
 
 import calendar
-from datetime import datetime
+from datetime import datetime 
 
 
 
-# Get the current month and year
-now = datetime.now()
-current_month = now.month
-current_year = now.year
-
-# Function to generate calendar layout
-def generate_calendar(month, year):
+def generate_calendar(year, month):
     cal = calendar.monthcalendar(year, month)
-    days_layout = html.Ul(
-        style={'listStyleType': 'none', 'padding': '0', 'margin': '0'},
-        children=[
-            html.Li(
-                html.Button(
-                    str(day), 
-                    id=f'day-{day}-{month}-{year}', 
-                    n_clicks=0,
-                    style={
-                        'fontSize': '24px', 
-                        'width': '60px', 
-                        'height': '60px', 
-                        'borderRadius': '5px', 
-                        'margin': '5px', 
-                        'backgroundColor': '#eee', 
-                        'border': 'none'
-                    }
-                ) if day != 0 else ''
-                for week in cal for day in week
-            )
-        ]
-    )
+    days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    calendar_table = []
+    
+    # Add header with days
+    header = [html.Th(day) for day in days]
+    calendar_table.append(html.Tr(header))
 
-    return html.Div(
-        style={
-            'padding': '70px 25px', 
-            'width': '100%', 
-            'backgroundColor': '#1abc9c', 
-            'textAlign': 'center', 
-            'display': 'inline-block'
-        },
-        children=[
-            html.H2(
-                calendar.month_name[month] + " " + str(year), 
-                style={'color': 'white'}
-            ),
-            html.Ul(
-                style={
-                    'margin': '0', 
-                    'padding': '10px 0', 
-                    'backgroundColor': '#ddd',
-                    'listStyleType': 'none'
-                }, 
-                children=[html.Li(
-                    day, 
-                    style={
-                        'display': 'inline-block', 
-                        'width': '13.6%', 
-                        'color': '#666', 
-                        'textAlign': 'center'
-                    }
-                ) for day in ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']]
-            ),
-            days_layout
-        ]
-    )
+    # Add the weeks
+    for week in cal:
+        week_row = []
+        for day in week:
+            if day == 0:
+                week_row.append(html.Td(''))  # Empty cells for days outside the current month
+            else:
+                week_row.append(html.Td(
+                    html.Button(
+                        str(day),
+                        id={'type': 'day-btn', 'index': day},
+                        style={
+                            'width': '50px',  # Set the width of the buttons
+                            'height': '50px',  # Set the height of the buttons
+                            'border-radius': '10%',  # Make them round if desired
+                            'text-align': 'center',
+                            'margin': '2px',  # Add some space between the buttons
+                            'display': 'inline-block'
+                        }
+                    )
+                ))
+        calendar_table.append(html.Tr(week_row))
 
-# Define the app layout
-layout = dbc.Container(
-    [
-        html.H1("Booking Calendar", style={'textAlign': 'center'}),
-        dcc.Dropdown(
-            id='month-dropdown',
-            options=[{'label': calendar.month_name[i], 'value': i} for i in range(1, 13)],
-            value=current_month,
-            style={'width': '200px', 'margin': 'auto'}
-        ),
-        dcc.Dropdown(
-            id='year-dropdown',
-            options=[{'label': str(year), 'value': year} for year in range(current_year, current_year + 5)],
-            value=current_year,
-            style={'width': '200px', 'margin': 'auto'}
-        ),
-        html.Div(id='calendar', style={'textAlign': 'center'})
-    ],
-    fluid=True,
-    style={'textAlign': 'center'}
-)
+    return html.Table(calendar_table, className='calendar')
 
-# Callback to update the calendar based on selected month and year
+
+
+
+def get_month_year_string(month, year):
+    return f"{calendar.month_name[month]} {year}"
+
+
+# Initial year and month (current date)
+initial_year = datetime.today().year
+initial_month = datetime.today().month
+
+
+# Callback to update the two calendars when buttons are clicked
 @app.callback(
-    Output('calendar', 'children'),
-    [Input('month-dropdown', 'value'),
-     Input('year-dropdown', 'value')]
+    [Output('calendar-div-1', 'children'),
+     Output('calendar-div-2', 'children'),
+     Output('month-year-display-1', 'children'),
+     Output('month-year-display-2', 'children')],
+    [Input('prev-month-btn', 'n_clicks'), Input('next-month-btn', 'n_clicks')],
+    [State('month-year-display-1', 'children'), State('month-year-display-2', 'children')]
 )
-def update_calendar(selected_month, selected_year):
-    return generate_calendar(selected_month, selected_year)
+def update_calendars(prev_clicks, next_clicks, current_display_1, current_display_2):
+    # Extract the current month and year from the first displayed month
+    if current_display_1:
+        current_month_1, current_year_1 = current_display_1.split(" ")
+        current_month_1 = list(calendar.month_name).index(current_month_1)  # Convert month name to index
+        current_year_1 = int(current_year_1)
+    else:
+        current_month_1 = initial_month
+        current_year_1 = initial_year
+    
+    # Adjust the first month based on which button is clicked
+    change = next_clicks - prev_clicks
+    current_month_1 += change
+
+    # Handle year rollover for the first month
+    if current_month_1 > 12:
+        current_month_1 = 1
+        current_year_1 += 1
+    elif current_month_1 < 1:
+        current_month_1 = 12
+        current_year_1 -= 1
+
+    # Set the second month (always the next consecutive month)
+    current_month_2 = current_month_1 + 1
+    current_year_2 = current_year_1
+    if current_month_2 > 12:
+        current_month_2 = 1
+        current_year_2 += 1
+
+    # Generate the updated calendars and the month-year displays
+    calendar_1 = generate_calendar(current_year_1, current_month_1)
+    calendar_2 = generate_calendar(current_year_2, current_month_2)
+
+    return (calendar_1, calendar_2, 
+            get_month_year_string(current_month_1, current_year_1), 
+            get_month_year_string(current_month_2, current_year_2))
+
+# Callback to handle date selection
+@app.callback(
+    Output('date-output', 'children'),
+    [Input({'type': 'day-btn', 'index': dash.dependencies.ALL}, 'n_clicks')],
+    [State('month-year-display-1', 'children'), State('month-year-display-2', 'children')]
+)
+def display_selected_date(n_clicks, current_display_1, current_display_2):
+    ctx = dash.callback_context
+    if not ctx.triggered:
+        return "No date selected"
+    
+    # Get the selected button
+    selected_day = ctx.triggered[0]['prop_id'].split('.')[0]
+    selected_day = eval(selected_day)['index']  # Extract the day number
+
+    # Determine which calendar was clicked (first or second)
+    triggered_element = ctx.triggered[0]['prop_id']
+    if 'calendar-div-1' in triggered_element:
+        current_month, current_year = current_display_1.split(" ")
+    else:
+        current_month, current_year = current_display_2.split(" ")
+
+    current_month = list(calendar.month_name).index(current_month)
+    current_year = int(current_year)
+
+    # Return the selected date
+    selected_date = f"{current_year}-{current_month:02d}-{selected_day:02d}"
+    return f"Selected Date: {selected_date}"
+
+
+layout = dbc.Container([
+    dbc.Row(
+        dbc.Col(
+            html.H2("Booking Calendar", className="text-center"),
+            width=12
+        ),
+        justify="center",  # Center the row
+    ),
+    dcc.Store(id="selected-date", data=""),  # To store the selected date
+    dbc.Row([
+
+        # Card 1: Previous Month
+        dbc.Col(
+            dbc.Card([ 
+                dbc.CardBody([
+                    html.Button("<", id="prev-month-btn", n_clicks=0, className="btn btn-outline-primary"),
+                    html.Span(id="month-year-display-1", style={'fontSize': '20px', 'marginBottom': '20px'}),
+                    html.Div(id='calendar-div-1')
+                ]),
+            ]),
+            xs=12, sm=12, md=6, lg=6
+        ),
+
+        # Card 2: Next Month
+        dbc.Col(
+            dbc.Card([ 
+                dbc.CardBody([
+                    html.Button(">", id="next-month-btn", n_clicks=0, className="btn btn-outline-primary"),
+                    html.Span(id="month-year-display-2", style={'fontSize': '20px', 'marginBottom': '20px'}),
+                    html.Div(id='calendar-div-2')
+                ]),
+            ]),
+            xs=12, sm=12, md=6, lg=6
+        )
+    ]),
+    html.Hr(),
+    dbc.Row(
+        dbc.Col(
+            html.Div(id="date-output", className="text-center"),  # Show selected date in the center
+            width=12
+        )
+    )
+])

@@ -1,4 +1,5 @@
-from dash import dcc, html
+import dash
+from dash import html, dcc, callback_context
 import dash_bootstrap_components as dbc 
 from dash.dependencies import Input, Output, State
 
@@ -53,50 +54,28 @@ def generate_navbar():
                     dbc.Col(
                         dbc.Nav(
                             [
-                                dbc.NavItem(dbc.NavLink("ABOUT US", href="/aboutus")),
-                                dbc.NavItem(dbc.NavLink("ROOMS", href="/rooms")),
-                                dbc.NavItem(dbc.NavLink("ACTIVITIES", href="/activities")),
-                                dbc.NavItem(dbc.NavLink("EVENTS", href="/events")),
-                                dbc.NavItem(dbc.NavLink("PACKAGES", href="/packages")), 
-                                dbc.NavItem(dbc.NavLink("AMENITIES", href="/amenities")),
-                                dbc.NavItem(dbc.NavLink("CONTACT US", href="/contactus")),
+                                dbc.NavItem(dbc.NavLink("ABOUT US", href="/aboutus", id="about-us-link")),
+                                dbc.NavItem(dbc.NavLink("ROOMS", href="/rooms", id="rooms-link")),
+                                dbc.NavItem(dbc.NavLink("ACTIVITIES", href="/activities", id="activities-link")),
+                                dbc.NavItem(dbc.NavLink("EVENTS", href="/events", id="events-link")),
+                                dbc.NavItem(dbc.NavLink("PACKAGES", href="/packages", id="packages-link")), 
+                                dbc.NavItem(dbc.NavLink("AMENITIES", href="/amenities", id="amenities-link")),
+                                dbc.NavItem(dbc.NavLink("CONTACT US", href="/contactus", id="contact-us-link")),
                             ],
-                            className="ms-auto d-none d-lg-flex",  # Show on large screens
+                            className="ms-auto d-none d-lg-flex",  
                             navbar=True,
                         ),
                         width="auto",
-                        className="d-none d-lg-flex",  # Show on large screens
+                        className="d-none d-lg-flex",  
                     ),
-                     
+
                     # Navbar Toggler for small screens
                     dbc.Col(
                         dbc.NavbarToggler(id="navbar-toggler", n_clicks=0),
                         width="auto",
-                        className="ms-auto d-md-flex d-lg-none ms-3",  # Show on small screens
+                        className="ms-auto d-md-flex d-lg-none ms-3",   
                     ),
 
-                    # Offcanvas for the menu
-                    dbc.Offcanvas(
-                        dbc.Nav(
-                            [
-                                dbc.NavItem(dbc.NavLink("HOME", href="/", style={'margin-right': '20px'})),
-                                dbc.NavItem(dbc.NavLink("ABOUT US", href="/aboutus", style={'margin-right': '20px'})),
-                                dbc.NavItem(dbc.NavLink("ROOMS", href="/rooms", style={'margin-right': '20px'})), 
-                                dbc.NavItem(dbc.NavLink("ACTIVITIES", href="/activities", style={'margin-right': '20px'})),
-                                dbc.NavItem(dbc.NavLink("EVENTS", href="/events", style={'margin-right': '20px'})),
-                                dbc.NavItem(dbc.NavLink("PACKAGES", href="/packages", style={'margin-right': '20px'})),
-                                dbc.NavItem(dbc.NavLink("AMENITIES", href="/amenities", style={'margin-right': '20px'})),
-                                dbc.NavItem(dbc.NavLink("CONTACT US", href="/contactus")),
-                            ],
-                            vertical=True,  # Vertical layout for off-canvas
-                            navbar=True,
-                        ),
-                        id="offcanvas",
-                        is_open=False,
-                        placement="start", 
-                        style={"width": "250px"},  # Set the width of the off-canvas
-                    ),
- 
                     # Book Now Button
                     dbc.Col(
                         dbc.Button(
@@ -108,10 +87,45 @@ def generate_navbar():
                                 "BOOK NOW"
                             ],
                             color="primary",
-                            className="d-md-flex align-items-center",
+                            className="d-md-flex align-items-center ms-3",
                         ),
                         width="auto",
-                        className="ms-3",  
+                        className="ms-auto ms-3",  
+                    ),
+                     
+                    # Offcanvas for the menu
+                    dbc.Offcanvas(  
+                        dbc.Nav(
+                            [
+                                dbc.NavItem(
+                                    dbc.NavLink(
+                                        html.Img(
+                                            src=app.get_asset_url('logo/sc_logo.jpg'),
+                                            style={'height': '5em'}
+                                        ),
+                                        href="/",
+                                        style={'padding': '0'}
+                                    )
+                                ),
+                                html.Hr(), 
+                                dbc.NavItem(dbc.NavLink("ABOUT US", href="/aboutus", style={'color': 'white', 'margin-right': '20px'})),
+                                dbc.NavItem(dbc.NavLink("ROOMS", href="/rooms", style={'color': 'white', 'margin-right': '20px'})), 
+                                dbc.NavItem(dbc.NavLink("ACTIVITIES", href="/activities", style={'color': 'white', 'margin-right': '20px'})),
+                                dbc.NavItem(dbc.NavLink("EVENTS", href="/events", style={'color': 'white', 'margin-right': '20px'})),
+                                dbc.NavItem(dbc.NavLink("PACKAGES", href="/packages", style={'color': 'white', 'margin-right': '20px'})),
+                                dbc.NavItem(dbc.NavLink("AMENITIES", href="/amenities", style={'color': 'white', 'margin-right': '20px'})),
+                                dbc.NavItem(dbc.NavLink("CONTACT US", href="/contactus", style={'color': 'white'})),
+                            ],
+                            vertical=True,
+                            navbar=True,
+                        ),
+                        id="offcanvas",
+                        is_open=False,
+                        placement="start", 
+                        style={
+                            "width": "250px", 
+                            "backgroundColor": "#1F1F1F"
+                        },  
                     ),
                 ],
                 align="center",
@@ -126,19 +140,31 @@ def generate_navbar():
     )
     return navbar
 
-# Callback to toggle the offcanvas menu
+
+
 @app.callback(
     Output("offcanvas", "is_open"),
-    [Input("navbar-toggler", "n_clicks")],
-    [State("offcanvas", "is_open")],
+    [Input("navbar-toggler", "n_clicks"),
+     Input("about-us-link", "n_clicks"),
+     Input("rooms-link", "n_clicks"),
+     Input("activities-link", "n_clicks"),
+     Input("events-link", "n_clicks"),
+     Input("packages-link", "n_clicks"),
+     Input("amenities-link", "n_clicks"),
+     Input("contact-us-link", "n_clicks")],
+    State("offcanvas", "is_open")  # Use State to check current state
 )
-def toggle_offcanvas(n, is_open): 
-    if n:
-        return not is_open
-    return is_open
- 
+def toggle_offcanvas(n_clicks, *args):
+    ctx = callback_context
+    if not ctx.triggered:
+        return False  # Default state
 
+    button_id = ctx.triggered[0]["prop_id"].split(".")[0]
 
+    if button_id == "navbar-toggler":
+        return not ctx.states["offcanvas.is_open"]  # Toggle the state
+    else:
+        return False 
 
                                 
 def generate_footer():
