@@ -33,21 +33,30 @@ def generate_calendar(year, month):
                     html.Button(
                         str(day),
                         id={'type': 'day-btn', 'index': day},
-                        style={
-                            'width': '50px',  # Set the width of the buttons
-                            'height': '50px',  # Set the height of the buttons
-                            'border-radius': '10%',  # Make them round if desired
+                        style={ 
+                            'min-width': '40px',   
+                            'max-width': '40px',   
+                            'min-height': '40px',   
+                            'max-height': '40px',   
+                            'border-radius': '10%',  # Rounded corners
                             'text-align': 'center',
-                            'margin': '2px',  # Add some space between the buttons
-                            'display': 'inline-block'
+                            'margin': '0px',
+                            'display': 'flex',  # Flexbox for button
+                            'align-items': 'center',  # Center text vertically
+                            'justify-content': 'center',  # Center text horizontally 
+                            'min-font-size': '16px', 
+                            'max-font-size': '16px',   
                         }
-                    )
+                    ),
+                    style={'padding': '0px'}
                 ))
         calendar_table.append(html.Tr(week_row))
 
-    return html.Table(calendar_table, className='calendar')
-
-
+    return html.Table(
+        calendar_table, 
+        className='calendar', 
+        style={'width': '100%', 'border-spacing': '0px', 'border-collapse': 'collapse'}  
+    )
 
 
 def get_month_year_string(month, year):
@@ -144,11 +153,12 @@ layout = dbc.Container([
         justify="center",  # Center the row
     ),
     dcc.Store(id="selected-date", data=""),  # To store the selected date
+    html.Br(),
     dbc.Row([
 
         # Card 1: Previous Month
         dbc.Col(
-            dbc.Card([ 
+            dbc.Card([
                 dbc.CardBody([
                     dbc.Row(
                         [
@@ -158,45 +168,48 @@ layout = dbc.Container([
                                 className="text-left" 
                             ),
                             dbc.Col(
-                                html.Span(id="month-year-display-1", style={'fontSize': '20px', 'marginBottom': '20px'}),
-                                width="auto",  # Center the span without stretching
-                                className="text-center"  # Center text within the column
+                                html.Span(id="month-year-display-1", style={'fontSize': '20px', 'marginBottom': '20px', 'marginLeft': '20px'}),
+                                width=8,  # Adjust width as needed to allow centering
+                                className="text-center"  # Center the text
                             ),
                         ],
-                        justify="between",  # Space between the columns
-                        align="center"  # Vertically center the row content
+                        justify="start",  # Align items to the left
+                        align="center"
                     ),
-                    html.Div(id='calendar-div-1', style={'textAlign': 'center'})  # Center calendar div if needed
+                    html.Div(id='calendar-div-1', style={'textAlign': 'center'})  
                 ]),
             ]),
-            xs=12, sm=12, md=6, lg=6
+            xs=10, sm=10, md=6, lg=4
         ),
+        html.Br(),
+        html.Br(),
 
         # Card 2: Next Month
         dbc.Col(
-            dbc.Card([ 
+            dbc.Card([
                 dbc.CardBody([
                     dbc.Row(
                         [
                             dbc.Col(
-                                html.Span(id="month-year-display-2", style={'fontSize': '20px', 'marginBottom': '20px', 'marginLeft': '20px'}),
-                                width="auto",
-                                className="text-center"   
+                                html.Span(id="month-year-display-2", style={'fontSize': '20px', 'marginBottom': '20px', 'marginRight': '20px'}),
+                                width=8,   
+                                className="text-center"  
                             ),
                             dbc.Col(
-                                html.Button(">", id="next-month-btn", n_clicks=0, className="btn btn-outline-primary", style={'marginRight': '20px'}),
-                                width="auto",   
-                                className="text-right" 
+                                html.Button(">", id="next-month-btn", n_clicks=0, className="btn btn-outline-primary"),
+                                width="auto",
+                                className="text-Right" 
                             ),
+                            
                         ],
-                        justify="center",   
-                        align="center"  
+                        justify="end",   
+                        align="center"
                     ),
                     html.Div(id='calendar-div-2', style={'textAlign': 'center'})  
                 ]),
             ]),
-            xs=12, sm=12, md=6, lg=6
-        ), 
+            xs=10, sm=10, md=6, lg=4
+        ),  
     ]),
     html.Hr(),
     dbc.Row(
