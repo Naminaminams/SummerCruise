@@ -97,15 +97,16 @@ def displaypage(pathname, sessionlogout, user_id, accesstype, search):
             elif pathname == '/activities':
                 returnlayout = adminrooms.layout
             elif pathname == '/amenities':
-                returnlayout = calendar.layout
+                returnlayout = amenities.layout
             elif pathname == '/booking':
-                returnlayout = booking.layout
+                returnlayout = calendar.layout
             elif pathname == '/contactus':
                 returnlayout = contactus.layout
             elif pathname == '/events':
                 returnlayout = events.layout
             elif pathname == '/packages':
                 returnlayout = packages.layout
+            
             
             # elif user_id != -1:
             #     if accesstype >= 1:

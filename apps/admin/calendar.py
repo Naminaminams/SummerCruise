@@ -158,12 +158,12 @@ layout = dbc.Container([
                                 className="text-left" 
                             ),
                             dbc.Col(
-                                html.Span(id="month-year-display-1", style={'fontSize': '20px', 'marginBottom': '20px', 'marginRight': '20px'}),
+                                html.Span(id="month-year-display-1", style={'fontSize': '20px', 'marginBottom': '20px'}),
                                 width="auto",  # Center the span without stretching
                                 className="text-center"  # Center text within the column
                             ),
                         ],
-                        justify="center",  # Center the row content
+                        justify="between",  # Space between the columns
                         align="center"  # Vertically center the row content
                     ),
                     html.Div(id='calendar-div-1', style={'textAlign': 'center'})  # Center calendar div if needed
