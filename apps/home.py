@@ -216,7 +216,7 @@ location = dbc.Container(
                                     that you can easily visit via bangka.
                                     """
                                 ),
-                                dbc.Button("How to get there?", color="light", href="/activities", 
+                                dbc.Button("How to get there?", color="light", href="https://www.google.com/maps/dir//RWF6%2BM5F+Binukbok+Parking+Area,+Batangas/@13.824083,120.9068588,814m/data=!3m1!1e3!4m17!1m7!3m6!1s0x33bd083a59a12ae7:0x3afeb59f11b3702c!2sBinukbok+Parking+Area!8m2!3d13.8241976!4d120.9104208!16s%2Fg%2F11dxl8t656!4m8!1m0!1m5!1m1!1s0x33bd083a59a12ae7:0x3afeb59f11b3702c!2m2!1d120.9104208!2d13.8241976!3e2?entry=ttu&g_ep=EgoyMDI0MTAwOS4wIKXMDSoASAFQAw%3D%3D",   
                                 style={
                                     "border": "1px solid black", 
                                     "border-radius": "10px",      

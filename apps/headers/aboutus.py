@@ -25,27 +25,121 @@ aboutusbackground = html.Div(
             ],
             style={"max-height": "500px"}  # Limit the height of the carousel
         ),
-        dbc.Card(
-            [ 
-                dbc.CardBody(
-                    [
-                        html.H2(html.B("Welcome to Summer Cruise Diving Resort"), 
-                            className="card-title", 
-                            style={'fontColor':'white','textAlign': 'center', 'fontFamily': "'Lobster'"}),
-                         
-                    ]
-                )
-            ],
-            style={ 
+        html.Div(
+            html.H4(html.B("Welcome to Summer Cruise Diving Resort"), 
+                className="card-title", 
+                style={'color':'white','textAlign': 'center', 'fontFamily': "'Lobster'", 'fontSize': '48px'}
+            ),
+            style={
                 "position": "absolute", 
-                "top": "100px",  
-                "left": "50%",  
-                "transform": "translateX(-50%)",    
-            },
+                "top": "50%", 
+                "left": "50%", 
+                "transform": "translate(-50%, -50%)",  # Center the text
+                "color": "white", 
+                "width": "100%", 
+                "textAlign": "center"
+            }
         ),
     ],
     style={"position": "relative", "max-height": "500px"}  # Make parent container relative
 )
+
+
+
+aboutusinfo = html.Div(
+    [
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.Div(
+                        [
+                            html.P(
+                                """ 
+                                🌊 Summer Cruise offers thrilling activities including Discover Scuba Diving,
+                                PADI Open Water Scuba Diving Certification, Introduction to Freediving, Snorkeling, 
+                                and Underwater Photography.
+                                """, 
+                                className="text-center", 
+                                style={
+                                    "font-size": "16px",  # Default size for larger screens
+                                }
+                            ), 
+                        ],
+                        className="d-flex flex-column text-center"   
+                    ),
+                    width={"size": 12},
+                    xs=12, sm=12, md=8, lg=4,
+                    className="d-flex justify-content-center text-center"
+                ),
+                dbc.Col(
+                    html.Img(   
+                        src="/assets/pictures/grouppic.jpg",  
+                        style={"width": "100%", "height": "auto", "border-radius": "10px"},  
+                        alt="Underwater Adventure"  # Add alt text for accessibility
+                    ),
+                    width={"size": 12}, 
+                    xs=12, sm=12, md=4, lg=4,  # Adjust width for responsiveness
+                    className="d-flex justify-content-center align-items-center"
+                ),
+            ],
+            justify='center',  # Center align the columns in the row
+            align='center',
+            className="p-3"  # Small padding around the row
+        ),
+    ]
+)
+
+
+
+
+
+
+
+
+missionvision = html.Div(
+    [
+        dbc.Row(
+            [
+                dbc.Col(
+                    [ 
+                        html.Br(),
+                        html.H2("Our Mission", className="text-center"),
+                        html.P(""" 
+                                In Summer Cruise we dedicate ourselves to delivering an
+                                exceptional and unforgettable experience for our guests,
+                                creating lasting memories by providing comfort and service.
+                            """, 
+                            className="text-center", 
+                            style={
+                                "font-size": "18px",  # Default size for larger screens
+                            }
+                        ),  
+
+                        html.Br(),
+                        html.Br(),
+                        html.H2("Our Vision", className="text-center"),
+                        html.P(""" 
+                                We aim to be the leading dive vacation destination in the Philippines, 
+                                offering unparalleled service and unforgettable adventures that
+                                create lasting connections with our guests.
+                            """, 
+                            className="text-center", 
+                            style={
+                                "font-size": "18px",  # Default size for larger screens
+                            }
+                        ),   
+                        html.Br(),
+                    ],
+                    xs=12, sm=12, md=5, lg=5,
+                ),
+            ],
+            justify="center",
+            align="center",
+        ), 
+    ]
+)
+
+
 
 
 
@@ -57,57 +151,45 @@ image_sources = [
     "/assets/pictures/grouppic.jpg", 
     "/assets/pictures/grouppic.jpg", 
     "/assets/pictures/grouppic.jpg",
+
+    
+    "/assets/pictures/grouppic.jpg", 
+    "/assets/pictures/grouppic.jpg", 
+    "/assets/pictures/grouppic.jpg", 
+    "/assets/pictures/grouppic.jpg", 
+    "/assets/pictures/grouppic.jpg", 
+    "/assets/pictures/grouppic.jpg",
     ]
 
-mission = html.Div(
+
+# Create a row of images dynamically
+def create_image_row(start_index):
+    return dbc.Row(
+        [
+            dbc.Col(
+                html.Img(
+                    src=image_sources[start_index + i],
+                    className="clickable-image",
+                    id=f"image{start_index + i + 1}",
+                    style={"width": "100%", "cursor": "pointer", "height": "auto"},
+                ),
+                xs=4, sm=4, md=3, lg=2,
+                className="p-2",  # Add padding to each column
+            ) for i in range(6)  # Adjust range if you have more images
+        ],
+        justify="center",
+        className="mb-3"  # Add vertical padding (top and bottom) to the row
+    )
+
+pictures = html.Div(
     [
         dbc.Row(
             [
                 dbc.Col(
-                    [
-                        html.Br(),
-                        html.H4("Our Mission", className="text-center"),
-                        html.P("In SUMMER CRUISE we dedicate ourselves to delivering an", className="text-center"),
-                        html.P(
-                            """
-                            In SUMMER CRUISE we dedicate ourselves to delivering an  
-                            """,
-                            className="text-center",
-                        ),
-                        html.Br(),
-                        # Row for pictures
-                        dbc.Row(
-                            [
-                                dbc.Col(
-                                    html.Img(
-                                        src=image_sources[0],  # Path to image 1
-                                        className="clickable-image",
-                                        id="image1",
-                                        style={"width": "100%", "cursor": "pointer"},
-                                    ),
-                                    xs=4, sm=4, md=3, lg=3,
-                                ),
-                                dbc.Col(
-                                    html.Img(
-                                        src=image_sources[1],  # Path to image 2
-                                        className="clickable-image",
-                                        id="image2",
-                                        style={"width": "100%", "cursor": "pointer"},
-                                    ),
-                                    xs=4, sm=4, md=3, lg=3,
-                                ),
-                                dbc.Col(
-                                    html.Img(
-                                        src=image_sources[2],  # Path to image 3
-                                        className="clickable-image",
-                                        id="image3",
-                                        style={"width": "100%", "cursor": "pointer"},
-                                    ),
-                                    xs=4, sm=4, md=3, lg=3,
-                                ),
-                            ],
-                            justify="center",
-                        ),
+                    [ 
+                        create_image_row(0),  # First row of images  
+                        create_image_row(3),  # Second row of images
+                        html.Br(), 
                     ],
                     xs=12, sm=12, md=9, lg=9,
                 ),
@@ -115,256 +197,197 @@ mission = html.Div(
             justify="center",
             align="center",
         ),
+
         # Modal for enlarged image with dark background
         dbc.Modal(
             [
                 dbc.ModalBody(
                     html.Div(
                         [
-                            html.Img(id="mission_modal", style={"width": "75%", "border-radius": "0px"}),
-                            dbc.Button("<", id="mission_prevbtn", style={"position": "absolute", "left": "1px", "top": "50%"}, color="primary"),
-                            dbc.Button(">", id="mission_nxtbtn", style={"position": "absolute", "right": "1px", "top": "50%"}, color="primary"),
+                            html.Img(id="pic_modal", style={"width": "75%", "border-radius": "0px"}),
+                            dbc.Button("<", id="pic_prevbtn", style={"position": "absolute", "left": "1px", "top": "50%"}, color="primary"),
+                            dbc.Button(">", id="pic_nxtbtn", style={"position": "absolute", "right": "1px", "top": "50%"}, color="primary"),
                         ],
                         style={"position": "relative", "text-align": "center"},
                     ),
                     style={"background-color": "black"},  # Transparent background for the modal body
                 ),
             ],
-            id="mission_imagelarge",
+            id="pic_imagelarge",
             size="xl",  # Larger modal for a bigger image
             centered=True,
             backdrop=True,  # Darken background
             style={"background-color": "rgba(0, 0, 0, 0.5)"},  # Transparent modal background
         ),
     ]
-)
-
+) 
 
 # Callback to open the modal and display the clicked image
 @app.callback(
     [
-        Output("mission_imagelarge", "is_open"),
-        Output("mission_modal", "src"),
-        Output("mission_prevbtn", "disabled"),
-        Output("mission_nxtbtn", "disabled")
+        Output("pic_imagelarge", "is_open"),
+        Output("pic_modal", "src"),
+        Output("pic_prevbtn", "disabled"),
+        Output("pic_nxtbtn", "disabled")
     ],
     [
         Input("image1", "n_clicks"), 
         Input("image2", "n_clicks"), 
-        Input("image3", "n_clicks"),  
-        Input("mission_prevbtn", "n_clicks"), 
-        Input("mission_nxtbtn", "n_clicks")
+        Input("image3", "n_clicks"),
+        Input("image4", "n_clicks"), 
+        Input("image5", "n_clicks"),
+        Input("image6", "n_clicks"),
+        
+        Input("image7", "n_clicks"), 
+        Input("image8", "n_clicks"), 
+        Input("image9", "n_clicks"),
+        Input("image10", "n_clicks"), 
+        Input("image11", "n_clicks"),
+        Input("image12", "n_clicks"),
+        Input("pic_prevbtn", "n_clicks"), 
+        Input("pic_nxtbtn", "n_clicks")
     ],
     [
-        State("mission_modal", "src"), 
-        State("mission_imagelarge", "is_open")
+        State("pic_modal", "src"), 
+        State("pic_imagelarge", "is_open")
     ],
     prevent_initial_call=True
 )
-def display_missionimage(n1, n2, n3, prev_click, next_click, current_src, is_open):
+def display_picimage(n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, prev_click, next_click, current_src, is_open):
     ctx = dash.callback_context
     triggered = ctx.triggered[0]["prop_id"].split(".")[0]
     
     # Determine which image is currently displayed
-    if current_src:
+    if current_src in image_sources:
         current_index = image_sources.index(current_src)
     else:
         current_index = 0
     
     # Handle which image to display
-    if triggered in ["image1", "image2", "image3"]:
-        if triggered == "image1" and n1:
-            current_index = 0
-        elif triggered == "image2" and n2:
-            current_index = 1
-        elif triggered == "image3" and n3:
-            current_index = 2
+    if triggered in [f"image{i + 1}" for i in range(6)]:
+        current_index = int(triggered.replace("image", "")) - 1
         return True, image_sources[current_index], current_index == 0, current_index == len(image_sources) - 1
 
     # Handle next and previous button clicks
     if is_open:
-        if triggered == "mission_prevbtn" and current_index > 0:
+        if triggered == "pic_prevbtn" and current_index > 0:
             current_index -= 1
-        elif triggered == "mission_nxtbtn" and current_index < len(image_sources) - 1:
+        elif triggered == "pic_nxtbtn" and current_index < len(image_sources) - 1:
             current_index += 1
         return True, image_sources[current_index], current_index == 0, current_index == len(image_sources) - 1
 
     return False, "", False, False
 
-
-
-
-
-vision = html.Div(
+location = dbc.Container(
     [
         dbc.Row(
             [
                 dbc.Col(
                     [
+                        html.H2("Directions to Summer Cruise", className="text-center"),  
                         html.Br(),
-                        html.H4("Our Vision", className="text-center"),
-                        html.P(
-                            """
-                            We aim to be the leading dive vacation destination in the Philippines, 
-                            offering unparalleled service and unforgettable adventures that 
-                            create lasting connections with our guests.
-                            """,
-                            className="text-center",
-                        ),
-                        html.P(
-                            """
-                            We aim to be the leading dive vacation destination in the Philippines, 
-                            offering unparalleled service and unforgettable adventures that 
-                            create lasting connections with our guests.
-                            """,
-                            className="text-center",
-                        ),
-                        html.Br(),
-                        # Row for pictures
-                        dbc.Row(
+                        
+                        # Card for Commute Information
+                        dbc.Card(
                             [
-                                dbc.Col(
-                                    html.Img(
-                                        src=image_sources[0],  # Path to image 1
-                                        className="clickable-image",
-                                        id="image1",
-                                        style={"width": "100%", "cursor": "pointer"},
-                                    ),
-                                    xs=4, sm=4, md=3, lg=3,
-                                ),
-                                dbc.Col(
-                                    html.Img(
-                                        src=image_sources[1],  # Path to image 2
-                                        className="clickable-image",
-                                        id="image2",
-                                        style={"width": "100%", "cursor": "pointer"},
-                                    ),
-                                    xs=4, sm=4, md=3, lg=3,
-                                ),
-                                dbc.Col(
-                                    html.Img(
-                                        src=image_sources[2],  # Path to image 3
-                                        className="clickable-image",
-                                        id="image3",
-                                        style={"width": "100%", "cursor": "pointer"},
-                                    ),
-                                    xs=4, sm=4, md=3, lg=3,
+                                dbc.CardBody(
+                                    [
+                                        html.H5(
+                                            [
+                                                html.B("Commute to"), " Binukbok Parking Area", html.B(" from Metro Manila")
+                                            ],
+                                            className="text-center"  # Center the heading
+                                        ),
+                                        html.P(
+                                            [
+                                                "1. Make your way to", html.B("Buendia DLTB Bus Terminal"), "(near Gil Puyat LRT Station). Take a bus with", html.B(" Lemery Tambo"), " Exit sign (DLTB Co.) Fare is at Php 175.",
+                                                html.Br(),
+                                                "2. Disembark at", html.B(" Xentro Mall"), " (terminal station).",
+                                                html.Br(),
+                                                "3. Take a tricycle to San Luis, Barangay Balite (Binukbok parking) or", html.B(" Summer Cruise Parking"), ". Travel time is 15 - 20 minutes and fare is at Php 200 but can be haggled down to Php 150.",
+                                                html.Br(),
+                                                "4. Once at the parking, contact Rose or Janet."
+                                            ]
+                                        ),
+                                    ]
                                 ),
                             ],
-                            justify="center",
+                            style={"margin": "10px"}
+                        ),
+
+                        # Card for Private Vehicle Information
+                        dbc.Card(
+                            [
+                                dbc.CardBody(
+                                    [ 
+                                        html.H5(
+                                            [
+                                                html.B("Private Vehicle to"), " Binukbok Parking Area", html.B(" from Metro Manila")
+                                            ],
+                                            className="text-center"  # Center the heading
+                                        ),
+                                        html.P(
+                                            [
+                                                "1. Waze", html.B(" Binukbok Parking Area"), " and make sure your route is along Star Toll and take the", html.B("3rd Lipa Exit (Lipa Tambo Exit)"), ".",
+                                                html.Br(),
+                                                "2. Drive through the national highway and exit at", html.B(" Cuenca, Alitagtag,"), " then turn left towards the McDonalds. Keep on the path, mostly straight along P.Laural Highway and turn right to", html.B(" Cuenca, Taal"), " (at the Jollibee).",
+                                                html.Br(),
+                                                "3. Follow the national highway road until you reach Muzon, there, turn left (when you see a small public marketplace) then corner right after a few meters. Now you are at Bauan, just follow the straight path until you turn left at the palengke.",
+                                                html.Br(),
+                                                "4. Drive straight to Brgy. Balite and look for the signage", html.B(" Summer Cruise Parking"), " at the right.",
+                                                html.Br(),
+                                                "5. Once at the parking, contact Rose or Janet."
+                                            ]
+                                        ),
+                                    ]
+                                ),
+                            ],
+                            style={"margin": "10px"}
                         ),
                     ],
-                    xs=12, sm=12, md=9, lg=9,
+                    xs=12, sm=12, md=6, lg=6,  # Adjusted for more space for text
+                    className="text-center"  # Center content in this column
                 ),
-            ],
-            justify="center",
-            align="center",
-        ),
-        # Modal for enlarged image with dark background
-        dbc.Modal(
-            [
-                dbc.ModalBody(
-                    html.Div(
-                        [
-                            html.Img(id="mission_modal", style={"width": "75%", "border-radius": "0px"}),
-                            dbc.Button("<", id="mission_prevbtn", style={"position": "absolute", "left": "1px", "top": "50%"}, color="primary"),
-                            dbc.Button(">", id="mission_nxtbtn", style={"position": "absolute", "right": "1px", "top": "50%"}, color="primary"),
-                        ],
-                        style={"position": "relative", "text-align": "center"},
-                    ),
-                    style={"background-color": "black"},  # Transparent background for the modal body
-                ),
-            ],
-            id="mission_imagelarge",
-            size="xl",  # Larger modal for a bigger image
-            centered=True,
-            backdrop=True,  # Darken background
-            style={"background-color": "rgba(0, 0, 0, 0.5)"},  # Transparent modal background
-        ),
-    ]
-)
-
-vision = html.Div(
-    [
-        dbc.Row(
-            [
+                
+                # Column for the Image and Button
                 dbc.Col(
                     [
-                        html.Br(),
-                        html.H4("Our Vision", className="text-center"),
-                        html.P(
-                            """
-                            We aim to be the leading dive vacation destination in the Philippines, 
-                            offering unparalleled service and unforgettable adventures that 
-                            create lasting connections with our guests.
-                            """,
-                            className="text-center",
-                        ),
-                        html.Br(),
-                        # Row for pictures
-                        dbc.Row(
+                        dbc.Card(
                             [
-                                dbc.Col(
-                                    html.Img(
-                                        src=image_sources[3],  # Path to image 1
-                                        className="clickable-image",
-                                        id="image4",
-                                        style={"width": "100%", "cursor": "pointer"},
-                                    ),
-                                    xs=4, sm=4, md=3, lg=3,
-                                ),
-                                dbc.Col(
-                                    html.Img(
-                                        src=image_sources[4],  # Path to image 2
-                                        className="clickable-image",
-                                        id="image5",
-                                        style={"width": "100%", "cursor": "pointer"},
-                                    ),
-                                    xs=4, sm=4, md=3, lg=3,
-                                ),
-                                dbc.Col(
-                                    html.Img(
-                                        src=image_sources[5],  # Path to image 3
-                                        className="clickable-image",
-                                        id="image6",
-                                        style={"width": "100%", "cursor": "pointer"},
-                                    ),
-                                    xs=4, sm=4, md=3, lg=3,
-                                ),
+                                dbc.CardImg(
+                                    src=app.get_asset_url('pictures/map_car.jpg'),
+                                    top=True,
+                                    style={'width': '100%', 'height': 'auto'}
+                                ), 
                             ],
-                            justify="center",
+                            style={"margin": "10px"}
+                        ),
+                        dbc.Button(
+                            "Get Started", 
+                            color="light", 
+                            href="https://maps.app.goo.gl/MXmixVjJ7NreyGK98",   
+                            style={
+                                "border": "1px solid black", 
+                                "border-radius": "10px",      
+                                "color": "black", 
+                                "font-size": "14px",      
+                                "width": "180px",
+                                "margin": "10px auto",  # Center the button
+                                "display": "block"
+                            }
                         ),
                     ],
-                    xs=12, sm=12, md=9, lg=9,
+                    xs=12, sm=12, md=5, lg=4,
+                    className="text-center"  # Center content in this column
                 ),
             ],
-            justify="center",
             align="center",
-        ),
-        # Modal for enlarged image with dark background
-        dbc.Modal(
-            [
-                dbc.ModalBody(
-                    html.Div(
-                        [
-                            html.Img(id="modal-image", style={"width": "75%", "border-radius": "0px"}),
-                            dbc.Button("<", id="prev-btn", style={"position": "absolute", "left": "1px", "top": "50%"}, color="primary"),
-                            dbc.Button(">", id="next-btn", style={"position": "absolute", "right": "1px", "top": "50%"}, color="primary"),
-                        ],
-                        style={"position": "relative", "text-align": "center"},
-                    ),
-                    style={"background-color": "black"},  # Transparent background for the modal body
-                ),
-            ],
-            id="image-modal",
-            size="xl",  # Larger modal for a bigger image
-            centered=True,
-            backdrop=True,  # Darken background
-            style={"background-color": "rgba(0, 0, 0, 0.5)"},  # Transparent modal background
-        ),
-    ]
+            className="mt-5"
+        )
+    ],
+    fluid=True,
+    className="pt-4 pb-4"
 )
-
 
 
 
@@ -380,11 +403,23 @@ layout = html.Div(
                         aboutusbackground,  
                         html.Br(),
                         html.Br(),
-                        mission,
+                        html.Br(),
+                        
+                        html.H4("Here's to your next underwater adventure!", className="text-center"), 
+                        aboutusinfo,
+                        html.Br(),
+                            html.P(
+                                """ 
+                                ● ● ●
+                                """, className="text-center"
+                            ), 
+                        html.Br(),
+                        missionvision,
                         html.Br(),
                         html.Br(),
-                        vision,
+                        pictures,
                     ],  
+                    className="px-4",  # Add horizontal padding (left and right)
                 ), 
             ],
             justify='center',    
@@ -397,57 +432,52 @@ layout = html.Div(
                     [
                         dbc.Col(
                             [
-                                
                                 html.Br(),
-                                html.H4("SUMMER CRUISE commits itself to these Core Values:", className="text-center"), 
-                                    html.H6("Excellent Quality", className="text-center"),
-                                    html.Br(),
-                                    html.P(
-                                        """
-                                        We strive to uphold quality service in 
-                                        our work and how we teach, ensuring that 
-                                        our guests experience the very best in comfort 
-                                        and enjoyment throughout their stay.
-
-                                        """, className="text-center"
-                                    ),
-                                html.Br(),
-                                    html.H6("Hospitable Service", className="text-center"),
-                                    html.Br(),
-                                    html.P(
-                                        """
-                                        We believe in fostering an atmosphere where guests feel
-                                        truly welcomed and cared for, creating meaningful and enjoyable experiences.
-                                        """, className="text-center"
-                                    ),
-                                html.Br(),
-                                    html.H6("Fun and Safety ", className="text-center"),
-                                    html.Br(),
-                                    html.P(
-                                        """
-                                        We believe fun and safety go hand in hand,
-                                        ensuring that every guest can fully 
-                                        enjoy their time with us, knowing their well-being is always prioritized.
-
-
-                                        """, className="text-center"
-                                    ),
-                                html.Br(),
+                                html.H4("Excellent Quality", className="text-center"), 
                                 html.P(
-                                    """ 
-                                    ● ● ●
+                                    """
+                                    We strive to uphold quality service in 
+                                    our work and how we teach, ensuring that 
+                                    our guests experience the very best in comfort 
+                                    and enjoyment throughout their stay.
                                     """, className="text-center"
-                                ), 
+                                ),
+                                html.Br(),
+                                html.H4("Hospitable Service", className="text-center"), 
+                                html.P(
+                                    """
+                                    We believe in fostering an atmosphere where guests feel
+                                    truly welcomed and cared for, creating meaningful and enjoyable experiences.
+                                    """, className="text-center"
+                                ),
+                                html.Br(),
+                                html.H4("Fun and Safety", className="text-center"), 
+                                html.P(
+                                    """
+                                    We believe fun and safety go hand in hand,
+                                    ensuring that every guest can fully 
+                                    enjoy their time with us, knowing their well-being is always prioritized.
+                                    """, className="text-center"
+                                ),
                                 html.Br(), 
                             ], 
                             xs=12, sm=12, md=6, lg=5,
+                            className="px-4",  # Add horizontal padding (left and right)
                         ), 
                     ],
                     justify='center',    
                     align='center',   
                 )
             ]
+        ),  
+        html.P(
+            """ 
+            ● ● ●
+            """, className="text-center"
         ), 
+        location,
+        html.Br()
+
     ]
 )
 

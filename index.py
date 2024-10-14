@@ -116,5 +116,10 @@ def displaypage(pathname, sessionlogout, user_id, accesstype, search):
     return [returnlayout, sessionlogout]
  
 
+#if __name__ == '__main__':
+    #app.run_server(debug=True)
+
+
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    webbrowser.open('http://127.0.0.1:8050/', new = 0, autoraise = True)
+    app.run_server(debug = False)
