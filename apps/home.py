@@ -474,16 +474,15 @@ reminders = html.Div(
 layout = html.Div(
     [
         homepagebackground, 
-        
+        html.Br(),
         html.Div(
-            className="d-flex justify-content-center",  # Center the content horizontally
-            style={"backgroundColor": "black", "padding": "20px"},  # Black background with padding
+            className="d-flex justify-content-center",   
             children=[
                 dbc.Row(
                     [
                         dbc.Col(
                             [ 
-                                html.H4("Now with Starlink Wifi!", className="text-center text-white"),  # White text on black background
+                                html.H4(html.B("Now with Starlink Wifi!"), className="text-center"),  
                             ], 
                             xs=12, sm=12, md=6, lg=6, 
                         ), 
@@ -492,7 +491,7 @@ layout = html.Div(
                                 html.Div(
                                     html.Img(src="/assets/pictures/starklink.jpg", className="img-fluid rounded-start", 
                                             style={"maxWidth": "80%"}), 
-                                    className="d-flex justify-content-center"  # Center image within the column
+                                    className="d-flex justify-content-center"  
                                 ),
                             ], 
                             xs=12, sm=12, md=6, lg=6, 
@@ -504,7 +503,7 @@ layout = html.Div(
             ]
         ), 
 
-        html.Br(),
+        html.Hr(),
         html.Br(),
 
         html.Div(
