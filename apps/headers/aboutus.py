@@ -73,7 +73,7 @@ aboutusinfo = html.Div(
                 ),
                 dbc.Col(
                     html.Img(   
-                        src="/assets/pictures/aboutus/fish.jpg",  
+                        src="/assets/pictures/aboutpics/fish.jpg",  
                         style={"width": "100%", "height": "auto", "border-radius": "10px"},  
                         alt="Underwater Adventure"  # Add alt text for accessibility
                     ),
@@ -145,25 +145,25 @@ missionvision = html.Div(
 
 # List of image sources (paths to your images)
 image_sources = [
-    "/assets/pictures/aboutus/boat.jpg", 
-    "/assets/pictures/aboutus/dive.jpg", 
-    "/assets/pictures/aboutus/hang.jpg",
-    "/assets/pictures/aboutus/lobster.jpg", 
-    "/assets/pictures/aboutus/practice.jpg", 
-    "/assets/pictures/aboutus/stonefish.jpg",
+    "/assets/pictures/aboutpics/pic1.png", 
+    "/assets/pictures/aboutpics/pic2.png", 
+    "/assets/pictures/aboutpics/pic3.png", 
+    "/assets/pictures/aboutpics/pic4.png", 
+    "/assets/pictures/aboutpics/pic5.png", 
+    "/assets/pictures/aboutpics/pic6.png", 
 
-    
-    "/assets/pictures/aboutus/turtle.jpg", 
-    "/assets/pictures/aboutus/dive2.jpg", 
-    "/assets/pictures/aboutus/diving.jpg", 
-    "/assets/pictures/aboutus/sunset.JPG", 
-    "/assets/pictures/aboutus/castle.jpg", 
-    "/assets/pictures/aboutus/freedive.jpg",
+    "/assets/pictures/aboutpics/pic7.png", 
+    "/assets/pictures/aboutpics/pic8.png", 
+    "/assets/pictures/aboutpics/pic9.png", 
+    "/assets/pictures/aboutpics/pic10.png", 
+    "/assets/pictures/aboutpics/pic11.png", 
+    "/assets/pictures/aboutpics/pic12.png", 
     ]
 
 
 # Create a row of images dynamically
 def create_image_row(start_index):
+    images_to_show = min(6, len(image_sources) - start_index)  # Ensure we don't exceed the list
     return dbc.Row(
         [
             dbc.Col(
@@ -172,10 +172,11 @@ def create_image_row(start_index):
                     className="clickable-image",
                     id=f"image{start_index + i + 1}",
                     style={"width": "100%", "cursor": "pointer", "height": "auto"},
+                    alt=f"Image {start_index + i + 1}"  # Add alt text
                 ),
                 xs=4, sm=4, md=3, lg=2,
                 className="p-2",  # Add padding to each column
-            ) for i in range(6)  # Adjust range if you have more images
+            ) for i in range(images_to_show)  # Dynamically adjust based on images available
         ],
         justify="center",
         className="mb-3"  # Add vertical padding (top and bottom) to the row
@@ -188,7 +189,7 @@ pictures = html.Div(
                 dbc.Col(
                     [ 
                         create_image_row(0),  # First row of images  
-                        create_image_row(3),  # Second row of images
+                        create_image_row(6),  # Second row of images
                         html.Br(), 
                     ],
                     xs=12, sm=12, md=9, lg=9,
@@ -236,8 +237,7 @@ pictures = html.Div(
         Input("image3", "n_clicks"),
         Input("image4", "n_clicks"), 
         Input("image5", "n_clicks"),
-        Input("image6", "n_clicks"),
-        
+        Input("image6", "n_clicks"), 
         Input("image7", "n_clicks"), 
         Input("image8", "n_clicks"), 
         Input("image9", "n_clicks"),
