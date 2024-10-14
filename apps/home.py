@@ -467,46 +467,45 @@ reminders = html.Div(
             className="g-0 justify-content-center"  # Center align columns within the row  # Remove gutter (spacing) between columns
         )
     ],
-    style={'padding': '20px'}  # Optional: add padding around the layout
+    style={'padding': '20px'}   
 )
 
  
 layout = html.Div(
     [
         homepagebackground, 
-        html.Br(),
-        html.Br(),
+        
         html.Div(
-            className="d-flex justify-content-center",  # Centers the card horizontally
+            className="d-flex justify-content-center",  # Center the content horizontally
+            style={"backgroundColor": "black", "padding": "20px"},  # Black background with padding
             children=[
-                dbc.Card(
-                    dbc.Row(
-                        [
-                            dbc.Col(
-                                [ 
-                                    html.H4("Now with Starlink Wifi!", className="text-center"), 
-                                ], 
-                                xs=12, sm=12, md=6, lg=6,
-                                className="px-4",
-                            ), 
-                            dbc.Col(
-                                [
+                dbc.Row(
+                    [
+                        dbc.Col(
+                            [ 
+                                html.H4("Now with Starlink Wifi!", className="text-center text-white"),  # White text on black background
+                            ], 
+                            xs=12, sm=12, md=6, lg=6, 
+                        ), 
+                        dbc.Col(
+                            [
+                                html.Div(
                                     html.Img(src="/assets/pictures/starklink.jpg", className="img-fluid rounded-start", 
-                                            style={"maxWidth": "100%"}), 
-                                ], 
-                                xs=12, sm=12, md=6, lg=6,
-                                className="px-4",
-                            ), 
-                        ],
-                        justify='center',    
-                        align='center',
-                    ),
-                    className="mb-3",
-                    style={"maxWidth": "540px", "position": "relative", "overflow": "hidden"},  # Card styling
+                                            style={"maxWidth": "80%"}), 
+                                    className="d-flex justify-content-center"  # Center image within the column
+                                ),
+                            ], 
+                            xs=12, sm=12, md=6, lg=6, 
+                        ), 
+                    ],
+                    justify='center',    
+                    align='center',
                 )
             ]
-        ),
+        ), 
 
+        html.Br(),
+        html.Br(),
 
         html.Div(
             [
