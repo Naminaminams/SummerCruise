@@ -278,16 +278,18 @@ def display_picimage(n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, prev_cli
 
     return False, "", False, False
 
+
+
 location = dbc.Container(
     [
         dbc.Row(
-            [
+            [ 
+                dbc.Col(width=1),
                 dbc.Col(
                     [
                         html.H2("Directions to Summer Cruise", className="text-center"),  
                         html.Br(),
-                        
-                        # Card for Commute Information
+                         
                         dbc.Card(
                             [
                                 dbc.CardBody(
@@ -295,16 +297,15 @@ location = dbc.Container(
                                         html.H5(
                                             [
                                                 html.B("Commute to"), " Binukbok Parking Area", html.B(" from Metro Manila")
-                                            ],
-                                            className="text-center"  # Center the heading
+                                            ]
                                         ),
                                         html.P(
                                             [
-                                                "1. Make your way to", html.B("Buendia DLTB Bus Terminal"), "(near Gil Puyat LRT Station). Take a bus with", html.B(" Lemery Tambo"), " Exit sign (DLTB Co.) Fare is at Php 175.",
+                                                "1. Make your way to", html.B(" Buendia DLTB Bus Terminal"), " (near Gil Puyat LRT Station). Take a bus with", html.B(" Lemery Tambo"), " Exit sign (DLTB Co.) Fare is at Php 175.",
                                                 html.Br(),
                                                 "2. Disembark at", html.B(" Xentro Mall"), " (terminal station).",
                                                 html.Br(),
-                                                "3. Take a tricycle to San Luis, Barangay Balite (Binukbok parking) or", html.B(" Summer Cruise Parking"), ". Travel time is 15 - 20 minutes and fare is at Php 200 but can be haggled down to Php 150.",
+                                                "3. Take a tricycle to San Luis, Barangay Balite to ", html.B(" Binukbok parking or Summer Cruise Parking"), ". Travel time is 15 - 20 minutes and fare is at Php 200 but can be haggled down to Php 150.",
                                                 html.Br(),
                                                 "4. Once at the parking, contact Rose or Janet."
                                             ]
@@ -312,10 +313,9 @@ location = dbc.Container(
                                     ]
                                 ),
                             ],
-                            style={"margin": "10px"}
+                            style={"margin": "10px", "display": "flex", "justify-content": "center"}  # Center the card
                         ),
-
-                        # Card for Private Vehicle Information
+ 
                         dbc.Card(
                             [
                                 dbc.CardBody(
@@ -323,18 +323,17 @@ location = dbc.Container(
                                         html.H5(
                                             [
                                                 html.B("Private Vehicle to"), " Binukbok Parking Area", html.B(" from Metro Manila")
-                                            ],
-                                            className="text-center"  # Center the heading
+                                            ]
                                         ),
                                         html.P(
                                             [
-                                                "1. Waze", html.B(" Binukbok Parking Area"), " and make sure your route is along Star Toll and take the", html.B("3rd Lipa Exit (Lipa Tambo Exit)"), ".",
+                                                "1. Waze", html.B(" Binukbok Parking Area"), " and make sure your route is along Star Toll and take the", html.B(" 3rd Lipa Exit (Lipa Tambo Exit)"), ".",
                                                 html.Br(),
-                                                "2. Drive through the national highway and exit at", html.B(" Cuenca, Alitagtag,"), " then turn left towards the McDonalds. Keep on the path, mostly straight along P.Laural Highway and turn right to", html.B(" Cuenca, Taal"), " (at the Jollibee).",
+                                                "2. Drive through the national highway and ", html.B("exit at Cuenca, Alitagtag,"), " then turn left towards the McDonalds. Keep on the path, mostly straight along P.Laural Highway and turn right to", html.B(" Cuenca, Taal"), " (at the Jollibee).",
                                                 html.Br(),
-                                                "3. Follow the national highway road until you reach Muzon, there, turn left (when you see a small public marketplace) then corner right after a few meters. Now you are at Bauan, just follow the straight path until you turn left at the palengke.",
+                                                "3. Follow the national highway road until you reach Muzon, there, turn left (when you see a small public marketplace) then corner right after a few meters. At Bauan, just follow the straight path until you turn left at the palengke.",
                                                 html.Br(),
-                                                "4. Drive straight to Brgy. Balite and look for the signage", html.B(" Summer Cruise Parking"), " at the right.",
+                                                "4. Drive straight to Brgy. Balite and ", html.B(" look for the signage Summer Cruise Parking"), " at the right.",
                                                 html.Br(),
                                                 "5. Once at the parking, contact Rose or Janet."
                                             ]
@@ -342,14 +341,12 @@ location = dbc.Container(
                                     ]
                                 ),
                             ],
-                            style={"margin": "10px"}
+                            style={"margin": "10px", "display": "flex", "justify-content": "center"}  # Center the card
                         ),
                     ],
-                    xs=12, sm=12, md=6, lg=6,  # Adjusted for more space for text
-                    className="text-center"  # Center content in this column
+                    xs=12, sm=12, md=6, lg=6,   
                 ),
-                
-                # Column for the Image and Button
+                 
                 dbc.Col(
                     [
                         dbc.Card(
@@ -360,7 +357,7 @@ location = dbc.Container(
                                     style={'width': '100%', 'height': 'auto'}
                                 ), 
                             ],
-                            style={"margin": "10px"}
+                            style={"margin": "10px", "display": "flex", "justify-content": "center"}  # Center the card
                         ),
                         dbc.Button(
                             "Get Started", 
@@ -378,7 +375,6 @@ location = dbc.Container(
                         ),
                     ],
                     xs=12, sm=12, md=5, lg=4,
-                    className="text-center"  # Center content in this column
                 ),
             ],
             align="center",
