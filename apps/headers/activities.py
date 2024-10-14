@@ -80,7 +80,7 @@ snorkelcard = html.Div(
                                 html.Li("Full Snorkel Rental Php 350 (one day)"), 
                             ]),  
                             html.Br(),
-                            dbc.Button("Book Now", href="/activities", className="hover-btn"),
+                            dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn"),
                         ],
                         className="d-flex flex-column align-items-start"  # Left-align content
                     ),
@@ -145,7 +145,7 @@ freedivingcard = html.Div(
                             html.Br(),
                             html.Div(
                                 [
-                                    dbc.Button("Book Now", href="/activities", className="hover-btn me-2"),  
+                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2"),  
                                     dbc.Button("View Promos", href="/activities", className="hover2-btn" ),
                                 ],
                                 className="d-flex flex-row justify-content-start align-items-center"  
@@ -220,7 +220,7 @@ familycard = html.Div(
                                 html.Li("Boat Fee per head Php 400"), 
                             ]), 
                             html.Br(), 
-                            dbc.Button("Book Now", href="/activities", className="hover-btn me-2"),
+                            dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2"),
                         ],
                         className="d-flex flex-column align-items-start"  # Left-align content
                     ),
@@ -288,7 +288,7 @@ Introdivecard = html.Div(
                             html.Br(),
                             html.Div(
                                 [
-                                    dbc.Button("Book Now", href="/activities", className="hover-btn me-2"),  
+                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2"),  
                                     dbc.Button("View Promos", href="/activities", className="hover2-btn" ),
                                 ],
                                 className="d-flex flex-row justify-content-start align-items-center"  
@@ -359,7 +359,7 @@ opendivecard = html.Div(
                             html.Br(),
                             html.Div(
                                 [
-                                    dbc.Button("Book Now", href="/activities", className="hover-btn me-2"),  
+                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2"),  
                                     dbc.Button("View Promos", href="/activities", className="hover2-btn" ),
                                 ],
                                 className="d-flex flex-row justify-content-start align-items-center"  
@@ -434,7 +434,7 @@ advanceddivecard = html.Div(
                             html.Br(),
                             html.Div(
                                 [
-                                    dbc.Button("Book Now", href="/activities", className="hover-btn me-2"),  
+                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2"),  
                                     dbc.Button("View Promos", href="/activities", className="hover2-btn" ),
                                 ],
                                 className="d-flex flex-row justify-content-start align-items-center"  
@@ -504,7 +504,7 @@ rescuedivecard = html.Div(
                             html.Br(),
                             html.Div(
                                 [
-                                    dbc.Button("Book Now", href="/activities", className="hover-btn me-2"),  
+                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2"),  
                                     dbc.Button("View Promos", href="/activities", className="hover2-btn" ),
                                 ],
                                 className="d-flex flex-row justify-content-start align-items-center"  

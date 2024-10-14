@@ -111,7 +111,7 @@ room1_2card = html.Div(
                                 ),
                                 dbc.Button(
                                     "Book Now", 
-                                    href="/activities",
+                                    href="https://www.facebook.com/summercruiseresort",
                                     className="hover-btn",  # Add this class to the button
                                     style={
                                         "position": "absolute",
@@ -162,7 +162,7 @@ room3_4card = html.Div(
                                 ),
                                 dbc.Button(
                                     "Book Now", 
-                                    href="/activities",
+                                    href="https://www.facebook.com/summercruiseresort",
                                     className="hover-btn",  # Add this class to the button
                                     style={
                                         "position": "absolute",
@@ -274,7 +274,7 @@ room5_6card = html.Div(
                                 ),
                                 dbc.Button(
                                     "Book Now", 
-                                    href="/activities",
+                                    href="https://www.facebook.com/summercruiseresort",
                                     className="hover-btn",  # Add this class to the button
                                     style={
                                         "position": "absolute",
@@ -323,7 +323,7 @@ room7_8card = html.Div(
                                 ),
                                 dbc.Button(
                                     "Book Now", 
-                                    href="/activities",
+                                    href="https://www.facebook.com/summercruiseresort",
                                     className="hover-btn",  # Add this class to the button
                                     style={
                                         "position": "absolute",
@@ -435,7 +435,7 @@ room9card = html.Div(
                                 ),
                                 dbc.Button(
                                     "Book Now", 
-                                    href="/activities",
+                                    href="https://www.facebook.com/summercruiseresort",
                                     className="hover-btn",  # Add this class to the button
                                     style={
                                         "position": "absolute",
@@ -484,7 +484,7 @@ room10_11card = html.Div(
                                 ),
                                 dbc.Button(
                                     "Book Now", 
-                                    href="/activities",
+                                    href="https://www.facebook.com/summercruiseresort",
                                     className="hover-btn",  # Add this class to the button
                                     style={
                                         "position": "absolute",
