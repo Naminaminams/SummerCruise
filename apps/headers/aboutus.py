@@ -73,7 +73,7 @@ aboutusinfo = html.Div(
                 ),
                 dbc.Col(
                     html.Img(   
-                        src="/assets/pictures/grouppic.jpg",  
+                        src="/assets/pictures/aboutus/fish.jpg",  
                         style={"width": "100%", "height": "auto", "border-radius": "10px"},  
                         alt="Underwater Adventure"  # Add alt text for accessibility
                     ),
@@ -145,20 +145,20 @@ missionvision = html.Div(
 
 # List of image sources (paths to your images)
 image_sources = [
-    "/assets/pictures/grouppic.jpg", 
-    "/assets/pictures/grouppic.jpg", 
-    "/assets/pictures/grouppic.jpg",
-    "/assets/pictures/grouppic.jpg", 
-    "/assets/pictures/grouppic.jpg", 
-    "/assets/pictures/grouppic.jpg",
+    "/assets/pictures/aboutus/boat.jpg", 
+    "/assets/pictures/aboutus/dive.jpg", 
+    "/assets/pictures/aboutus/hang.jpg",
+    "/assets/pictures/aboutus/lobster.jpg", 
+    "/assets/pictures/aboutus/practice.jpg", 
+    "/assets/pictures/aboutus/stonefish.jpg",
 
     
-    "/assets/pictures/grouppic.jpg", 
-    "/assets/pictures/grouppic.jpg", 
-    "/assets/pictures/grouppic.jpg", 
-    "/assets/pictures/grouppic.jpg", 
-    "/assets/pictures/grouppic.jpg", 
-    "/assets/pictures/grouppic.jpg",
+    "/assets/pictures/aboutus/turtle.jpg", 
+    "/assets/pictures/aboutus/dive2.jpg", 
+    "/assets/pictures/aboutus/diving.jpg", 
+    "/assets/pictures/aboutus/sunset.JPG", 
+    "/assets/pictures/aboutus/castle.jpg", 
+    "/assets/pictures/aboutus/freedive.jpg",
     ]
 
 
