@@ -279,19 +279,29 @@ review_cards = html.Div(
             [
                 dbc.Col(
                     review(
-                        "https://via.placeholder.com/150", 
-                        "Excellent Service!", 
-                        "The service provided was outstanding, and I was very impressed with the attention to detail.", 
-                        "John Doe"
+                        "https://www.facebook.com/photo/?fbid=8441145292602221&set=a.121304897919677", 
+                        "Our experience at Summer Cruise was truly sulit and unforgettable. We almost did not want to leave! Nakakabitin!", 
+                        """
+                            The sea is undeniably scary but set that fear aside because the underwater world deserves an 
+                            audience that can appreciate its wonders and beauty.
+                            Summer Cruise Diving Resort is one of the must-visit destinations in San Luis, Batangas. 
+                            There are multiple ways to get there and for us commuters, it's via bus and tricycle. 
+                            Just make sure to arrive at Summer Cruise's parking area before 4 pm to catch the boat to the resort itself.
+                        """, 
+                        "Nazka Leosala"
                     ),
                     xs=10, sm=10, md=3, lg=3,
                 ),
                 dbc.Col(
                     review(
-                        "https://via.placeholder.com/150", 
-                        "Very Satisfied", 
-                        "I am extremely satisfied with my purchase. The product quality exceeded my expectations.", 
-                        "Jane Smith"
+                        "https://www.facebook.com/photo/?fbid=8448423028550436&set=a.106872632705559", 
+                        "Staff are all friendly and approachable.", 
+                        """
+                            First time here and we really enjoyed the activities and accommodation. Staff are all friendly and approachable.
+                            We came here for the intro class, and lahat ng coaches ay mababait. They welcome questions 
+                            and we learned a lot from them. Even yung coaches na hindi assigned sa inyo, mabait rin and willing to help you.
+                        """, 
+                        "Joshua Forcadela"
                     ),
                     xs=10, sm=10, md=3, lg=3,
                 ),
