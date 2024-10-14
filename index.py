@@ -109,36 +109,12 @@ def displaypage(pathname, sessionlogout, user_id, accesstype, search):
             elif pathname == '/packages':
                 returnlayout = packages.layout
             
-            
-            # elif user_id != -1:
-            #     if accesstype >= 1:
-            #         if pathname == '/user' or pathname == '/user/dashboard':
-            #             returnlayout = user_dashboard.layout
-            #         elif pathname == '/user/profile' and mode != 'register':
-            #             returnlayout = user_profile.layout
-            #         else:
-            #             returnlayout = 'Error 404: Request not found'
-            #     elif accesstype == 2:
-            #         if pathname == '/user/search':
-            #             returnlayout = user_search.layout
-            #         elif pathname == '/resource/catalog':
-            #             returnlayout = resource_catalog.layout
-            #         elif pathname == '/circulation/loans':
-            #             returnlayout = circulation_loans.layout
-            #         elif pathname == '/circulation/wishlists':
-            #             returnlayout = circulation_wishlists.layout
-            #         else:
-            #             returnlayout = 'Error 403: Forbidden'
-                # else:
-                #     returnlayout = 'Error 403: Forbidden'
+             
             else:
                 returnlayout = blankpage.layout
 
     return [returnlayout, sessionlogout]
-
-app = dash.Dash(__name__)
-server = app.server
-
+ 
 
 if __name__ == '__main__':
     app.run_server(debug=True)
