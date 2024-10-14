@@ -307,7 +307,7 @@ location = dbc.Container(
                                                 html.Br(),
                                                 "3. Take a tricycle to San Luis, Barangay Balite to ", html.B(" Binukbok parking or Summer Cruise Parking"), ". Travel time is 15 - 20 minutes and fare is at Php 200 but can be haggled down to Php 150.",
                                                 html.Br(),
-                                                "4. Once at the parking, contact Rose or Janet."
+                                                "4. Once at the parking, contact Rose (0912-366-2774) or Janet (0946-959-2298)."
                                             ]
                                         ),
                                     ]
@@ -335,7 +335,7 @@ location = dbc.Container(
                                                 html.Br(),
                                                 "4. Drive straight to Brgy. Balite and ", html.B(" look for the signage Summer Cruise Parking"), " at the right.",
                                                 html.Br(),
-                                                "5. Once at the parking, contact Rose or Janet."
+                                                "5. Once at the parking, contact Rose (0912-366-2774) or Janet (0946-959-2298)."
                                             ]
                                         ),
                                     ]

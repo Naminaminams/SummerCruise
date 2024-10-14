@@ -246,23 +246,30 @@ location = dbc.Container(
 )
  
 
+
+
+
 def review(image_url, header_text, description_text, small_text):
     return dbc.Card(
         dbc.Row(
             [
                 dbc.Col(
-                    dbc.CardImg(src=image_url, className="img-fluid rounded-start ml-3", style={"maxWidth": "100px", "padding": "10px"} ),
-                    className="col-md-4",  
-                ),
-                dbc.Col(
                     dbc.CardBody(
                         [
-                            html.H5(header_text, className="card-title"),
-                            html.P(description_text, className="card-text"),
-                            html.Small(small_text, className="card-text text-muted"),
+                            html.Div(
+                                [
+                                    dbc.CardImg(src=image_url, className="img-fluid", 
+                                                style={"maxWidth": "100px", "borderRadius": "50%"}),
+                                    html.Small(small_text, className="card-text text-muted text-center"),
+                                ],
+                                className="d-flex flex-column align-items-center"  # Center image and small text
+                            ),
+                            html.Br(),
+                            html.H5(header_text, className="card-title text-center"),  # Center header
+                            html.P(description_text, className="card-text text-center"),  # Center description
                         ]
                     ),
-                    className="col-md-8",
+                    className="col-md-12",
                 ),
             ],
             className="g-0 d-flex align-items-center",
@@ -273,28 +280,16 @@ def review(image_url, header_text, description_text, small_text):
 
 
 
+
+
 review_cards = html.Div(
     [
         dbc.Row(
             [
+                
                 dbc.Col(
                     review(
-                        "https://www.facebook.com/photo/?fbid=8441145292602221&set=a.121304897919677", 
-                        "Our experience at Summer Cruise was truly sulit and unforgettable. We almost did not want to leave! Nakakabitin!", 
-                        """
-                            The sea is undeniably scary but set that fear aside because the underwater world deserves an 
-                            audience that can appreciate its wonders and beauty.
-                            Summer Cruise Diving Resort is one of the must-visit destinations in San Luis, Batangas. 
-                            There are multiple ways to get there and for us commuters, it's via bus and tricycle. 
-                            Just make sure to arrive at Summer Cruise's parking area before 4 pm to catch the boat to the resort itself.
-                        """, 
-                        "Nazka Leosala"
-                    ),
-                    xs=10, sm=10, md=3, lg=3,
-                ),
-                dbc.Col(
-                    review(
-                        "https://www.facebook.com/photo/?fbid=8448423028550436&set=a.106872632705559", 
+                        "/assets/pictures/aboutus/review2.jpg", 
                         "Staff are all friendly and approachable.", 
                         """
                             First time here and we really enjoyed the activities and accommodation. Staff are all friendly and approachable.
@@ -307,10 +302,27 @@ review_cards = html.Div(
                 ),
                 dbc.Col(
                     review(
-                        "https://via.placeholder.com/150", 
-                        "Highly Recommend", 
-                        "I would highly recommend this service to anyone looking for quality and reliability.", 
-                        "Chris Johnson"
+                        "/assets/pictures/aboutus/review1.jpg", 
+                        "Our experience at Summer Cruise was truly sulit and unforgettable. We almost did not want to leave! Nakakabitin!", 
+                        """
+                            Summer Cruise Diving Resort is one of the must-visit destinations in San Luis, Batangas. 
+                            There are multiple ways to get there and for us commuters, it's via bus and tricycle. 
+                            Just make sure to arrive at Summer Cruise's parking area before 4 pm to catch the boat to the resort itself...
+                        """, 
+                        "Nazka Leosala"
+                    ),
+                    xs=10, sm=10, md=3, lg=3,
+                ),
+                dbc.Col(
+                    review(
+                        "/assets/pictures/aboutus/review3.jpg", 
+                        "Perfect for people on a budget", 
+                        """
+                            We came here on September 23-24, 2023, and it's a nice low-cost place for people who want
+                            to start learning how to dive. It's perfect for people on a budget because they have 
+                            packages combining accommodation and freediving intro classes. Their intro classes go as deep as 10 meters only...
+                        """, 
+                        "Dennise Recuerdo"
                     ),
                     xs=10, sm=10, md=3, lg=3,
                 ),
@@ -338,8 +350,8 @@ banner = dbc.Card(
                 [
                     html.Div(
                         [
-                            html.H4(html.B("Book today and avail our Summer Promos"), className="card-title text-center"),
-                            dbc.Button("Online Booking", color="dark", className="mt-3 d-block mx-auto"),  # Center button
+                            html.H4(html.B("Book today and avail our Summer Promos"), className="card-title text-center"), 
+
                         ],
                         className="d-flex flex-column justify-content-center align-items-center h-100",  # Center content
                         style={"height": "100%"}  # Make div take full height of card
@@ -464,6 +476,38 @@ layout = html.Div(
         homepagebackground, 
         html.Br(),
         html.Br(),
+        html.Div(
+            className="d-flex justify-content-center",  # Centers the card horizontally
+            children=[
+                dbc.Card(
+                    dbc.Row(
+                        [
+                            dbc.Col(
+                                [ 
+                                    html.H4("Now with Starlink Wifi!", className="text-center"), 
+                                ], 
+                                xs=12, sm=12, md=6, lg=6,
+                                className="px-4",
+                            ), 
+                            dbc.Col(
+                                [
+                                    html.Img(src="/assets/pictures/starklink.jpg", className="img-fluid rounded-start", 
+                                            style={"maxWidth": "100%"}), 
+                                ], 
+                                xs=12, sm=12, md=6, lg=6,
+                                className="px-4",
+                            ), 
+                        ],
+                        justify='center',    
+                        align='center',
+                    ),
+                    className="mb-3",
+                    style={"maxWidth": "540px", "position": "relative", "overflow": "hidden"},  # Card styling
+                )
+            ]
+        ),
+
+
         html.Div(
             [
                 dbc.Row(
@@ -874,7 +918,7 @@ layout = html.Div(
                 ),
                 dbc.Row(
                     [
-                        dbc.Button("Other testimonials 🠮", color="primary", href="/", style={"width": "auto"}),
+                        dbc.Button("Other testimonials 🠮", color="primary", href="https://www.google.com/search?client=firefox-b-d&q=summer+cruise#lrd=0x33bd0824daf79bfb:0x308106deae431340,1,,,,", style={"width": "auto"}),
                     ], className="d-flex justify-content-center"
                 )
             ]
