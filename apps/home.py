@@ -155,7 +155,7 @@ aboutus = dbc.Container(
                                     We’re proud of how far we’ve come and excited to share our journey with you.
                                     """
                                 ),
-                                dbc.Button("Learn More", color="light", href="/activities", 
+                                dbc.Button("Learn More", color="light", href="/aboutus", 
                                 style={
                                     "border": "1px solid black", 
                                     "border-radius": "10px",      
@@ -490,6 +490,7 @@ layout = html.Div(
                                 ), 
                             ], 
                             xs=12, sm=12, md=6, lg=5,
+                            className="px-4",
                         ), 
                     ],
                     justify='center',    

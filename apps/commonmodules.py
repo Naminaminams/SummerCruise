@@ -77,25 +77,25 @@ def generate_navbar():
                     ),
 
                     # Book Now Button
-                    dbc.Col(
-                        html.A(  # Wrap the button in a link
-                            dbc.Button(
-                                [
-                                    html.Img(
-                                        src=app.get_asset_url('icons/calendar_icon.png'),
-                                        style={'height': '1em', 'margin-right': '0.5em'}
-                                    ),
-                                    "BOOK NOW"
-                                ],
-                                color="primary",
-                                className="d-md-flex align-items-center ms-3",
-                            ),
-                            href="/booking",  # Set the link to the booking page
-                            style={'textDecoration': 'none'}  # Optional: Remove underline from the link
-                        ),
-                        width="auto",
-                        className="ms-auto ms-3",  
-                    ),
+                    # dbc.Col(
+                    #     html.A(  # Wrap the button in a link
+                    #         dbc.Button(
+                    #             [
+                    #                 html.Img(
+                    #                     src=app.get_asset_url('icons/calendar_icon.png'),
+                    #                     style={'height': '1em', 'margin-right': '0.5em'}
+                    #                 ),
+                    #                 "BOOK NOW"
+                    #             ],
+                    #             color="primary",
+                    #             className="d-md-flex align-items-center ms-3",
+                    #         ),
+                    #         href="/booking",  # Set the link to the booking page
+                    #         style={'textDecoration': 'none'}  # Optional: Remove underline from the link
+                    #     ),
+                    #     width="auto",
+                    #     className="ms-auto ms-3",  
+                    # ),
                      
                     # Offcanvas for the menu
                     dbc.Offcanvas(  
