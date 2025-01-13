@@ -25,6 +25,7 @@ aboutusbackground = html.Div(
             ],
             style={"max-height": "500px"}  # Limit the height of the carousel
         ),
+        
         html.Div(
             html.H4(html.B("Welcome to Summer Cruise Diving Resort"), 
                 className="card-title", 
@@ -43,6 +44,7 @@ aboutusbackground = html.Div(
     ],
     style={"position": "relative", "max-height": "500px"}  # Make parent container relative
 )
+ 
 
 
 
@@ -61,7 +63,7 @@ aboutusinfo = html.Div(
                                 """, 
                                 className="text-center", 
                                 style={
-                                    "font-size": "20px",  # Default size for larger screens
+                                    "font-size": "18px",  # Default size for larger screens
                                 }
                             ), 
                         ],
@@ -287,7 +289,7 @@ location = dbc.Container(
                 dbc.Col(width=1),
                 dbc.Col(
                     [
-                        html.H2("Directions to Summer Cruise", className="text-center"),  
+                        html.H3("Directions to Summer Cruise", className="text-center"),  
                         html.Br(),
                          
                         dbc.Card(
@@ -296,9 +298,10 @@ location = dbc.Container(
                                     [
                                         html.H5(
                                             [
-                                                html.B("Commute to"), " Binukbok Parking Area", html.B(" from Metro Manila")
+                                                html.B("Commute to Binukbok Parking Area from Metro Manila")
                                             ]
                                         ),
+                                        html.Hr(),
                                         html.P(
                                             [
                                                 "1. Make your way to", html.B(" Buendia DLTB Bus Terminal"), " (near Gil Puyat LRT Station). Take a bus with", html.B(" Lemery Tambo"), " Exit sign (DLTB Co.) Fare is at Php 175.",
@@ -322,9 +325,10 @@ location = dbc.Container(
                                     [ 
                                         html.H5(
                                             [
-                                                html.B("Private Vehicle to"), " Binukbok Parking Area", html.B(" from Metro Manila")
+                                                html.B("Private Vehicle to Binukbok Parking Area from Metro Manila")
                                             ]
                                         ),
+                                        html.Hr(),
                                         html.P(
                                             [
                                                 "1. Waze", html.B(" Binukbok Parking Area"), " and make sure your route is along Star Toll and take the", html.B(" 3rd Lipa Exit (Lipa Tambo Exit)"), ".",
@@ -389,14 +393,110 @@ location = dbc.Container(
 
 
 
+reminders = html.Div(
+    [
+        html.H2(
+            "Reminders",
+            style={'textAlign': 'center', 'marginBottom': '30px'}
+        ),
+        dbc.Row(
+            [
+                dbc.Col(
+                    [
+                        dbc.Card(
+                            [
+                                dbc.CardBody(
+                                    [
+                                        html.H5("We highly advise guests to come BEFORE 5pm", style={'fontWeight': 'bold'}),
+                                        html.P("so you can still avail of the bangka ride going to the Resort. Otherwise, guests arriving late, regardless of number, will need to WALK to the resort, but we will have you escorted by one of our staff.")
+                                    ]
+                                )
+                            ],
+                            className="mb-3"  # Add margin bottom to card
+                        ),
+                        dbc.Card(
+                            [
+                                dbc.CardBody(
+                                    [
+                                        html.H5("Day Trip Parking Fee - Php 50", style={'fontWeight': 'bold'}),
+                                        html.P("Parking Fee is NOT included in the deposit and room rates so please prepare Php 150 (overnight)")
+                                    ]
+                                )
+                            ],
+                            className="mb-3"  # Add margin bottom to card
+                        ),
+                        dbc.Card(
+                            [
+                                dbc.CardBody(
+                                    [
+                                        html.H5("Room Cancellation", style={'fontWeight': 'bold'}),
+                                        html.P("Cancellation should be made 3 days prior check in, otherwise deposit is FORFEITED. Unless there is a weather emergency in which case the booking can be rescheduled up to the guest's needs.")
+                                    ]
+                                )
+                            ],
+                            className="mb-3"  # Add margin bottom to card
+                        ),
+                    ],
+                    xs=12, sm=12, md=8, lg=4,
+                    className="p-1", 
+                ),
+                dbc.Col(
+                    [
+                        dbc.Card(
+                            [
+                                dbc.CardBody(
+                                    [
+                                        html.H5("Rocky Terrain", style={'fontWeight': 'bold'}),
+                                        html.P("Although the resort is accessible by land, the path leading to the resort is rocky and might cause inconvenience to guests, especially those bringing several baggages, thus, early arrival is highly recommended.")
+                                    ]
+                                )
+                            ],
+                            className="mb-3"  # Add margin bottom to card
+                        ),
+                        dbc.Card(
+                            [
+                                dbc.CardBody(
+                                    [
+                                        html.H5("Bangka Fee - Php 50", style={'fontWeight': 'bold'}),
+                                        html.P("Bangka Fee is NOT included in the deposit and room rates so please prepare Php 50 / head (one way)")
+                                    ]
+                                )
+                            ],
+                            className="mb-3"  # Add margin bottom to card
+                        ),
+                        dbc.Card(
+                            [
+                                dbc.CardBody(
+                                    [
+                                        html.H5("Contact Reception:", style={'fontWeight': 'bold'}),
+                                        html.P("Ate Rose: 0912-366-2774"),
+                                        html.P("Ate Janet: 0946-959-2298")
+                                    ]
+                                )
+                            ],
+                            className="mb-3"  # Add margin bottom to card
+                        ),
+                    ],
+                    xs=12, sm=12, md=8, lg=4, 
+                    className="p-1", 
+                ),
+            ],
+            className="g-0 justify-content-center"  # Center align columns within the row  # Remove gutter (spacing) between columns
+        )
+    ],
+    style={'padding': '20px'}   
+)
+
+
+
 
 layout = html.Div(
     [ 
+        aboutusbackground,  
         dbc.Row(
             [
                 dbc.Col(
                     [ 
-                        aboutusbackground,  
                         html.Br(),
                         html.Br(),
                         html.Br(),
@@ -472,7 +572,8 @@ layout = html.Div(
             """, className="text-center"
         ), 
         location,
-        html.Br()
+        html.Br(),
+        reminders,  
 
     ]
 )

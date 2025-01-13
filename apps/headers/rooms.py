@@ -38,10 +38,7 @@ roombackground = html.Div(
                             className="card-text",
                             style={'textAlign': 'center'}
                         ),   
-                        html.Div(
-                            dbc.Button("View Map", color="primary"),
-                            style={'display': 'flex', 'justify-content': 'center'}  # Center the button
-                        ),
+                        
                     ]
                 )
             ],
@@ -395,7 +392,7 @@ room9card = html.Div(
                              
                             html.H4(html.B("Oasis")),
                             html.P("""Located at the leftmost side of the resort, 
-                                   it's perfect location to wait for the sunrise. 
+                                   it's the perfect location to wait for the sunrise. 
                                    Oasis offers breathtaking views of the beach 
                                    and the side mountain just on the first floor.
                                    """), 
@@ -549,6 +546,10 @@ layout = html.Div(
     [
         roombackground,
         html.Br(),
+        html.Div(
+                dbc.Button("View Map", color="primary"),
+                style={'display': 'flex', 'justify-content': 'center'}  # Center the button
+            ),
         html.Br(),
         dbc.Row(
             [

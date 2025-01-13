@@ -93,7 +93,7 @@ snorkelcard = html.Div(
                         html.Div(
                             [
                                 html.Img(
-                                    src="/assets/pictures/rooms/room1.jpg", 
+                                    src="/assets/pictures/activities/activity1.jpg", 
                                     style={
                                         "width": "100%", 
                                         "height": "auto", 
@@ -162,7 +162,7 @@ freedivingcard = html.Div(
                         html.Div(
                             [
                                 html.Img(
-                                    src="/assets/pictures/rooms/room1.jpg", 
+                                    src="/assets/pictures/activities/activity2.png", 
                                     style={
                                         "width": "100%", 
                                         "height": "auto", 
@@ -233,7 +233,7 @@ familycard = html.Div(
                         html.Div(
                             [
                                 html.Img(
-                                    src="/assets/pictures/rooms/room1.jpg", 
+                                    src="/assets/pictures/activities/activity3.JPG", 
                                     style={
                                         "width": "100%", 
                                         "height": "auto", 
@@ -305,7 +305,7 @@ Introdivecard = html.Div(
                         html.Div(
                             [
                                 html.Img(
-                                    src="/assets/pictures/rooms/room1.jpg", 
+                                    src="/assets/pictures/activities/activity4.jpg", 
                                     style={
                                         "width": "100%", 
                                         "height": "auto", 
@@ -376,7 +376,7 @@ opendivecard = html.Div(
                         html.Div(
                             [
                                 html.Img(
-                                    src="/assets/pictures/rooms/room1.jpg", 
+                                    src="/assets/pictures/activities/activity5.jpg", 
                                     style={
                                         "width": "100%", 
                                         "height": "auto", 
@@ -451,7 +451,7 @@ advanceddivecard = html.Div(
                         html.Div(
                             [
                                 html.Img(
-                                    src="/assets/pictures/rooms/room1.jpg", 
+                                    src="/assets/pictures/activities/activity6.jpg", 
                                     style={
                                         "width": "100%", 
                                         "height": "auto", 
@@ -521,7 +521,7 @@ rescuedivecard = html.Div(
                         html.Div(
                             [
                                 html.Img(
-                                    src="/assets/pictures/rooms/room1.jpg", 
+                                    src="/assets/pictures/activities/activity7.jpg", 
                                     style={
                                         "width": "100%", 
                                         "height": "auto", 
@@ -580,7 +580,7 @@ divemastercard = html.Div(
                         html.Div(
                             [
                                 html.Img(
-                                    src="/assets/pictures/rooms/room1.jpg", 
+                                    src="/assets/pictures/activities/activity8.png", 
                                     style={
                                         "width": "100%", 
                                         "height": "auto", 
@@ -620,17 +620,17 @@ picture_cards = html.Div(
         dbc.Row(
             [
                 dbc.Col(
-                    dbc.CardImg(src="/assets/pictures/diningarea.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
+                    dbc.CardImg(src="/assets/pictures/activities/boatdive.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
                     width="auto",  # Adjust column width to fit content
                     style={"padding": "0.5rem"},  # Reduce padding between columns
                 ),
                 dbc.Col(
-                    dbc.CardImg(src="/assets/pictures/diningarea.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
+                    dbc.CardImg(src="/assets/pictures/activities/couple.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
                     width="auto",  # Adjust column width to fit content
                     style={"padding": "0.5rem"},  # Reduce padding between columns
                 ),
                 dbc.Col(
-                    dbc.CardImg(src="/assets/pictures/diningarea.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
+                    dbc.CardImg(src="/assets/pictures/activities/turtle.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
                     width="auto",  # Adjust column width to fit content
                     style={"padding": "0.5rem"},  # Reduce padding between columns
                 ),
@@ -640,17 +640,17 @@ picture_cards = html.Div(
         dbc.Row(
             [
                 dbc.Col(
-                    dbc.CardImg(src="/assets/pictures/diningarea.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
+                    dbc.CardImg(src="/assets/pictures/activities/dive1.png", style={"maxHeight": "180px", "objectFit": "cover"}), 
                     width="auto",  # Adjust column width to fit content
                     style={"padding": "0.5rem"},  # Reduce padding between columns
                 ),
                 dbc.Col(
-                    dbc.CardImg(src="/assets/pictures/diningarea.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
+                    dbc.CardImg(src="/assets/pictures/activities/dive2.png", style={"maxHeight": "180px", "objectFit": "cover"}), 
                     width="auto",  # Adjust column width to fit content
                     style={"padding": "0.5rem"},  # Reduce padding between columns
                 ),
                 dbc.Col(
-                    dbc.CardImg(src="/assets/pictures/diningarea.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
+                    dbc.CardImg(src="/assets/pictures/activities/dive3.png", style={"maxHeight": "180px", "objectFit": "cover"}), 
                     width="auto",  # Adjust column width to fit content
                     style={"padding": "0.5rem"},  # Reduce padding between columns
                 ),

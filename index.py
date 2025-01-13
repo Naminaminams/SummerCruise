@@ -11,7 +11,7 @@ from apps import commonmodules as cm
 from apps import home
 from apps import blankpage
 
-from apps.headers import aboutus, rooms, activities, amenities, booking, contactus, events, packages
+from apps.headers import aboutus, rooms, activities, amenities, events, packages
 from apps.admin import adminrooms, calendar
 
 
@@ -102,12 +102,10 @@ def displaypage(pathname, sessionlogout, user_id, accesstype, search):
                 returnlayout = blankpage.layout
             elif pathname == '/booking':
                 returnlayout = calendar.layout
-            elif pathname == '/contactus':
-                returnlayout = blankpage.layout
             elif pathname == '/events':
                 returnlayout = blankpage.layout
             elif pathname == '/packages':
-                returnlayout = blankpage.layout
+                returnlayout = packages.layout
             
              
             else:

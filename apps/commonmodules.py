@@ -57,10 +57,9 @@ def generate_navbar():
                                 dbc.NavItem(dbc.NavLink("ABOUT US", href="/aboutus", id="about-us-link")),
                                 dbc.NavItem(dbc.NavLink("ROOMS", href="/rooms", id="rooms-link")),
                                 dbc.NavItem(dbc.NavLink("ACTIVITIES", href="/activities", id="activities-link")),
-                                dbc.NavItem(dbc.NavLink("EVENTS", href="/events", id="events-link")),
+                                #dbc.NavItem(dbc.NavLink("EVENTS", href="/events", id="events-link")),
                                 dbc.NavItem(dbc.NavLink("PACKAGES", href="/packages", id="packages-link")), 
-                                dbc.NavItem(dbc.NavLink("AMENITIES", href="/amenities", id="amenities-link")),
-                                dbc.NavItem(dbc.NavLink("CONTACT US", href="/contactus", id="contact-us-link")),
+                                #dbc.NavItem(dbc.NavLink("AMENITIES", href="/amenities", id="amenities-link")),
                             ],
                             className="ms-auto d-none d-lg-flex",  
                             navbar=True,
@@ -115,10 +114,9 @@ def generate_navbar():
                                 dbc.NavItem(dbc.NavLink("ABOUT US", href="/aboutus", style={'color': 'white', 'margin-right': '20px'})),
                                 dbc.NavItem(dbc.NavLink("ROOMS", href="/rooms", style={'color': 'white', 'margin-right': '20px'})), 
                                 dbc.NavItem(dbc.NavLink("ACTIVITIES", href="/activities", style={'color': 'white', 'margin-right': '20px'})),
-                                dbc.NavItem(dbc.NavLink("EVENTS", href="/events", style={'color': 'white', 'margin-right': '20px'})),
+                                #dbc.NavItem(dbc.NavLink("EVENTS", href="/events", style={'color': 'white', 'margin-right': '20px'})),
                                 dbc.NavItem(dbc.NavLink("PACKAGES", href="/packages", style={'color': 'white', 'margin-right': '20px'})),
-                                dbc.NavItem(dbc.NavLink("AMENITIES", href="/amenities", style={'color': 'white', 'margin-right': '20px'})),
-                                dbc.NavItem(dbc.NavLink("CONTACT US", href="/contactus", style={'color': 'white'})),
+                                #dbc.NavItem(dbc.NavLink("AMENITIES", href="/amenities", style={'color': 'white', 'margin-right': '20px'})),
                             ],
                             vertical=True,
                             navbar=True,
@@ -152,10 +150,10 @@ def generate_navbar():
      Input("about-us-link", "n_clicks"),
      Input("rooms-link", "n_clicks"),
      Input("activities-link", "n_clicks"),
-     Input("events-link", "n_clicks"),
+     #Input("events-link", "n_clicks"),
      Input("packages-link", "n_clicks"),
-     Input("amenities-link", "n_clicks"),
-     Input("contact-us-link", "n_clicks")],
+     #Input("amenities-link", "n_clicks")
+    ],
     State("offcanvas", "is_open")  # Use State to check current state
 )
 def toggle_offcanvas(n_clicks, *args):
@@ -169,8 +167,10 @@ def toggle_offcanvas(n_clicks, *args):
         return not ctx.states["offcanvas.is_open"]  # Toggle the state
     else:
         return False 
+ 
 
-                                
+
+
 def generate_footer():
     footer = dbc.Container(
         [
@@ -180,16 +180,16 @@ def generate_footer():
                         [ 
                             html.Div(
                                 [
-                                    html.P(
-                                        html.B("SPECIAL OFFERS"), 
-                                        className="d-flex align-items-center text-center text-sm-left" 
-                                    ),
-                                    dbc.NavItem(dbc.NavLink("Events", href="/events", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
                                     dbc.NavItem(dbc.NavLink("Packages", href="/packages", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
-                                    dbc.NavItem(dbc.NavLink("Amenities", href="/amenities", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
+                                    dbc.NavItem(dbc.NavLink("Home", href="/home", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
+                                    dbc.NavItem(dbc.NavLink("About Us", href="/aboutus", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
+                                    dbc.NavItem(dbc.NavLink("Rooms", href="/rooms", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
+                                    dbc.NavItem(dbc.NavLink("Activities", href="/activities", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
+                                    
                                 ],
                                 className="d-flex flex-column align-items-center align-items-sm-start"  
                             ),
+                            
                         ],
                         xs=12, sm=12, md=3, lg=3,   
                         className="d-flex justify-content-center justify-content-sm-start  mb-4" 
