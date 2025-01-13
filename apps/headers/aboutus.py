@@ -28,11 +28,11 @@ aboutusbackground = html.Div(
         html.Div(
             html.H4(html.B("Welcome to Summer Cruise Diving Resort"), 
                 className="card-title", 
-                style={'color':'white','textAlign': 'center', 'fontFamily': "'Lobster'", 'fontSize': '48px'}
+                style={'color':'white','textAlign': 'center', 'fontSize': '48px'}
             ),
             style={
                 "position": "absolute", 
-                "top": "50%", 
+                "top": "80%", 
                 "left": "50%", 
                 "transform": "translate(-50%, -50%)",  # Center the text
                 "color": "white", 
