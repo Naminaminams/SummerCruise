@@ -470,7 +470,103 @@ reminders = html.Div(
     style={'padding': '20px'}   
 )
 
+
+
+
+
+
+
+
+
+introinfo2 = html.Div(
+    [
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.Div(
+                        [
+                            html.P(
+                                """ 
+                                Summer Cruise offers thrilling activities including Discover Scuba Diving,
+                                PADI Open Water Scuba Diving Certification, Introduction to Freediving, Snorkeling, 
+                                and Underwater Photography.
+                                """, 
+                                className="text-center", 
+                                style={
+                                    "font-size": "20px",  # Default size for larger screens
+                                }
+                            ), 
+                        ],
+                        className="d-flex flex-column text-center"   
+                    ),
+                    width={"size": 12},
+                    xs=12, sm=12, md=8, lg=4,
+                    className="d-flex justify-content-center text-center"
+                ),
+                dbc.Col(
+                    html.Img(   
+                        src="/assets/pictures/aboutpics/fish.jpg",  
+                        style={"width": "100%", "height": "auto", "border-radius": "10px"},  
+                        alt="Underwater Adventure"  # Add alt text for accessibility
+                    ),
+                    width={"size": 12}, 
+                    xs=12, sm=12, md=4, lg=4,  # Adjust width for responsiveness
+                    className="d-flex justify-content-center align-items-center"
+                ),
+            ],
+            justify='center',  # Center align the columns in the row
+            align='center',
+            className="p-3"  # Small padding around the row
+
+        ),
+    ]
+)
+
+introinfo1 = html.Div(
+    [
+        dbc.Row(
+            [
+                dbc.Col(
+                    [
+                        
+                        
+                        html.Br(),
+                        html.H2("Summer Cruise Diving Resort", className="text-center"), 
+                        
+                        html.P(
+                            """
+                            ​is your perfect home away from home, nestled in the charming town of Brgy. 
+                            Balite, San Luis, Batangas City. Just a two-hour drive from the metro, 
+                            you'll escape the hustle and bustle and be treated to some of the best sunset views around.
+                            """, className="text-center"
+                        ),
+                        html.Br(),
  
+                        html.Br(),
+                        html.P(
+                            """ 
+                            For almost ten years, Summer Cruise has been serving up delicious food and comfy lodging. 
+                            With it's easy access to the sea, it's the perfect place to try your hand at water activities,
+                            be it snorkeling, free-diving, SCUBA diving, or fishing.
+                            Whether you're a couple, a family, a group of friends, traveling with your furbabies, 
+                            or a corporate team, Summer Cruise is the ideal spot for relaxation or adventure. 
+                            Escape the hustle of city life and immerse yourself in a brand new underwater world.
+                            """, className="text-center"
+                        ), 
+                    ], 
+                    xs=12, sm=12, md=6, lg=5,
+                    className="px-4",
+                ), 
+            ],
+            justify='center',    
+            align='center',   
+        )
+    ]
+)
+
+
+
+
 layout = html.Div(
     [
         homepagebackground, 
@@ -504,57 +600,8 @@ layout = html.Div(
         # ), 
  
         html.Br(),
+        introinfo1,
 
-        html.Div(
-            [
-                dbc.Row(
-                    [
-                        dbc.Col(
-                            [
-                                
-                                html.Br(),
-                                html.H2("Summer Cruise Diving Resort", className="text-center"), 
-                                
-                                html.P(
-                                    """
-                                    ​is your perfect home away from home, nestled in the charming town of Brgy. 
-                                    Balite, San Luis, Batangas City. Just a two-hour drive from the metro, 
-                                    you'll escape the hustle and bustle and be treated to some of the best sunset views around.
-                                    """, className="text-center"
-                                ),
-                                html.Br(),
-
-                                dbc.Col(
-                                    html.Img(   
-                                        src="/assets/pictures/aboutpics/fish.jpg",  
-                                        style={"width": "100%", "height": "auto", "border-radius": "10px"},  
-                                        alt="Underwater Adventure"  # Add alt text for accessibility
-                                    ),
-                                    width={"size": 12}, 
-                                    xs=12, sm=12, md=4, lg=4,  # Adjust width for responsiveness
-                                    className="d-flex justify-content-center align-items-center"
-                                ),
-                                html.Br(),
-                                html.P(
-                                    """ 
-                                    For almost ten years, Summer Cruise has been serving up delicious food and comfy lodging. 
-                                    With it's easy access to the sea, it's the perfect place to try your hand at water activities,
-                                    be it snorkeling, free-diving, SCUBA diving, or fishing.
-                                    Whether you're a couple, a family, a group of friends, traveling with your furbabies, 
-                                    or a corporate team, Summer Cruise is the ideal spot for relaxation or adventure. 
-                                    Escape the hustle of city life and immerse yourself in a brand new underwater world.
-                                    """, className="text-center"
-                                ), 
-                            ], 
-                            xs=12, sm=12, md=6, lg=5,
-                            className="px-4",
-                        ), 
-                    ],
-                    justify='center',    
-                    align='center',   
-                )
-            ]
-        ), 
         html.Br(),
         html.Br(),
         ammenities_cards, 

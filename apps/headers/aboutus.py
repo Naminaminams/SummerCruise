@@ -28,7 +28,7 @@ aboutusbackground = html.Div(
         html.Div(
             html.H4(html.B("Welcome to Summer Cruise Diving Resort"), 
                 className="card-title", 
-                style={'color':'white','textAlign': 'center', 'fontSize': '40px'}
+                style={'color':'white','textAlign': 'center', 'fontSize': '48px'}
             ),
             style={
                 "position": "absolute", 
@@ -61,7 +61,7 @@ aboutusinfo = html.Div(
                                 """, 
                                 className="text-center", 
                                 style={
-                                    "font-size": "20px",  
+                                    "font-size": "20px",  # Default size for larger screens
                                 }
                             ), 
                         ],
@@ -70,6 +70,16 @@ aboutusinfo = html.Div(
                     width={"size": 12},
                     xs=12, sm=12, md=8, lg=4,
                     className="d-flex justify-content-center text-center"
+                ),
+                dbc.Col(
+                    html.Img(   
+                        src="/assets/pictures/aboutpics/fish.jpg",  
+                        style={"width": "100%", "height": "auto", "border-radius": "10px"},  
+                        alt="Underwater Adventure"  # Add alt text for accessibility
+                    ),
+                    width={"size": 12}, 
+                    xs=12, sm=12, md=4, lg=4,  # Adjust width for responsiveness
+                    className="d-flex justify-content-center align-items-center"
                 ),
             ],
             justify='center',  # Center align the columns in the row
