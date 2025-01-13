@@ -502,8 +502,7 @@ layout = html.Div(
         #         )
         #     ]
         # ), 
-
-        html.Hr(),
+ 
         html.Br(),
 
         html.Div(
@@ -524,11 +523,17 @@ layout = html.Div(
                                     """, className="text-center"
                                 ),
                                 html.Br(),
-                                html.P(
-                                    """ 
-                                    ● ● ●
-                                    """, className="text-center"
-                                ), 
+
+                                dbc.Col(
+                                    html.Img(   
+                                        src="/assets/pictures/aboutpics/fish.jpg",  
+                                        style={"width": "100%", "height": "auto", "border-radius": "10px"},  
+                                        alt="Underwater Adventure"  # Add alt text for accessibility
+                                    ),
+                                    width={"size": 12}, 
+                                    xs=12, sm=12, md=4, lg=4,  # Adjust width for responsiveness
+                                    className="d-flex justify-content-center align-items-center"
+                                ),
                                 html.Br(),
                                 html.P(
                                     """ 

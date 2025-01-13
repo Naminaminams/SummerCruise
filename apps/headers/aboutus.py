@@ -28,11 +28,11 @@ aboutusbackground = html.Div(
         html.Div(
             html.H4(html.B("Welcome to Summer Cruise Diving Resort"), 
                 className="card-title", 
-                style={'color':'white','textAlign': 'center', 'fontSize': '48px'}
+                style={'color':'white','textAlign': 'center', 'fontSize': '40px'}
             ),
             style={
                 "position": "absolute", 
-                "top": "80%", 
+                "top": "30%", 
                 "left": "50%", 
                 "transform": "translate(-50%, -50%)",  # Center the text
                 "color": "white", 
@@ -55,13 +55,13 @@ aboutusinfo = html.Div(
                         [
                             html.P(
                                 """ 
-                                🌊 Summer Cruise offers thrilling activities including Discover Scuba Diving,
+                                Summer Cruise offers thrilling activities including Discover Scuba Diving,
                                 PADI Open Water Scuba Diving Certification, Introduction to Freediving, Snorkeling, 
                                 and Underwater Photography.
                                 """, 
                                 className="text-center", 
                                 style={
-                                    "font-size": "16px",  # Default size for larger screens
+                                    "font-size": "20px",  
                                 }
                             ), 
                         ],
@@ -70,16 +70,6 @@ aboutusinfo = html.Div(
                     width={"size": 12},
                     xs=12, sm=12, md=8, lg=4,
                     className="d-flex justify-content-center text-center"
-                ),
-                dbc.Col(
-                    html.Img(   
-                        src="/assets/pictures/aboutpics/fish.jpg",  
-                        style={"width": "100%", "height": "auto", "border-radius": "10px"},  
-                        alt="Underwater Adventure"  # Add alt text for accessibility
-                    ),
-                    width={"size": 12}, 
-                    xs=12, sm=12, md=4, lg=4,  # Adjust width for responsiveness
-                    className="d-flex justify-content-center align-items-center"
                 ),
             ],
             justify='center',  # Center align the columns in the row
