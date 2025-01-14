@@ -350,12 +350,24 @@ banner = dbc.Card(
                 [
                     html.Div(
                         [
-                            html.H4(html.B("Book today and avail our Summer Promos"), className="card-title text-center"), 
-
+                            html.H4(
+                                html.B("Book today and avail our January Promos"), 
+                                className="card-title text-center"
+                            ),
+                            dbc.Row(
+                                dbc.Col(
+                                    [
+                                        dbc.Button(html.B("Packages"), color="primary", href="/packages", className="me-2"),  # Add spacing between buttons
+                                        dbc.Button(html.B("Book Now"), color="primary", href="https://www.facebook.com/summercruiseresort"),
+                                    ],
+                                    style={'display': 'flex', 'justify-content': 'center'}  # Center the buttons
+                                )
+                            ),
                         ],
                         className="d-flex flex-column justify-content-center align-items-center h-100",  # Center content
                         style={"height": "100%"}  # Make div take full height of card
-                    ),
+                    )
+
                 ],
                 className="h-100 d-flex flex-column justify-content-center align-items-center",  # Ensure card body takes full height of card and centers content
             ),
@@ -517,7 +529,7 @@ introinfo2 = html.Div(
                 ),
                 dbc.Col(
                     html.Img(   
-                        src="/assets/pictures/home/intro.png",  
+                        src="/assets/pictures/homepage/intro.png",  
                         style={"width": "80%", "height": "auto", "border-radius": "10px"},  
                         alt="Underwater Adventure"   
                     ),
@@ -642,9 +654,9 @@ layout = html.Div(
                 dbc.Col(
                     dbc.Carousel(
                         items=[
-                            {"key": "1", "src": "assets/pictures/home/freedivetraining.png"},
-                            {"key": "2", "src": "assets/pictures/home/freedivegroup.png"},
-                            {"key": "3", "src": "assets/pictures/home/freedive.png"}, 
+                            {"key": "1", "src": "assets/pictures/homepage/A1.png"},
+                            {"key": "2", "src": "assets/pictures/homepage/A2.png"},
+                            {"key": "3", "src": "assets/pictures/homepage/A3.png"}, 
                         ],
                         className="carousel-fade custom-carousel",
                         style={"Height": "350px", "overflow": "hidden"}  
@@ -690,8 +702,9 @@ layout = html.Div(
                 dbc.Col(
                     dbc.Carousel(
                         items=[
-                            {"key": "1", "src": "assets/pictures/home/divetraining.png"},
-                            {"key": "2", "src": "assets/pictures/home/diveguide.png"},
+                            {"key": "1", "src": "assets/pictures/homepage/B1.png"},
+                            {"key": "2", "src": "assets/pictures/homepage/B2.png"},
+                            {"key": "3", "src": "assets/pictures/homepage/B3.png"},
                         ],
                         className="carousel-fade custom-carousel",
                         style={"Height": "350px", "overflow": "hidden"}  
@@ -735,8 +748,9 @@ layout = html.Div(
                 dbc.Col(
                     dbc.Carousel(
                         items=[
-                            {"key": "1", "src": "assets/pictures/home/turtleb.png"},
-                            {"key": "2", "src": "assets/pictures/home/skindive.png"}, 
+                            {"key": "1", "src": "assets/pictures/homepage/C1.png"},
+                            {"key": "2", "src": "assets/pictures/homepage/C2.png"},
+                            {"key": "3", "src": "assets/pictures/homepage/C3.png"},
                         ],
                         className="carousel-fade custom-carousel",
                         style={"Height": "350px", "overflow": "hidden"}  
@@ -782,8 +796,9 @@ layout = html.Div(
                 dbc.Col(
                     dbc.Carousel(
                         items=[
-                            {"key": "1", "src": "assets/pictures/home/scubagroup.png"},
-                            {"key": "2", "src": "assets/pictures/home/corals.png"},
+                            {"key": "1", "src": "assets/pictures/homepage/D1.png"},
+                            {"key": "2", "src": "assets/pictures/homepage/D2.png"},
+                            {"key": "3", "src": "assets/pictures/homepage/D3.png"},
                         ],
                         className="carousel-fade custom-carousel",
                         style={"Height": "350px", "overflow": "hidden"}  
@@ -830,7 +845,9 @@ layout = html.Div(
                 dbc.Col(
                     dbc.Carousel(
                         items=[
-                            {"key": "1", "src": "assets/pictures/home/turtle2.png"}, 
+                            {"key": "1", "src": "assets/pictures/homepage/E1.png"}, 
+                            {"key": "2", "src": "assets/pictures/homepage/E2.png"},  
+                            {"key": "3", "src": "assets/pictures/homepage/E3.png"}, 
                         ],
                         className="carousel-fade custom-carousel",
                         style={"Height": "350px", "overflow": "hidden"}  
@@ -877,7 +894,9 @@ layout = html.Div(
                 dbc.Col(
                     dbc.Carousel(
                         items=[
-                            {"key": "1", "src": "assets/pictures/home/clownfish.png"}, 
+                            {"key": "1", "src": "assets/pictures/homepage/F1.png"}, 
+                            {"key": "2", "src": "assets/pictures/homepage/F2.png"},
+                            {"key": "3", "src": "assets/pictures/homepage/F3.png"},
                         ],
                         className="carousel-fade custom-carousel",
                         style={"Height": "350px", "overflow": "hidden"}  
@@ -921,7 +940,9 @@ layout = html.Div(
                 dbc.Col(
                     dbc.Carousel(
                         items=[
-                            {"key": "1", "src": "assets/pictures/home/boat.png"}, 
+                            {"key": "1", "src": "assets/pictures/homepage/G1.png"},
+                            {"key": "2", "src": "assets/pictures/homepage/G2.png"},
+                            {"key": "3", "src": "assets/pictures/homepage/G3.png"},
                         ],
                         className="carousel-fade custom-carousel",
                         style={"Height": "350px", "overflow": "hidden"}  

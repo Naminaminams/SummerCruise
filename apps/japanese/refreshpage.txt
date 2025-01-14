@@ -1,0 +1,70 @@
+@app.callback(
+    [
+        Output("navbar", "children"), 
+        Output("footer", "children"),
+        Output("redirect-url", "data"),
+        Output('url', 'pathname')  # Add the Output to change the location
+    ],
+    [Input("japanese-button", "n_clicks")],
+    prevent_initial_call=True
+)
+def update_layout(n_clicks):
+    if n_clicks % 2 == 1:  # Switch to Japanese mode
+        navbar = cm.generate_ja_navbar()
+        button = dbc.Button(
+            "ENGLISH", id="japanese-button", n_clicks=n_clicks, color="light",
+            style={
+                'margin-left': 'auto',
+                'padding': '5px 15px',
+                'font-size': '14px',
+                "border": "1px solid black", 
+                "border-radius": "10px",      
+                "color": "black",   
+                "width": "100px", 
+            }
+        ) 
+        navbar_with_button = html.Div(
+            style={
+                'display': 'flex',
+                'justify-content': 'space-between',
+                'align-items': 'center',
+                'width': '100%', 
+                'background-color': 'white'
+            },
+            children=[navbar, button]
+        )
+        
+        footer = cm.generate_ja_footer()
+        redirect_url = "/ja/home"  # Set the redirect URL for Japanese
+
+        # Change the location by setting pathname
+        return navbar_with_button, footer, redirect_url, "/ja/home"  # Redirect to /ja/home
+    else:  # Default mode
+        navbar = cm.generate_navbar()
+        button = dbc.Button(
+            "日本語", id="japanese-button", n_clicks=n_clicks, color="light",
+            style={
+                'margin-left': 'auto',  
+                'padding': '5px 15px',
+                'font-size': '14px',
+                "border": "1px solid black", 
+                "border-radius": "10px",      
+                "color": "black",   
+                "width": "100px", 
+            }
+        )
+        navbar_with_button = html.Div(
+            style={
+                'display': 'flex',
+                'justify-content': 'space-between',
+                'align-items': 'center',
+                'width': '100%', 
+                'background-color': 'white'
+            },
+            children=[navbar, button]
+        )
+        footer = cm.generate_footer()
+        redirect_url = "/"  # Set the redirect URL for default language
+
+        # Change the location by setting pathname
+        return navbar_with_button, footer, redirect_url, "/"
