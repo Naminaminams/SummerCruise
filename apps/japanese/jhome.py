@@ -17,8 +17,7 @@ homepagebackground = dbc.Carousel(
     items=[
         {
             "key": "1",
-            "src": "/assets/backgrounds/resortbg.jpg",
-            "header": "ようこそ", 
+            "src": "/assets/backgrounds/ja-resortbg.png", 
             "img_style": {"height": "500px", "object-fit": "cover"}  # Set max height and scale images
         },
         {
