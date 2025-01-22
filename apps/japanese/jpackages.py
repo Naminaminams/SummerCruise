@@ -27,10 +27,10 @@ packbackground = html.Div(
             [ 
                 dbc.CardBody(
                     [
-                        html.H2(html.B("New Year Packages"), className="card-title", style={'textAlign': 'center', 'fontFamily': "'Lobster'"}),
+                        html.H2(html.B("料金"), className="card-title", style={'textAlign': 'center', 'fontFamily': "'Lobster'"}),
                         html.P(
                             [
-                                "Book Exclusive Deals Today ", 
+                                "活動。ご宿泊。お食事。", 
                             ], 
                             className="card-text",
                             style={'textAlign': 'center'}
@@ -57,107 +57,40 @@ packbackground = html.Div(
 
 
 package1 = html.Div(
-    [ 
+    [  
         dbc.Row(
             [ 
                 dbc.Col(
                     [
-                        html.Div(
-                            [
-                                html.Img(
-                                    src="/assets/pictures/packages/package3.jpg", 
-                                    style={
-                                        "width": "100%", 
-                                        "height": "auto", 
-                                        "position": "relative",
-                                        
-                                    }
-                                ),
-                                dbc.Button(
-                                    "Book Now", 
-                                    href="https://www.facebook.com/summercruiseresort",
-                                    className="hover-btn",  # Add this class to the button
-                                    style={
-                                        "position": "absolute",
-                                        "top": "80%",  # Adjust the position of the button
-                                        "left": "20%",  # Center horizontally
-                                        "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
-                                ),
-                            ],
-                            style={
-                                "position": "relative",
-                                "text-align": "center"
-                            }
-                        ),
-                    ],
-                    width={"size": 12, "offset": 0},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ), 
-                dbc.Col(
-                    html.Div(
-                        [
-                            html.H4(html.B("Overnight + Freediving")),
-                            html.P("📌1,999/ pax freedive lesson with shared room"),
-                            html.P("📌2,200/ pax freedive lesson with private room"),
-                            html.Br(),
-                            html.P("INCLUSIONS"),
-                            html.Ul([ 
-                                html.Li("Coach Fee"),
-                                html.Li("1 day Gear Rental"),
-                                html.Li("Underwater Photo and Video"),
-                                html.Li("2 Open Water Dives"),
-                                html.Li("1 Pool Session"),
-                                html.Li("Private room 2D1N"),
-                            ]),  
-                            html.Br(),  
-                        ]
-                    ),
-                    width={"size": 12},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ) 
-            ],
-            justify='center', 
-            align='center',
-            className="p-1"   
-        ),
-        dbc.Row(
-            [ 
-                dbc.Col(
-                    [
-                        html.H5(html.B("Sample Itinerary")),
-                        html.P("""Start the day with an overview of the activities, 
-                               followed by an introduction to essential techniques in a dry session.
-                               Learn effective equalization techniques and master breathing exercises 
-                               to optimize your underwater experience before we move to the deeper water.
-                               Finally, we develop your skills in proper finning and duck diving 
-                               to take those awesome shots!""", style={"textAlign": "justify"})
+                        html.H5(html.B("ダイビング料金（表示はペソ）")),
                     ], 
-                    xs=12, sm=12, md=8, lg=3,
+                    xs=12, sm=12, md=5, lg=2,
                 ),
                 dbc.Col(
                     [ 
                         dbc.Table(
-                            [
-                                html.Thead(
-                                    html.Tr(
-                                        [
-                                            html.Th("Time"),
-                                            html.Th("Description"),
-                                        ]
-                                    )
-                                ),
+                            [ 
                                 html.Tbody(
                                     [
-                                        html.Tr([html.Td("9:00AM-9:30AM"), html.Td("Briefing and Dry Session")]),
-                                        html.Tr([html.Td("9:30AM-10:00AM"), html.Td("Equalization and Breathing Exercises")]),
-                                        html.Tr([html.Td("10:00AM-10:30AM"), html.Td("Stretching Routine")]),
-                                        html.Tr([html.Td("10:30AM-12:00PM"), html.Td("First Session: Mastering Finning, Apnea, and Dynamic Techniques")]),
-                                        html.Tr([html.Td("12:00PM-1:30PM"), html.Td("Lunch Break")]),
-                                        html.Tr([html.Td("1:30PM-4:00PM"), html.Td("Second Session: Free Immersion, Line Training, Proper Duck Diving")]),
-                                        html.Tr([html.Td("4:00PM onwards"), html.Td("Closing Highlights: Picture and video")]),
+                                        html.Tr([html.Td("エントリーフィー"), html.Td("P 350"), 
+                                                 html.Td(html.Ul([ 
+                                                    html.Li("飲料水・コーヒーは無料"), 
+                                                    html.Li("ホットシャワー・タオルの使用"), 
+                                                    html.Li("ご宿泊のお客様はエントリー費無料"), 
+                                                    html.Li("７歳以下は半額、３歳以下は無料"),  
+                                                    ]),  
+                                                )
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("シュノーケルレンタル"), html.Td("P 350"), 
+                                                 html.Td(html.Ul([ 
+                                                    html.Li("３時間の料金"), 
+                                                    html.Li("マスク・シュノーケル・ブーツ・フィン"),  
+                                                    ]),  
+                                                )
+                                            ]
+                                        ),
+                                        
                                     ]
                                 ),
                             ],
@@ -169,7 +102,6 @@ package1 = html.Div(
                     ],
                     xs=12, sm=12, md=8, lg=5,
                 ),
-
             ],
             justify='center', 
             align='center',
@@ -181,108 +113,75 @@ package1 = html.Div(
 
 
 
-
-
 package2 = html.Div(
-    [ 
+    [  
         dbc.Row(
             [ 
                 dbc.Col(
                     [
-                        html.Div(
-                            [
-                                html.Img(
-                                    src="/assets/pictures/packages/package1.jpg", 
-                                    style={
-                                        "width": "100%", 
-                                        "height": "auto", 
-                                        "position": "relative",
-                                        
-                                    }
-                                ),
-                                dbc.Button(
-                                    "Book Now", 
-                                    href="https://www.facebook.com/summercruiseresort",
-                                    className="hover-btn",  # Add this class to the button
-                                    style={
-                                        "position": "absolute",
-                                        "top": "80%",  # Adjust the position of the button
-                                        "left": "20%",  # Center horizontally
-                                        "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
-                                ),
-                            ],
-                            style={
-                                "position": "relative",
-                                "text-align": "center"
-                            }
-                        ),
-                    ],
-                    width={"size": 12, "offset": 0},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ), 
-                dbc.Col(
-                    html.Div(
-                        [
-                            html.H4(html.B("Overnight + Intro to SCUBA Diving")),
-                            html.P("📌 Experience SCUBA diving for only 4,990 for 2 pax"),  
-                            html.Br(),
-                                html.P("INCLUSIONS"),
-                                    html.Ul([ 
-                                        html.Li("Guide Fee"), 
-                                        html.Li("Full Dive Gear Rental (mask and fins. boots. wetsuit. tank)"), 
-                                        html.Li("2 Open Water Dives"), 
-                                        html.Li("1 Pool Session"),  
-                                    ]),  
-                            html.Br(),  
-                            html.P("Perfect for absolute beginners, this introductory diving course welcomes participants of all swimming abilities."), 
-                            html.Br(),  
-                        ]
-                    ),
-                    width={"size": 12},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ),
-            ],
-            justify='center', 
-            align='center',
-            className="p-1"   
-        ),
-        dbc.Row(
-            [ 
-                dbc.Col(
-                    [
-                        html.H5(html.B("Sample Itinerary")),
-                        html.P(""" 
-                               The course starts with an easy-to-follow video and explanation, 
-                               providing you with basic knowledge about SCUBA diving. 
-                               Then, we'll have a one-on-one practice in shallow water, ensuring you're comfortable with the 
-                               equipment and techniques. 
-                               Afterward, enjoy a guided one-on-one dive either at the beach 
-                               or take a boat to our recommended locations, where you'll apply what you've learned in a safe, 
-                               immersive environment.""", style={"textAlign": "justify"})
+                        html.H5(html.B("ダイビング")),
                     ], 
-                    xs=12, sm=12, md=8, lg=3,
+                    xs=12, sm=12, md=5, lg=2,
                 ),
                 dbc.Col(
                     [ 
                         dbc.Table(
-                            [
-                                html.Thead(
-                                    html.Tr(
-                                        [
-                                            html.Th("Time"),
-                                            html.Th("Description"),
-                                        ]
-                                    )
-                                ),
+                            [ 
                                 html.Tbody(
                                     [
-                                        html.Tr([html.Td("9:30AM"), html.Td("Arrive at the Summer Cruise Beach House")]),
-                                        html.Tr([html.Td("10:00AM"), html.Td("Lecture on basic diving knowledge with video")]),
-                                        html.Tr([html.Td("10:30AM"), html.Td("Training in shallow water(One-on-One)")]),
-                                        html.Tr([html.Td("11:00AM"), html.Td("Beach entry Fun Dive (One-on-One)")]), 
+                                        html.Tr([html.Td([
+                                                    html.P("体験ダイビング（ビーチ）"), 
+                                                    html.P("体験ダイビング（ボート）"), 
+                                                ]), 
+                                                html.Td([
+                                                    html.P("P 1,800"), 
+                                                    html.P("P 2,800"),  
+                                                    ]), 
+                                                html.Td([ 
+                                                    html.P("ダイビング経験不要、何方でも参加可能"), 
+                                                    html.P("器材レンタル込み、マンツーマン対応"),  
+                                                    ]),  
+                                            ]
+                                        ),
+                                        html.Tr([html.Td([ 
+                                                    html.P("ファンダイブ"), 
+                                                    html.P("ビーチエントリー"),   
+                                                    ]),  
+                                                html.Td([ 
+                                                    html.P("P 800"),  
+                                                    ]),  
+                                                html.Td([ 
+                                                    html.P("タンク、ガイドダイバー込み"), 
+                                                    html.P("器材レンタルは別途費用"),  
+                                                    ]),   
+                                            ]
+                                        ),
+                                        html.Tr([html.Td([ 
+                                                    html.P("ファンダイブ/本"), 
+                                                    html.P("サンルイス地区"),   
+                                                    ]),  
+                                                html.Td([ 
+                                                    html.P("P 1,200"),  
+                                                    ]),  
+                                                html.Td([ 
+                                                    html.P("タンク、ガイド、ボート費用込み"), 
+                                                    html.P("器材レンタルは別途費用"),  
+                                                    html.P("入海料250ペソ/日/人が別途必要"),  
+                                                    ]),  
+                                            ]
+                                        ),
+                                        html.Tr([html.Td([ 
+                                                    html.P("器材レンタル/日"),  
+                                                    ]),  
+                                                html.Td([ 
+                                                    html.P("P 1,000"),  
+                                                    ]), 
+                                                html.Td([ 
+                                                    html.P("ダイビング器材フルセット１日の費用"),  
+                                                    ]),  
+                                            ]
+                                        ),
+                                        
                                     ]
                                 ),
                             ],
@@ -294,128 +193,59 @@ package2 = html.Div(
                     ],
                     xs=12, sm=12, md=8, lg=5,
                 ),
-
             ],
             justify='center', 
             align='center',
             className="p-3"  
         ),
     ],
-) 
-
-
-
-
-
+)
+ 
+ 
 
 package3 = html.Div(
-    [ 
+    [  
         dbc.Row(
             [ 
                 dbc.Col(
                     [
-                        html.Div(
-                            [
-                                html.Img(
-                                    src="/assets/pictures/packages/package2.jpg", 
-                                    style={
-                                        "width": "100%", 
-                                        "height": "auto", 
-                                        "position": "relative",
-                                        
-                                    }
-                                ),
-                                dbc.Button(
-                                    "Book Now", 
-                                    href="https://www.facebook.com/summercruiseresort",
-                                    className="hover-btn",  # Add this class to the button
-                                    style={
-                                        "position": "absolute",
-                                        "top": "80%",  # Adjust the position of the button
-                                        "left": "20%",  # Center horizontally
-                                        "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
-                                ),
-                            ],
-                            style={
-                                "position": "relative",
-                                "text-align": "center"
-                            }
-                        ),
-                    ],
-                    width={"size": 12, "offset": 0},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ), 
-                dbc.Col(
-                    html.Div(
-                        [
-                            html.H4(html.B("Overnight + Open Water SCUBA Diving")),
-                            html.P("📌 Experience scuba diving for only 18,000/pax"),  
-                            html.Br(),
-                                html.P("INCLUSIONS"),
-                                    html.Ul([ 
-                                        html.Li("Instructor Fee"), 
-                                        html.Li("Full Dive Gear Rental (mask and fins. boots. wetsuit. tank)"), 
-                                        html.Li("PADI Manual, Dive Log & Online C-CAD Liscence"),
-                                        html.Li("4 Open Water Dives"), 
-                                        html.Li("2 Confined Water Dive Practice"),  
-                                        html.Li("Private Accomodation 2D1N"),  
-                                    ]), 
-                            html.Br(),  
-                        ]
-                    ),
-                    width={"size": 12},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ) 
-            ],
-            justify='center', 
-            align='center',
-            className="p-1"   
-        ),
-        dbc.Row(
-            [ 
-                dbc.Col(
-                    [
-                        html.H5(html.B("Sample Itinerary")),
-                        html.P(""" Ready to dive deeper? Take the next step and join our 
-                               Open Water Scuba Diving course to fully experience the wonders beneath the surface!
-                               Join us for two confined water practice dives (shallow water) and four open water lessons, 
-                               where you'll be taught underwater skills in a safe, one-on-one environment.
-
-                               Try our package today with the room included! 
-                               """, style={"textAlign": "justify"})
-                               
+                        html.H5(html.B("PADI認定コース")),
+                        html.P("（マニュアル・Ｃカード申請費含む）　参加資格（12歳以上）")
                     ], 
-                    xs=12, sm=12, md=8, lg=3,
+                    xs=12, sm=12, md=5, lg=2,
                 ),
                 dbc.Col(
                     [ 
                         dbc.Table(
-                            [
-                                html.Thead(
-                                    html.Tr(
-                                        [
-                                            html.Th("Time"),
-                                            html.Th("Description"),
-                                        ]
-                                    )
-                                ),
+                            [ 
                                 html.Tbody(
                                     [
-                                        html.Tr([html.Td("7:00AM"), html.Td("Depart from Manila")]),
-                                        html.Tr([html.Td("9:30AM"), html.Td("Arrive at the Summer Cruise Beach House")]),
-                                        html.Tr([html.Td("10:00AM"), html.Td("Lecture on basic diving knowledge with video")]),
-                                        html.Tr([html.Td("11:00AM"), html.Td("Confined Training in shallow water")]),
-                                        html.Tr([html.Td("12:00PM"), html.Td("Lunch Break")]),
-                                        html.Tr([html.Td("1:00PM"), html.Td("First Open Water Training (Beach entry)")]), 
-                                        html.Tr([html.Td("2:00PM"), html.Td("Classroom and Video")]),
-                                        html.Tr([html.Td("3:00PM"), html.Td("Second Open Water Training (Beach entry)")]), 
-                                        html.Tr([html.Td("4:00PM"), html.Td("Classroom and Video")]),
-                                        html.Tr([html.Td("5:00PM"), html.Td("Classroom for Academic Review")]),
-                                        html.Tr([html.Td("6:00PM"), html.Td("Trial exam (Section1-4)")]),
-                                        html.Tr([html.Td("6:30PM Onwards"), html.Td("Dinner, Free Time")]),  
+                                        html.Tr([html.Td("スクーバダイバー"), html.Td("P12,800"), 
+                                                 html.Td("１日、器材レンタル含む" )
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("オープンウォータ"), html.Td("P16,800"), 
+                                                 html.Td("２日、器材レンタル含む" )
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("アドバンス"), html.Td("P16,800"), 
+                                                 html.Td("２日、器材レンタル含む" )
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("レスキュー"), html.Td("P22,800"), 
+                                                 html.Td("３日、EFR＆器材レンタル含む" )
+                                            ]
+                                        ),
+
+                                        html.Tr([html.Td("ダイブマスター"), html.Td("P40,000"), 
+                                                 html.Td([ 
+                                                    html.P("最短７ 日間、器材レンタル＆教材費含む"), 
+                                                    html.P("週末ベースでの講習も可能"), 
+                                                    html.P("*年間メンバーシップ費用 (約$120/year)"), 
+                                                    ]),  
+                                            ]
+                                        ),
+                                        
                                     ]
                                 ),
                             ],
@@ -427,16 +257,142 @@ package3 = html.Div(
                     ],
                     xs=12, sm=12, md=8, lg=5,
                 ),
-
             ],
             justify='center', 
             align='center',
             className="p-3"  
         ),
     ],
-)  
+)
+ 
+ 
 
+accomodations = html.Div(
+    [  
+        dbc.Row(
+            [ 
+                dbc.Col(
+                    [
+                        html.H5(html.B("ご宿泊")),
+                    ], 
+                    xs=12, sm=12, md=5, lg=2,
+                ),
+                dbc.Col(
+                    [ 
+                        dbc.Table(
+                            [ 
+                                html.Thead(
+                                    html.Tr(
+                                        [
+                                            html.Th(""),
+                                            html.Th(" 料金（２名様）"),
+                                            html.Th(" 追加マットレス"),
+                                            html.Th(" シャワー＆トイレ"),
+                                            html.Th(" エアコン"),
+                                        ]
+                                    )
+                                ),
+                                html.Tbody(
+                                    [
+                                        html.Tr([html.Td("デラックス"), html.Td("P3,500"), 
+                                                 html.Td("P500/人" ), html.Td("YES" ), html.Td("YES" )
+                                            ]
+                                        ),
+                                        html.Tr([html.Td(" スタンダードA"), html.Td("P3,200"), 
+                                                 html.Td("P500/人" ), html.Td("YES" ), html.Td("YES" )
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("スタンダードB"), html.Td("P2,500"), 
+                                                 html.Td("P500/人" ), html.Td("共同（外）" ), html.Td("ファンのみ" )
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("エコノミー"), html.Td("P2,500"), 
+                                                 html.Td("P500/人" ), html.Td("共同（外）" ), html.Td("YES" )
+                                            ]
+                                        ), 
+                                    ]
+                                ),
+                            ],
+                            bordered=True,
+                            hover=True,
+                            responsive=True,
+                            striped=True,
+                        ),
+                    ],
+                    xs=12, sm=12, md=8, lg=5,
+                ),
+            ],
+            justify='center', 
+            align='center',
+            className="p-3"  
+        ),
+    ],
+)
+ 
+ 
 
+meals = html.Div(
+    [  
+        dbc.Row(
+            [ 
+                dbc.Col(
+                    [
+                        html.H5(html.B("お食事")),
+                    ], 
+                    xs=12, sm=12, md=5, lg=2,
+                ),
+                dbc.Col(
+                    [ 
+                        dbc.Table(
+                            [  
+                                html.Tbody(
+                                    [
+                                        html.Tr([html.Td("朝食"), html.Td(""), 
+                                                 html.Td("アラカルト" )
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("昼食"), html.Td(""), 
+                                                 html.Td("アラカルト" )
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("夕食"), html.Td(""), 
+                                                 html.Td("アラカルト" )
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("BBQ(スタンダード)/名 	"), html.Td("P500"), 
+                                                 html.Td("BBQ（ポーク、チキン、野菜、肉類）ライス" )
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("BBQ テーブルレンタル"), html.Td("P500"), 
+                                                 html.Td("BBQ テーブル・炭・皿類込み" )
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("瓶ビール"), html.Td("P80"), 
+                                                 html.Td("")
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("ソフトドリンク"), html.Td("P50"), 
+                                                 html.Td("")
+                                            ]
+                                        ),
+                                    ]
+                                ),
+                            ],
+                            bordered=True,
+                            hover=True,
+                            responsive=True,
+                            striped=True,
+                        ),
+                    ],
+                    xs=12, sm=12, md=8, lg=5,
+                ),
+            ],
+            justify='center', 
+            align='center',
+            className="p-3"  
+        ),
+    ],
+)
 
 layout = html.Div(
     [  
@@ -448,7 +404,13 @@ layout = html.Div(
                     [
                         package1, 
                         package2,
-                        package3
+                        package3,
+                        html.H4("■上記講習費には、宿泊＆食事は含まれていません。",
+                            className="text-center my-3"),
+                        html.Hr(),
+                        accomodations,
+                        meals
+                        
                     ],   
                 ), 
             ],

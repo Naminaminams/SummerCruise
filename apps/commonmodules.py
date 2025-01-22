@@ -61,42 +61,20 @@ def generate_navbar():
                                 dbc.NavItem(dbc.NavLink("PACKAGES", href="/packages", id="packages-link")), 
                                 #dbc.NavItem(dbc.NavLink("AMENITIES", href="/amenities", id="amenities-link")), 
                             ],
-                            className="ms-auto d-none d-lg-flex",  
+                            className="ms-auto d-none d-md-flex",  
                             navbar=True,
                         ),
                         width="auto",
-                        className="d-none d-lg-flex",  
+                        className="d-none d-md-flex",  
                     ),
 
                     # Navbar Toggler for small screens
                     dbc.Col(
                         dbc.NavbarToggler(id="navbar-toggler", n_clicks=0),
                         width="auto",
-                        className="ms-auto d-md-flex d-lg-none ms-3",   
+                        className="ms-auto d-flex d-md-none ms-3",   
                     ),
-
-                    # Book Now Button
-                    # dbc.Col(
-                    #     html.A(  # Wrap the button in a link
-                    #         dbc.Button(
-                    #             [
-                    #                 html.Img(
-                    #                     src=app.get_asset_url('icons/calendar_icon.png'),
-                    #                     style={'height': '1em', 'margin-right': '0.5em'}
-                    #                 ),
-                    #                 "BOOK NOW"
-                    #             ],
-                    #             color="primary",
-                    #             className="d-md-flex align-items-center ms-3",
-                    #         ),
-                    #         href="/booking",  # Set the link to the booking page
-                    #         style={'textDecoration': 'none'}  # Optional: Remove underline from the link
-                    #     ),
-                    #     width="auto",
-                    #     className="ms-auto ms-3",  
-                    # ),
-                     
-                    # Offcanvas for the menu
+ 
                     dbc.Offcanvas(  
                         dbc.Nav(
                             [
@@ -345,23 +323,23 @@ def generate_ja_navbar():
                         dbc.Nav(
                             [
                                 dbc.NavItem(dbc.NavLink("ホームページ", href="/ja/home", id="ja-home-link")),
-                                dbc.NavItem(dbc.NavLink("私達について", href="/ja/aboutus", id="ja-about-us-link")),
-                                dbc.NavItem(dbc.NavLink("宿泊施設", href="/ja/rooms", id="ja-rooms-link")),
+                                dbc.NavItem(dbc.NavLink("ご宿泊", href="/ja/rooms", id="ja-about-us-link")),
+                                dbc.NavItem(dbc.NavLink("場所への行き方", href="/ja/directions", id="ja-rooms-link")),
                                 dbc.NavItem(dbc.NavLink("活動", href="/ja/activities", id="ja-activities-link")), 
                                 dbc.NavItem(dbc.NavLink("料金", href="/ja/packages", id="ja-packages-link")),   
                             ],
-                            className="ms-auto d-none d-lg-flex",  
+                            className="ms-auto d-none d-md-flex",  
                             navbar=True,
                         ),
                         width="auto",
-                        className="d-none d-lg-flex",  
+                        className="d-none d-md-flex",  
                     ),
 
                     # Navbar Toggler for small screens
                     dbc.Col(
                         dbc.NavbarToggler(id="ja-navbar-toggler", n_clicks=0),
                         width="auto",
-                        className="ms-auto d-md-flex d-lg-none ms-3",   
+                        className="ms-auto d-flex d-lmd-none ms-3",   
                     ),
   
                     dbc.Offcanvas(  
@@ -379,8 +357,8 @@ def generate_ja_navbar():
                                 ),
                                 html.Hr(),  
                                 dbc.NavItem(dbc.NavLink("ホームページ", href="/ja/home", style={'color': 'white', 'margin-right': '20px'})),
-                                dbc.NavItem(dbc.NavLink("私達について", href="/ja/aboutus", style={'color': 'white', 'margin-right': '20px'})),
-                                dbc.NavItem(dbc.NavLink("宿泊施設", href="/ja/rooms", style={'color': 'white', 'margin-right': '20px'})), 
+                                dbc.NavItem(dbc.NavLink("ご宿泊", href="/ja/rooms", style={'color': 'white', 'margin-right': '20px'})),
+                                dbc.NavItem(dbc.NavLink("場所への行き方", href="/ja/directions", style={'color': 'white', 'margin-right': '20px'})), 
                                 dbc.NavItem(dbc.NavLink("活動", href="/ja/activities", style={'color': 'white', 'margin-right': '20px'})), 
                                 dbc.NavItem(dbc.NavLink("料金", href="/ja/packages", style={'color': 'white', 'margin-right': '20px'})),  
                             ],
@@ -447,8 +425,8 @@ def generate_ja_footer():
                                 [
                                     dbc.NavItem(dbc.NavLink("料金", href="/ja/packages", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
                                     dbc.NavItem(dbc.NavLink("ホームページ", href="/ja/home", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
-                                    dbc.NavItem(dbc.NavLink("私達について", href="/ja/aboutus", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
-                                    dbc.NavItem(dbc.NavLink("宿泊施設", href="/ja/rooms", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
+                                    dbc.NavItem(dbc.NavLink("ご宿泊", href="/ja/rooms", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
+                                    dbc.NavItem(dbc.NavLink("場所への行き方", href="/ja/directions", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
                                     dbc.NavItem(dbc.NavLink("活動", href="/ja/activities", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
                                     
                                 ],

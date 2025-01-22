@@ -68,3 +68,310 @@ def update_layout(n_clicks):
 
         # Change the location by setting pathname
         return navbar_with_button, footer, redirect_url, "/"
+
+
+
+
+
+
+
+
+
+
+# Callback to update navbar and footer
+@app.callback(
+    [
+        Output("navbar", "children"), 
+        Output("footer", "children"),
+        Output("redirect-url", "data"),
+        Output("url", "pathname"), 
+    ],
+    [Input("japanese-button", "n_clicks")],
+    prevent_initial_call=True
+)
+def update_layout(n_clicks):
+    if n_clicks % 2 == 1:  # Switch to Japanese mode
+        navbar = cm.generate_ja_navbar()
+        button = dbc.Button(
+            "ENGLISH", id="japanese-button",  n_clicks=n_clicks,  color="light",  
+            style={
+                'margin-left': 'auto', 
+                'padding': '5px 15px',
+                'font-size': '14px',
+                "border": "1px solid black", 
+                "border-radius": "10px",      
+                "color": "black",   
+                "width": "100px", 
+            }
+        ) 
+        navbar_with_button = html.Div(
+            style={
+                'display': 'flex',
+                'justify-content': 'space-between',
+                'align-items': 'center',
+                'width': '100%', 
+                'background-color': 'white'
+            },
+            children=[navbar, button]
+        )
+        
+        footer = cm.generate_ja_footer()
+        redirect_url = "/ja/home"
+    else:  # Default mode
+        navbar = cm.generate_navbar()
+        button = dbc.Button(
+            "日本語",  id="japanese-button", n_clicks=n_clicks, color="light",
+            style={
+                'margin-left': 'auto',  
+                'padding': '5px 15px',
+                'font-size': '14px',
+                "border": "1px solid black", 
+                "border-radius": "10px",      
+                "color": "black",   
+                "width": "100px", 
+            }
+        )
+        navbar_with_button = html.Div(
+            style={
+                'display': 'flex',
+                'justify-content': 'space-between',
+                'align-items': 'center',
+                'width': '100%', 
+                'background-color': 'white'
+            },
+            children=[navbar, button]
+        )
+        footer = cm.generate_footer()
+        redirect_url = "/"
+
+    return navbar_with_button, footer, redirect_url,  "/"
+
+
+
+
+
+
+
+
+
+
+
+
+app.layout = html.Div(
+    [
+        html.Meta(
+            name="theme-color",
+            content='#286052'
+        ),
+        dcc.Location(id='url', refresh=True),
+        dcc.Store(id="redirect-url", data=""), 
+        dcc.Store(id='language_mode', data='default', storage_type='memory'),  # Track the selected language
+
+        # Navbar container with default English navbar
+        html.Div(
+            id="navbar",  
+            children=[
+                cm.generate_navbar(),  # Default navbar in English
+                dbc.Button(
+                    "日本語", id="japanese-button", n_clicks=0, color="light", 
+                ),
+            ]
+        ),
+
+        html.Div(id='page-content'),
+        html.Link(rel='icon', href='/assets/logo/sc_logo.jpg'),
+        cm.up,
+
+        # Footer container
+        html.Div(
+            id="footer", 
+            children=cm.generate_footer()  # Default footer in English
+        ), 
+    ]
+)
+
+# Callback to update navbar and footer
+@app.callback(
+    [
+        Output("navbar", "children"), 
+        Output("footer", "children"),
+        Output("redirect-url", "data"),
+        Output("url", "pathname"), 
+    ],
+    [Input("japanese-button", "n_clicks")],
+    prevent_initial_call=True
+)
+def update_layout(n_clicks):
+    if n_clicks % 2 == 1:  # Switch to Japanese mode
+        navbar = cm.generate_ja_navbar()
+        button = dbc.Button(
+            "ENGLISH", id="japanese-button",  n_clicks=n_clicks,  color="light", 
+        ) 
+        navbar_with_button = html.Div(
+            style={
+                'display': 'flex',
+                'justify-content': 'space-between',
+                'align-items': 'center',
+                'width': '100%', 
+                'background-color': 'white'
+            },
+            children=[navbar, button]
+        )
+        
+        footer = cm.generate_ja_footer()
+        redirect_url = "/ja/home"
+    else:  # Default mode
+        navbar = cm.generate_navbar()
+        button = dbc.Button(
+            "日本語",  id="japanese-button", n_clicks=n_clicks, color="light", 
+        )
+        navbar_with_button = html.Div( 
+            children=[navbar, button]
+        )
+        footer = cm.generate_footer()
+        redirect_url = "/"
+
+    return navbar_with_button, footer, redirect_url,  "/"
+
+
+
+
+
+
+
+
+
+app.layout = html.Div(
+    [
+        html.Meta(
+            name="theme-color",
+            content='#286052'
+        ),
+        dcc.Location(id='url', refresh=True),
+        dcc.Store(id="redirect-url", data=""),
+        dcc.Store(id='sessionlogout', data=True, storage_type='local'),
+        dcc.Store(id='currentuserid', data=-1, storage_type='local'),
+        dcc.Store(id='currentrole', data=0, storage_type='local'),
+        dcc.Store(id='page_mode', data=-1, storage_type='memory'),
+        dcc.Store(id='view_id', data=-1, storage_type='memory'),
+        dcc.Store(id='language_mode', data='default', storage_type='memory'),  # Track the selected language
+
+        # Navbar container with default English navbar
+        html.Div(
+            id="navbar",
+            style={
+                'top': 0,
+                'display': 'flex',
+                'justify-content': 'space-between',
+                'align-items': 'center',
+                'width': '100%',
+                'z-index': 1000,
+                'background-color': 'white',
+                'padding': '10px'
+            },
+            children=[
+                cm.generate_navbar(),  # Default navbar in English
+                dbc.Button(
+                    "日本語", id="japanese-button", n_clicks=0, color="light",
+                    style={
+                        'margin-left': 'auto',  # Push to the rightmost part
+                        'padding': '5px 15px',
+                        'font-size': '14px',
+                        "border": "1px solid black", 
+                        "border-radius": "10px",      
+                        "color": "black",   
+                        "width": "100px", 
+                    }
+                ),
+            ]
+        ),
+
+        html.Div(id='page-content'),
+        html.Link(rel='icon', href='/assets/logo/sc_logo.jpg'),
+        cm.up,
+
+        # Footer container
+        html.Div(
+            id="footer",
+            style={
+                'display': 'flex',
+                'justify-content': 'center',
+                'width': '100%',
+                "backgroundColor": "#212121",
+                "color": "#C3C3C3",
+                "fontSize": "14px"
+            },
+            children=cm.generate_footer()  # Default footer in English
+        ), 
+    ]
+)
+
+# Callback to update navbar and footer
+@app.callback(
+    [
+        Output("navbar", "children"), 
+        Output("footer", "children"),
+        Output("redirect-url", "data"),
+        Output("url", "pathname"), 
+    ],
+    [Input("japanese-button", "n_clicks")],
+    prevent_initial_call=True
+)
+def update_layout(n_clicks):
+    if n_clicks % 2 == 1:  # Switch to Japanese mode
+        navbar = cm.generate_ja_navbar()
+        button = dbc.Button(
+            "ENGLISH", id="japanese-button",  n_clicks=n_clicks,  color="light",  
+            style={
+                'margin-left': 'auto', 
+                'padding': '5px 15px',
+                'font-size': '14px',
+                "border": "1px solid black", 
+                "border-radius": "10px",      
+                "color": "black",   
+                "width": "100px", 
+            }
+        ) 
+        navbar_with_button = html.Div(
+            style={
+                'display': 'flex',
+                'justify-content': 'space-between',
+                'align-items': 'center',
+                'width': '100%', 
+                'background-color': 'white'
+            },
+            children=[navbar, button]
+        )
+        
+        footer = cm.generate_ja_footer()
+        redirect_url = "/ja/home"
+    else:  # Default mode
+        navbar = cm.generate_navbar()
+        button = dbc.Button(
+            "日本語",  id="japanese-button", n_clicks=n_clicks, color="light",
+            style={
+                'margin-left': 'auto',  
+                'padding': '5px 15px',
+                'font-size': '14px',
+                "border": "1px solid black", 
+                "border-radius": "10px",      
+                "color": "black",   
+                "width": "100px", 
+            }
+        )
+        navbar_with_button = html.Div(
+            style={
+                'display': 'flex',
+                'justify-content': 'space-between',
+                'align-items': 'center',
+                'width': '100%', 
+                'background-color': 'white'
+            },
+            children=[navbar, button]
+        )
+        footer = cm.generate_footer()
+        redirect_url = "/"
+
+    return navbar_with_button, footer, redirect_url,  "/"
+
+

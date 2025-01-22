@@ -1,10 +1,6 @@
-import hashlib
-
 import dash
 from dash import callback_context, dcc, html
 import dash_bootstrap_components as dbc
-from dash.dependencies import Input, Output, State
-from dash.exceptions import PreventUpdate
 
 from app import app
 from apps import dbconnect as db
@@ -31,9 +27,9 @@ roombackground = html.Div(
                         html.H2(html.B("Rooms"), className="card-title", style={'textAlign': 'center', 'fontFamily': "'Lobster'"}),
                         html.P(
                             [
-                                "Whether it's an overnight stay or a week long vacation, ",
+                                "マニラ近郊のアニラオ＆サンルイスでご宿泊！",
                                 html.Br(),  
-                                "find the perfect staycation in Summer Cruise."
+                                "海の景色を眺めながらリラックス"
                             ], 
                             className="card-text",
                             style={'textAlign': 'center'}
@@ -57,78 +53,131 @@ roombackground = html.Div(
     style={"position": "relative", "max-height": "500px"}  # Make parent container relative
 )
 
+   
+
+standardpics = html.Div(
+    [
+        dbc.Row(
+            [
+                dbc.Col(
+                    dbc.CardImg(src="/assets/pictures/rooms/room1.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
+                    width="auto",  # Adjust column width to fit content
+                    style={"padding": "0.5rem"},  # Reduce padding between columns
+                ),
+                dbc.Col(
+                    dbc.CardImg(src="/assets/pictures/rooms/room3.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
+                    width="auto",  # Adjust column width to fit content
+                    style={"padding": "0.5rem"},  # Reduce padding between columns
+                ),
+                dbc.Col(
+                    dbc.CardImg(src="/assets/pictures/rooms/room5.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
+                    width="auto",  # Adjust column width to fit content
+                    style={"padding": "0.5rem"},  # Reduce padding between columns
+                ),
+            ],
+            className="mb-4 d-flex justify-content-center",  # Center content horizontally
+        ), 
+    ]
+)
+
+standard= html.Div(
+    [ 
+        dbc.Row(
+            [ 
+                dbc.Col(
+                    [ 
+                        dbc.Table(
+                            [  
+                                html.Tbody(
+                                    [
+                                        html.Tr([
+                                            html.Td("スタンダード"),  
+                                            html.Td( html.Ul([ 
+                                                    html.Li("クィーンサイズ x 1 + シングルサイズ x 1"),
+                                                    html.Li("ホットシャワー"),
+                                                    html.Li("水洗トイレ"),
+                                                    html.Li("プライベートテラス"), 
+                                                    html.Li("ルーム 3, 4, 5, 6 はエアコン付き。"), 
+                                                ]))
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("包括的"), 
+                                            html.Td("ブランケット、シーツ、枕、バスタオル")
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("チェックイン"), 
+                                            html.Td("13:00～")
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("チェックアウト"), 
+                                            html.Td("～12:00")
+                                            ]
+                                        ),
+                                    ]
+                                ),
+                            ],
+                            bordered=True,
+                            hover=True,
+                            responsive=True,
+                            striped=True,
+                        ),
+                    ],
+                    xs=12, sm=12, md=8, lg=5,
+                ),  
+            ],
+            justify='center',  # Center align the columns in the row
+            align='center',
+            className="p-3"  # Small padding around the row
+        ),
+    ]
+)
+ 
+
   
-room1_2card = html.Div(
+economy = html.Div(
     [ 
         dbc.Row(
-            [
+            [ 
                 dbc.Col(
-                    html.Div(
-                        [
-                            html.H4(html.B("Bamboo Breeze")),
-                            html.P("""Located on the second floor of the Left Wing, these rooms are situated 
-                                   at the leftmost side of the resort. Feel the serenity with our bamboo and nipa rooms 
-                                   as you wake up to a stunning view of the sea. 
-                                   """), 
-                            html.P("Rooms can accommodate two adults."),
-                            html.Br(),
-                                html.P("FEATURES"),
-                                    html.Ul([ 
-                                        html.Li("With 2 single beds"),
-                                        html.Li("Beach view"),
-                                        html.Li("Air Conditioning"),
-                                        html.Li("Private veranda"),
-                                        html.Li("Private bathroom"),
-                                    ]), 
-                                html.P("INCLUSIVE OF"),
-                                    html.Ul([
-                                        html.Li("Wireless internet access"),
-                                        html.Li("Free water and barako coffee"), 
-                                    ]),  
-                                html.Br(),
-                 
-                        ],
-                        className="d-flex flex-column align-items-start"  # Left-align content
-                    ),
-                    width={"size": 12},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ),
-                dbc.Col(
-                    [
-                        html.Div(
-                            [
-                                html.Img(
-                                    src="/assets/pictures/rooms/room1.jpg", 
-                                    style={
-                                        "width": "100%", 
-                                        "height": "auto", 
-                                        "position": "relative"
-                                    }
-                                ),
-                                dbc.Button(
-                                    "Book Now", 
-                                    href="https://www.facebook.com/summercruiseresort",
-                                    className="hover-btn",  # Add this class to the button
-                                    style={
-                                        "position": "absolute",
-                                        "top": "80%",  # Adjust the position of the button
-                                        "left": "50%",  # Center horizontally
-                                        "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
+                    [ 
+                        dbc.Table(
+                            [  
+                                html.Tbody(
+                                    [
+                                        html.Tr([
+                                            html.Td("スタンダード"),  
+                                            html.Td( html.Ul([ 
+                                                    html.Li("クィーンサイズ x 1 + シングルサイズ x 1"),
+                                                    html.Li("ホットシャワー"),
+                                                    html.Li("水洗トイレ"),
+                                                    html.Li("プライベートテラス"), 
+                                                    html.Li("ルーム 1, 2 は天井ファン。"), 
+                                                ]))
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("包括的"), 
+                                            html.Td("ブランケット、シーツ、枕、バスタオル")
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("チェックイン"), 
+                                            html.Td("13:00～")
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("チェックアウト"), 
+                                            html.Td("～12:00")
+                                            ]
+                                        ),
+                                    ]
                                 ),
                             ],
-                            style={
-                                "position": "relative",
-                                "text-align": "center"
-                            }
+                            bordered=True,
+                            hover=True,
+                            responsive=True,
+                            striped=True,
                         ),
                     ],
-                    width={"size": 12, "offset": 0},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ),
-
+                    xs=12, sm=12, md=8, lg=5,
+                ),  
             ],
             justify='center',  # Center align the columns in the row
             align='center',
@@ -138,160 +187,75 @@ room1_2card = html.Div(
 )
 
 
+groupics = html.Div(
+    [
+        dbc.Row(
+            [
+                dbc.Col(
+                    dbc.CardImg(src="/assets/pictures/rooms/room8.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
+                    width="auto",  # Adjust column width to fit content
+                    style={"padding": "0.5rem"},  # Reduce padding between columns
+                ),
+                dbc.Col(
+                    dbc.CardImg(src="/assets/pictures/rooms/room10.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
+                    width="auto",  # Adjust column width to fit content
+                    style={"padding": "0.5rem"},  # Reduce padding between columns
+                ),
+                dbc.Col(
+                    dbc.CardImg(src="/assets/pictures/rooms/room21.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
+                    width="auto",  # Adjust column width to fit content
+                    style={"padding": "0.5rem"},  # Reduce padding between columns
+                ),
+            ],
+            className="mb-4 d-flex justify-content-center",  # Center content horizontally
+        ), 
+    ]
+)  
 
-
-
-room3_4card = html.Div(
+group = html.Div(
     [ 
         dbc.Row(
             [ 
                 dbc.Col(
-                    [
-                        html.Div(
-                            [
-                                html.Img(
-                                    src="/assets/pictures/rooms/room3.jpg", 
-                                    style={
-                                        "width": "100%", 
-                                        "height": "auto", 
-                                        "position": "relative"
-                                    }
-                                ),
-                                dbc.Button(
-                                    "Book Now", 
-                                    href="https://www.facebook.com/summercruiseresort",
-                                    className="hover-btn",  # Add this class to the button
-                                    style={
-                                        "position": "absolute",
-                                        "top": "80%",  # Adjust the position of the button
-                                        "left": "50%",  # Center horizontally
-                                        "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
-                                ),
-                            ],
-                            style={
-                                "position": "relative",
-                                "text-align": "center"
-                            }
-                        ),
-                    ],
-                    width={"size": 12, "offset": 0},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ),
-                dbc.Col(
-                    html.Div(
-                        [ 
-                            html.H4(html.B("Seabreeze Nook")),
-                            html.P("""Located on the second floor of the Left Wing, these rooms are perfect for group outings. 
-                                   Relax in our nature-inspired rooms that blend bamboo 
-                                   and local wood in its architecture.  
-                                   """), 
-                            html.P("Rooms can accommodate two adults."),
-                            html.Br(),
-                                html.P("FEATURES"),
-                                    html.Ul([ 
-                                        html.Li("With 2 single beds"),
-                                        html.Li("Beach view"),
-                                        html.Li("Air Conditioning"), 
-                                        html.Li("Shared bathroom"),
-                                    ]), 
-                                html.P("INCLUSIVE OF"),
-                                    html.Ul([
-                                        html.Li("Wireless internet access"),
-                                        html.Li("Free water and barako coffee"), 
-                                    ]),  
-                                html.Br(),  
-                        ],
-                        className="d-flex flex-column align-items-start"   
-                    ),
-                    width={"size": 12},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ),
-
-            ],
-            justify='center', 
-            align='center',
-            className="p-3"  
-        ),
-    ]
-)
-
-
-
-
-room5_6card = html.Div(
-    [ 
-        dbc.Row(
-            [
-                dbc.Col(
-                    html.Div(
-                        [
-                             
-                            html.H4(html.B("Seashell Shores")),
-                            html.P("""Feel the calming rhythm of the ocean and escape to a rustic retreat 
-                                   on our private veranda.                                    
-                                   """), 
-                            html.P("Rooms can accommodate two adults."),
-                            html.Br(),
-                                html.P("FEATURES"),
-                                    html.Ul([ 
-                                        html.Li("With 2 single beds"),
-                                        html.Li("Beach view"),
-                                        html.Li("Private veranda"),
-                                        html.Li("Air Conditioning"),
-                                        html.Li("Private bathroom"),
-                                    ]), 
-                                html.P("INCLUSIVE OF"),
-                                    html.Ul([
-                                        html.Li("Wireless internet access"),
-                                        html.Li("Free water and barako coffee"), 
-                                    ]),  
-                                html.Br(),   
-                 
-                        ],
-                        className="d-flex flex-column align-items-start"  # Left-align content
-                    ),
-                    width={"size": 12},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ),
-                dbc.Col(
-                    [
-                        html.Div(
-                            [
-                                html.Img(
-                                    src="/assets/pictures/rooms/room5.jpg", 
-                                    style={
-                                        "width": "100%", 
-                                        "height": "auto", 
-                                        "position": "relative"
-                                    }
-                                ),
-                                dbc.Button(
-                                    "Book Now", 
-                                    href="https://www.facebook.com/summercruiseresort",
-                                    className="hover-btn",  # Add this class to the button
-                                    style={
-                                        "position": "absolute",
-                                        "top": "80%",  # Adjust the position of the button
-                                        "left": "50%",  # Center horizontally
-                                        "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
+                    [ 
+                        dbc.Table(
+                            [  
+                                html.Tbody(
+                                    [
+                                        html.Tr([
+                                            html.Td("グループルーム"),  
+                                            html.Td( html.Ul([ 
+                                                    html.Li("クィーンサイズ x 1 + シングルサイズ x 1、ホットシャワー"),
+                                                    html.Li("水洗トイレ"),
+                                                    html.Li("プライベートテラス"),
+                                                    html.Li("ロフトルーム"),   
+                                                    html.Li("ルーム 10, 11 はエアコン付きと扇風機。"), 
+                                                ]))
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("包括的"), 
+                                            html.Td("ブランケット、シーツ、枕、バスタオル")
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("チェックイン"), 
+                                            html.Td("13:00～")
+                                            ]
+                                        ),
+                                        html.Tr([html.Td("チェックアウト"), 
+                                            html.Td("～12:00")
+                                            ]
+                                        ),
+                                    ]
                                 ),
                             ],
-                            style={
-                                "position": "relative",
-                                "text-align": "center"
-                            }
+                            bordered=True,
+                            hover=True,
+                            responsive=True,
+                            striped=True,
                         ),
                     ],
-                    width={"size": 12, "offset": 0},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ),
-
+                    xs=12, sm=12, md=8, lg=5,
+                ),  
             ],
             justify='center',  # Center align the columns in the row
             align='center',
@@ -299,249 +263,8 @@ room5_6card = html.Div(
         ),
     ]
 )
- 
 
 
-room7_8card = html.Div(
-    [ 
-        dbc.Row(
-            [ 
-                dbc.Col(
-                    [
-                        html.Div(
-                            [
-                                html.Img(
-                                    src="/assets/pictures/rooms/room8.jpg", 
-                                    style={
-                                        "width": "100%", 
-                                        "height": "auto", 
-                                        "position": "relative"
-                                    }
-                                ),
-                                dbc.Button(
-                                    "Book Now", 
-                                    href="https://www.facebook.com/summercruiseresort",
-                                    className="hover-btn",  # Add this class to the button
-                                    style={
-                                        "position": "absolute",
-                                        "top": "80%",  # Adjust the position of the button
-                                        "left": "50%",  # Center horizontally
-                                        "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
-                                ),
-                            ],
-                            style={
-                                "position": "relative",
-                                "text-align": "center"
-                            }
-                        ),
-                    ],
-                    width={"size": 12, "offset": 0},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ),
-                dbc.Col(
-                    html.Div(
-                        [ 
-                            html.H4(html.B("Coral Cove")),
-                            html.P("""Coral Cove offers a unique blend of rustic and modern, 
-                                   with cemented walls and double-deck beds. These rooms are situated on the first floor, 
-                                   and it is the perfect stopover after a day at the sea.
-                                   """), 
-                            html.P("Rooms can accommodate two adults."),
-                            html.Br(),
-                                html.P("FEATURES"),
-                                    html.Ul([ 
-                                        html.Li("With 2 single beds"),
-                                        html.Li("Pool view"),
-                                        html.Li("Air Conditioning"),  
-                                    ]), 
-                                html.P("INCLUSIVE OF"),
-                                    html.Ul([
-                                        html.Li("Wireless internet access"),
-                                        html.Li("Free water and barako coffee"), 
-                                    ]),  
-                                html.Br(),  
-                        ],
-                        className="d-flex flex-column align-items-start"   
-                    ),
-                    width={"size": 12},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ),
-
-            ],
-            justify='center', 
-            align='center',
-            className="p-3"  
-        ),
-    ]
-)
- 
-
-
-
-
-room9card = html.Div(
-    [ 
-        dbc.Row(
-            [
-                dbc.Col(
-                    html.Div(
-                        [
-                             
-                            html.H4(html.B("Oasis")),
-                            html.P("""Located at the leftmost side of the resort, 
-                                   it's the perfect location to wait for the sunrise. 
-                                   Oasis offers breathtaking views of the beach 
-                                   and the side mountain just on the first floor.
-                                   """), 
-                            html.P("Rooms can accommodate two adults."),
-                            html.Br(),
-                                html.P("FEATURES"),
-                                    html.Ul([ 
-                                        html.Li("With 2 single beds"),
-                                        html.Li("Beach view"), 
-                                        html.Li("Air Conditioning"), 
-                                    ]), 
-                                html.P("INCLUSIVE OF"),
-                                    html.Ul([
-                                        html.Li("Wireless internet access"),
-                                        html.Li("Free water and barako coffee"), 
-                                    ]),  
-                                html.Br(),   
-                 
-                        ],
-                        className="d-flex flex-column align-items-start"  # Left-align content
-                    ),
-                    width={"size": 12},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ),
-                dbc.Col(
-                    [
-                        html.Div(
-                            [
-                                html.Img(
-                                    src="/assets/pictures/rooms/room8.jpg", 
-                                    style={
-                                        "width": "100%", 
-                                        "height": "auto", 
-                                        "position": "relative"
-                                    }
-                                ),
-                                dbc.Button(
-                                    "Book Now", 
-                                    href="https://www.facebook.com/summercruiseresort",
-                                    className="hover-btn",  # Add this class to the button
-                                    style={
-                                        "position": "absolute",
-                                        "top": "80%",  # Adjust the position of the button
-                                        "left": "50%",  # Center horizontally
-                                        "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
-                                ),
-                            ],
-                            style={
-                                "position": "relative",
-                                "text-align": "center"
-                            }
-                        ),
-                    ],
-                    width={"size": 12, "offset": 0},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ),
-
-            ],
-            justify='center',  # Center align the columns in the row
-            align='center',
-            className="p-3"  # Small padding around the row
-        ),
-    ]
-)
- 
-
-
-room10_11card = html.Div(
-    [ 
-        dbc.Row(
-            [ 
-                dbc.Col(
-                    [
-                        html.Div(
-                            [
-                                html.Img(
-                                    src="/assets/pictures/rooms/room10.jpg", 
-                                    style={
-                                        "width": "100%", 
-                                        "height": "auto", 
-                                        "position": "relative"
-                                    }
-                                ),
-                                dbc.Button(
-                                    "Book Now", 
-                                    href="https://www.facebook.com/summercruiseresort",
-                                    className="hover-btn",  # Add this class to the button
-                                    style={
-                                        "position": "absolute",
-                                        "top": "80%",  # Adjust the position of the button
-                                        "left": "50%",  # Center horizontally
-                                        "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
-                                ),
-                            ],
-                            style={
-                                "position": "relative",
-                                "text-align": "center"
-                            }
-                        ),
-                    ],
-                    width={"size": 12, "offset": 0},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ),
-                dbc.Col(
-                    html.Div(
-                        [ 
-                            html.H4(html.B("Cliffside Nest")),
-                            html.P("""High above the resort on the third floor, 
-                                   Cliffside Nest is perfect for large groups. 
-                                   The private loft and bamboo-nipa design evoke a rustic charm, ideal for a memorable stay.
-                                   """), 
-                            html.P("Rooms can accommodate ten adults."),
-                            html.Br(),
-                                html.P("FEATURES"),
-                                    html.Ul([ 
-                                        html.Li("With 2 single beds"), 
-                                        html.Li("Loft style"),
-                                        html.Li("Pool view"),
-                                        html.Li("Air Conditioning"), 
-                                        html.Li("Shared bathroom"), 
-                                    ]), 
-                                html.P("INCLUSIVE OF"),
-                                    html.Ul([
-                                        html.Li("Wireless internet access"),
-                                        html.Li("Free water and barako coffee"), 
-                                    ]),  
-                                html.Br(),  
-                        ],
-                        className="d-flex flex-column align-items-start"   
-                    ),
-                    width={"size": 12},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ),
-
-            ],
-            justify='center', 
-            align='center',
-            className="p-3"  
-        ),
-    ]
-)
-
- 
 layout = html.Div(
     [
         roombackground,
@@ -555,17 +278,17 @@ layout = html.Div(
             [
                 dbc.Col(
                     [
-                        room1_2card,
+                        standard,
                         html.Br(),
-                        room3_4card,
+                        standardpics,
                         html.Br(),
-                        room5_6card,
+                        economy,
                         html.Br(),
-                        room7_8card,
-                        html.Br(), 
-                        room9card,
+                        groupics,
                         html.Br(),
-                        room10_11card,
+                        group,
+                        
+                         
                     ],  
                 ), 
             ],
