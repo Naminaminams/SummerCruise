@@ -289,19 +289,16 @@ layout = html.Div(
                         html.P("バスでお越しになられる方はアクセス方法をまとめたPDFを印刷しご利用ください。",
                             className="text-center my-3"),
                         
-                        dbc.Button(
-                            "地図を見る",  # Button text
-                            href="https://maps.app.goo.gl/K6yuSpV5ZkQkzuqaA",
-                            style={
-                                'margin-left': 'auto',  # Push to the rightmost part
-                                'padding': '5px 15px',
-                                'font-size': '14px',
-                                "border": "1px solid black", 
-                                "border-radius": "10px",      
-                                "color": "black",   
-                                "width": "150px", 
-                            },
-                            target="_blank"  # Opens the link in a new tab
+                        dbc.Button("地図を開く", color="light", href="https://www.google.com/maps/dir//RWF6%2BM5F+Binukbok+Parking+Area,+Batangas/@13.824083,120.9068588,814m/data=!3m1!1e3!4m17!1m7!3m6!1s0x33bd083a59a12ae7:0x3afeb59f11b3702c!2sBinukbok+Parking+Area!8m2!3d13.8241976!4d120.9104208!16s%2Fg%2F11dxl8t656!4m8!1m0!1m5!1m1!1s0x33bd083a59a12ae7:0x3afeb59f11b3702c!2m2!1d120.9104208!2d13.8241976!3e2?entry=ttu&g_ep=EgoyMDI0MTAwOS4wIKXMDSoASAFQAw%3D%3D",   
+                                style={
+                                    "border": "1px solid black", 
+                                    "border-radius": "10px",      
+                                    "color": "black", 
+                                    "font-size": "14px",      
+                                    "width": "180px",
+                                    "margin": "20px 0"  
+                                },
+                                target="_blank"
                         ),
                         html.Br(),
                         html.Hr(),

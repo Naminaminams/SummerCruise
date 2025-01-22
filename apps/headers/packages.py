@@ -17,7 +17,7 @@ packbackground = html.Div(
             items=[
                 {
                     "key": "1",
-                    "src": "/assets/backgrounds/resortbg4.jpg",
+                    "src": "/assets/backgrounds/bg3.png",
                     "img_style": {"height": "500px", "object-fit": "cover"}  # Set height and scale images
                 }, 
             ],
@@ -82,7 +82,8 @@ package1 = html.Div(
                                         "top": "80%",  # Adjust the position of the button
                                         "left": "20%",  # Center horizontally
                                         "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
+                                    },
+                                    target="_blank" 
                                 ),
                             ],
                             style={
@@ -209,7 +210,8 @@ package2 = html.Div(
                                         "top": "80%",  # Adjust the position of the button
                                         "left": "20%",  # Center horizontally
                                         "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
+                                    },
+                                    target="_blank" 
                                 ),
                             ],
                             style={
@@ -334,7 +336,8 @@ package3 = html.Div(
                                         "top": "80%",  # Adjust the position of the button
                                         "left": "20%",  # Center horizontally
                                         "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
+                                    },
+                                    target="_blank" 
                                 ),
                             ],
                             style={

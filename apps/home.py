@@ -224,7 +224,8 @@ location = dbc.Container(
                                     "font-size": "14px",      
                                     "width": "180px",
                                     "margin": "20px 0"  
-                                }
+                                },
+                                target="_blank"
                             ), 
                             ],
                             style={ 
@@ -358,9 +359,9 @@ banner = dbc.Card(
                                 dbc.Col(
                                     [
                                         dbc.Button(html.B("Packages"), color="primary", href="/packages", className="me-2"),  # Add spacing between buttons
-                                        dbc.Button(html.B("Book Now"), color="primary", href="https://www.facebook.com/summercruiseresort"),
+                                        dbc.Button(html.B("Book Now"), color="primary", href="https://www.facebook.com/summercruiseresort"), 
                                     ],
-                                    style={'display': 'flex', 'justify-content': 'center'}  # Center the buttons
+                                    style={'display': 'flex', 'justify-content': 'center'},  # Center the buttons 
                                 )
                             ),
                         ],

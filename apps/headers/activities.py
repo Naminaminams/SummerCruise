@@ -18,7 +18,7 @@ activitiesbackground = html.Div(
             items=[
                 {
                     "key": "1",
-                    "src": "/assets/backgrounds/resortbgwide.jpg",
+                    "src": "/assets/backgrounds/bg1.png",
                     "img_style": {"height": "500px", "object-fit": "cover"}  
                 }, 
             ],
@@ -80,7 +80,7 @@ snorkelcard = html.Div(
                                 html.Li("Full Snorkel Rental Php 350 (one day)"), 
                             ]),  
                             html.Br(),
-                            dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn"),
+                            dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn", target="_blank" ),
                         ],
                         className="d-flex flex-column align-items-start"  # Left-align content
                     ),
@@ -145,7 +145,7 @@ freedivingcard = html.Div(
                             html.Br(),
                             html.Div(
                                 [
-                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2"),  
+                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2", target="_blank" ),  
                                     dbc.Button("View Promos", href="/activities", className="hover2-btn" ),
                                 ],
                                 className="d-flex flex-row justify-content-start align-items-center"  
@@ -191,6 +191,157 @@ freedivingcard = html.Div(
 )
  
 
+fdcert = html.Div(
+    [ 
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.Div(
+                        [ 
+                            html.P(html.B("PADI FREEDIVING CERTIFICATION")), 
+                            html.P("""Ready to advance to even deeper waters?"""), 
+                            html.P("""Course prerequisites: at least 15 years old"""),
+                            html.P("""
+                                   Reach a goal of static apnea of 2 minutes, 30 seconds; 
+                                   and dynamic apnea of 50 metres/165 feet with our Confined water session.
+                                   Practice deeper free immersion and constant weight freedives and more!
+                                   """), 
+                            html.Ul([
+                                html.Li("PADI Freediving certification Php 9,000"),  
+                                html.Li("Includes Rental gear (Fin and Mask with Snorkel) ✔ "), 
+                                html.Li("Meals are not included"), 
+                                html.Li("Practice deeper free immersion ✔"), 
+                                html.Li("Constant weight freediving ✔"),  
+                                html.Li("Buddy procedures and Rescue techniques ✔ "), 
+                                html.Li("Meals are not included"),
+                            ]),  
+                            html.Br(),
+                            html.Div(
+                                [
+                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2", target="_blank" ),  
+                                    dbc.Button("View Promos", href="/activities", className="hover2-btn" ),
+                                ],
+                                className="d-flex flex-row justify-content-start align-items-center"  
+                            ),
+                        ],
+                        className="d-flex flex-column align-items-start"  # Left-align content
+                    ),
+                    width={"size": 12},
+                    xs=12, sm=12, md=8, lg=4,
+                    className="d-flex justify-content-center align-items-center"
+                ),
+                dbc.Col(
+                    [
+                        html.Div(
+                            [
+                                html.Img(
+                                    src="/assets/pictures/activities/freedive1.jpg", 
+                                    style={
+                                        "width": "100%", 
+                                        "height": "auto", 
+                                        "position": "relative"
+                                    }
+                                ),
+                                
+                            ],
+                            style={
+                                "position": "relative",
+                                "text-align": "center"
+                            }
+                        ),
+                    ],
+                    width={"size": 12, "offset": 0},
+                    xs=12, sm=12, md=8, lg=4,
+                    className="d-flex justify-content-center align-items-center"
+                ),
+
+            ],
+            justify='center',  # Center align the columns in the row
+            align='center',
+            className="p-3"  # Small padding around the row
+        ),
+    ]
+)
+
+
+
+fdopenwater = html.Div(
+    [ 
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.Div(
+                        [ 
+                            html.P(html.B("PADI OPEN WATER FREEDIVING")), 
+                            html.P("""For advanced freedivers, get ready to up your static apnea, 
+                                   dynamic apnea, free immersion, and constant weight skills! 
+                                   """), 
+                            html.P("""Course prerequisites: at least 18 years old 
+                                   + PADI Freediver certification"""), 
+                            html.P("""
+                                   Reach a goal of static apnea of 3 minutes, 30 seconds; 
+                                   and dynamic apnea of 70 metres/230 feet with our Confined water session.
+                                   (including a no fins dynamic apnea.) 
+                                   """), 
+                            html.P("""
+                                   Achieve a goal of constant weight freedive of 32 metres/105 feet.
+                                   """), 
+                            html.Ul([
+                                html.Li("PADI Freediving certification Php 28,000"),  
+                                html.Li("Includes Rental gear (Fin and Mask with Snorkel) ✔ "), 
+                                html.Li("Workup dives for free immersion ✔"), 
+                                html.Li("Mouthfill equalization ✔"),  
+                                html.Li("Constant weight freediving ✔ "), 
+                                html.Li("Meals are not included"),
+                            ]),  
+                            html.Br(),
+                            html.Div(
+                                [
+                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2", target="_blank" ),  
+                                    dbc.Button("View Promos", href="/activities", className="hover2-btn" ),
+                                ],
+                                className="d-flex flex-row justify-content-start align-items-center"  
+                            ),
+                        ],
+                        className="d-flex flex-column align-items-start"  # Left-align content
+                    ),
+                    width={"size": 12},
+                    xs=12, sm=12, md=8, lg=4,
+                    className="d-flex justify-content-center align-items-center"
+                ),
+                dbc.Col(
+                    [
+                        html.Div(
+                            [
+                                html.Img(
+                                    src="/assets/pictures/activities/freedive2.jpg", 
+                                    style={
+                                        "width": "100%", 
+                                        "height": "auto", 
+                                        "position": "relative"
+                                    }
+                                ),
+                                
+                            ],
+                            style={
+                                "position": "relative",
+                                "text-align": "center"
+                            }
+                        ),
+                    ],
+                    width={"size": 12, "offset": 0},
+                    xs=12, sm=12, md=8, lg=4,
+                    className="d-flex justify-content-center align-items-center"
+                ),
+
+            ],
+            justify='center',  # Center align the columns in the row
+            align='center',
+            className="p-3"  # Small padding around the row
+        ),
+    ]
+)
+
 
 familycard = html.Div(
     [ 
@@ -220,7 +371,7 @@ familycard = html.Div(
                                 html.Li("Boat Fee per head Php 400"), 
                             ]), 
                             html.Br(), 
-                            dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2"),
+                            dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2", target="_blank" ),
                         ],
                         className="d-flex flex-column align-items-start"  # Left-align content
                     ),
@@ -233,7 +384,7 @@ familycard = html.Div(
                         html.Div(
                             [
                                 html.Img(
-                                    src="/assets/pictures/activities/activity3.JPG", 
+                                    src="/assets/pictures/activities/fishing.jpg", 
                                     style={
                                         "width": "100%", 
                                         "height": "auto", 
@@ -288,7 +439,7 @@ Introdivecard = html.Div(
                             html.Br(),
                             html.Div(
                                 [
-                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2"),  
+                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2", target="_blank" ),  
                                     dbc.Button("View Promos", href="/activities", className="hover2-btn" ),
                                 ],
                                 className="d-flex flex-row justify-content-start align-items-center"  
@@ -332,6 +483,69 @@ Introdivecard = html.Div(
 )
 
 
+nightddivecard = html.Div(
+    [ 
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.Div(
+                        [ 
+                            html.P(html.B("NIGHT DIVER SPECIALTY COURSE")), 
+                            html.P("""Want to explore the sea at night? Try our Night Diver course today to 
+                                   check out what animals come alive and glow underwater once the sun comes down.
+                                   There are no exams and the course is designed to increase your knowledge and experience while having fun."""), 
+                             
+                            html.Ul([  
+                                html.Li("Includes Rental gear (Full set) ✔ "),  
+                                html.Li("Inclusive of Entrance Fee ✔"),
+                                html.Li("Meals and Room are not included"),
+                            ]),  
+                            html.Br(),
+                            html.Div(
+                                [
+                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2", target="_blank" ),  
+                                    dbc.Button("View Promos", href="/activities", className="hover2-btn" ),
+                                ],
+                                className="d-flex flex-row justify-content-start align-items-center"  
+                            ),
+                        ],
+                        className="d-flex flex-column align-items-start"  # Left-align content
+                    ),
+                    width={"size": 12},
+                    xs=12, sm=12, md=8, lg=4,
+                    className="d-flex justify-content-center align-items-center"
+                ),
+                dbc.Col(
+                    [
+                        html.Div(
+                            [
+                                html.Img(
+                                    src="/assets/pictures/activities/nightdive.jpg", 
+                                    style={
+                                        "width": "100%", 
+                                        "height": "auto", 
+                                        "position": "relative"
+                                    }
+                                ), 
+                            ],
+                            style={
+                                "position": "relative",
+                                "text-align": "center"
+                            }
+                        ),
+                    ],
+                    width={"size": 12, "offset": 0},
+                    xs=12, sm=12, md=8, lg=4,
+                    className="d-flex justify-content-center align-items-center"
+                ), 
+            ],
+            justify='center',  # Center align the columns in the row
+            align='center',
+            className="p-3"  # Small padding around the row
+        ),
+    ]
+)
+
 
 
 
@@ -344,12 +558,13 @@ opendivecard = html.Div(
                         [ 
                             html.P(html.B("PADI OPEN WATER DIVER")), 
                             html.P("""Get your PADI Open Water License in just two days! 
-                                   (5 confined water dives, and 4 open water dives.) 
+                                   (2 confined water dives (shallow water), and 4 open water dives.) 
                                    Dive up to a maximum depth of 18 meters with a 
                                    certified buddy and be equipped to plan and execute your own dives."""), 
                              
                             html.Ul([ 
-                                html.Li("Open Water course (Beach) Php 14,800"),  
+                                html.Li("Open Water course (Beach) Php 16,800"),  
+                                html.Li("Total time: 2 days 1 night"),  
                                 html.Li("5 Academic and 2 Open Water lessons ✔ "),  
                                 html.Li("Includes Rental gear (Full set) ✔ "), 
                                 html.Li("Includes PADI Manual, Log book, Online C-CARD ✔ "), 
@@ -359,7 +574,7 @@ opendivecard = html.Div(
                             html.Br(),
                             html.Div(
                                 [
-                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2"),  
+                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2", target="_blank" ),  
                                     dbc.Button("View Promos", href="/activities", className="hover2-btn" ),
                                 ],
                                 className="d-flex flex-row justify-content-start align-items-center"  
@@ -412,7 +627,7 @@ advanceddivecard = html.Div(
                 dbc.Col(
                     html.Div(
                         [ 
-                            html.P(html.B("PADI ADVANCED WATER DIVER")), 
+                            html.P(html.B("PADI ADVANCED OPEN WATER DIVER")), 
                             html.P("""Level up your skills by diving up to 100 ft! 2 days training. 
                                    Includes 5 Open Water training dives (30-40 minutes per dive) 
                                    and 5 Academic lessons: 
@@ -424,7 +639,8 @@ advanceddivecard = html.Div(
                                    There are no exams and the course is designed to increase your knowledge and experience while having fun."""), 
                              
                             html.Ul([ 
-                                html.Li("Advanced Water course (Beach) Php 14,800"),  
+                                html.Li("Advanced Water course (Beach) Php 16,800"),  
+                                html.Li("Total time: 2 days 1 night"),  
                                 html.Li("5 Academic and 5 Open Water lessons ✔ "),  
                                 html.Li("Includes Rental gear (Full set) ✔ "), 
                                 html.Li("Includes PADI Manual, Log book, Online C-CARD ✔ "), 
@@ -434,7 +650,7 @@ advanceddivecard = html.Div(
                             html.Br(),
                             html.Div(
                                 [
-                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2"),  
+                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2", target="_blank" ),  
                                     dbc.Button("View Promos", href="/activities", className="hover2-btn" ),
                                 ],
                                 className="d-flex flex-row justify-content-start align-items-center"  
@@ -478,23 +694,27 @@ advanceddivecard = html.Div(
 )
 
 
-
-rescuedivecard = html.Div(
+advanceddivecard = html.Div(
     [ 
         dbc.Row(
             [
                 dbc.Col(
                     html.Div(
                         [ 
-                            html.P(html.B("RESCUE DIVE COURSE + EFR")), 
-                            html.P("""An essential course for divers who want to dive more safely! 
-                                   3 day lesson. Learn the ability to predict and solve underwater problems, 
-                                   and acquire the knowledge and skills to do so. 
-                                   The ability to anticipate will enable you to prepare and 
-                                   respond to emergencies."""), 
+                            html.P(html.B("PADI ADVANCED OPEN WATER DIVER")), 
+                            html.P("""Level up your skills by diving up to 100 ft! 2 days training. 
+                                   Includes 5 Open Water training dives (30-40 minutes per dive) 
+                                   and 5 Academic lessons: 
+                                   1) Peak Performance Buoyancy, 
+                                   2) Underwater navigation, 
+                                   3) Night diving, 
+                                   4) Deep diving, 
+                                   5) Drift diving or Digital under water imaging (underwater camera). 
+                                   There are no exams and the course is designed to increase your knowledge and experience while having fun."""), 
                              
                             html.Ul([ 
-                                html.Li("Open Water course (Beach) Php 14,800"),  
+                                html.Li("Advanced Water course (Beach) Php 16,800"),  
+                                html.Li("Total time: 2 days 1 night"),  
                                 html.Li("5 Academic and 5 Open Water lessons ✔ "),  
                                 html.Li("Includes Rental gear (Full set) ✔ "), 
                                 html.Li("Includes PADI Manual, Log book, Online C-CARD ✔ "), 
@@ -504,7 +724,77 @@ rescuedivecard = html.Div(
                             html.Br(),
                             html.Div(
                                 [
-                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2"),  
+                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2", target="_blank" ),  
+                                    dbc.Button("View Promos", href="/activities", className="hover2-btn" ),
+                                ],
+                                className="d-flex flex-row justify-content-start align-items-center"  
+                            ),
+                        ],
+                        className="d-flex flex-column align-items-start"  # Left-align content
+                    ),
+                    width={"size": 12},
+                    xs=12, sm=12, md=8, lg=4,
+                    className="d-flex justify-content-center align-items-center"
+                ),
+                dbc.Col(
+                    [
+                        html.Div(
+                            [
+                                html.Img(
+                                    src="/assets/pictures/activities/activity6.jpg", 
+                                    style={
+                                        "width": "100%", 
+                                        "height": "auto", 
+                                        "position": "relative"
+                                    }
+                                ), 
+                            ],
+                            style={
+                                "position": "relative",
+                                "text-align": "center"
+                            }
+                        ),
+                    ],
+                    width={"size": 12, "offset": 0},
+                    xs=12, sm=12, md=8, lg=4,
+                    className="d-flex justify-content-center align-items-center"
+                ), 
+            ],
+            justify='center',  # Center align the columns in the row
+            align='center',
+            className="p-3"  # Small padding around the row
+        ),
+    ]
+)
+
+rescuedivecard = html.Div(
+    [ 
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.Div(
+                        [ 
+                            html.P(html.B("RESCUE DIVER COURSE + EFR")), 
+                            html.P("""An essential course for divers who want to dive more safely! 
+                                   Course prerequisites: Open Water (or Jr. Open Water) Diver certification, 
+                                   complete Rescue Diver eLearning, and participate in Rescue Exercises 
+                                   in confined water."""), 
+                            html.P("""
+                                   Certification also requires CPR and first aid training within the past 24 months. 
+                                   If you don't have this training, we do offer enrollment of
+                                   Emergency First Response® (EFR) """), 
+                             
+                            html.Ul([ 
+                                html.Li("Rescue Diver course (Beach) Php 19,500"),  
+                                html.Li("Total time: 3 days 2 nights"),   
+                                html.Li("Includes Rental gear (Full set) ✔ "),  
+                                html.Li("Inclusive of Entrance Fee ✔"),
+                                html.Li("Meals and Room are not included"),
+                            ]),  
+                            html.Br(),
+                            html.Div(
+                                [
+                                    dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2", target="_blank" ),  
                                     dbc.Button("View Promos", href="/activities", className="hover2-btn" ),
                                 ],
                                 className="d-flex flex-row justify-content-start align-items-center"  
@@ -561,11 +851,14 @@ divemastercard = html.Div(
                             html.P("""You can choose from two types of programs: 
                                    short-term for a total of 7-days or an internship. 
                                    You will learn the knowledge and skills to organize a full diving experience. 
-                                   This course is designed for club and team leaders and future instructors.
+                                   """),  
+                            html.P("""
                                    If you would like to do an internship, please let us know the level you would like to start at 
-                                   (it is possible to start from zero), **WEEKEND ONLY basis is also available."""),  
+                                   (it is possible to start from zero)"""), 
+                            html.P("*WEEKEND ONLY basis is also available."),
                             html.Ul([ 
                                 html.Li("Php 40,000 +  PADI Membership fee $58/year"),   
+                                html.Li("Total time: 7 days 6 nights"),   
                             ]),  
                             html.Br(), 
                         ],
@@ -701,6 +994,9 @@ layout = html.Div(
                         html.Br(),
                         html.H3(html.B("SCUBA Diving"), style={'textAlign': 'center'}),
                         Introdivecard, 
+                        html.Br(),
+                        html.Br(),
+                        nightddivecard, 
                         html.Br(),
                         html.Br(),
                         html.H3(html.B("SCUBA Diving Certification"), style={'textAlign': 'center'}),

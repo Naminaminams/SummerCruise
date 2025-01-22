@@ -18,7 +18,7 @@ roombackground = html.Div(
             items=[
                 {
                     "key": "1",
-                    "src": "/assets/backgrounds/resortbg4.jpg",
+                    "src": "/assets/backgrounds/bg2.png",
                     "img_style": {"height": "500px", "object-fit": "cover"}  # Set height and scale images
                 }, 
             ],
@@ -115,7 +115,8 @@ room1_2card = html.Div(
                                         "top": "80%",  # Adjust the position of the button
                                         "left": "50%",  # Center horizontally
                                         "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
+                                    },
+                                    target="_blank" 
                                 ),
                             ],
                             style={
@@ -166,7 +167,8 @@ room3_4card = html.Div(
                                         "top": "80%",  # Adjust the position of the button
                                         "left": "50%",  # Center horizontally
                                         "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
+                                    },
+                                    target="_blank" 
                                 ),
                             ],
                             style={
@@ -278,7 +280,8 @@ room5_6card = html.Div(
                                         "top": "80%",  # Adjust the position of the button
                                         "left": "50%",  # Center horizontally
                                         "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
+                                    },target="_blank" 
+
                                 ),
                             ],
                             style={
@@ -327,7 +330,7 @@ room7_8card = html.Div(
                                         "top": "80%",  # Adjust the position of the button
                                         "left": "50%",  # Center horizontally
                                         "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
+                                    },target="_blank" 
                                 ),
                             ],
                             style={
@@ -439,7 +442,7 @@ room9card = html.Div(
                                         "top": "80%",  # Adjust the position of the button
                                         "left": "50%",  # Center horizontally
                                         "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
+                                    },target="_blank" 
                                 ),
                             ],
                             style={
@@ -488,7 +491,7 @@ room10_11card = html.Div(
                                         "top": "80%",  # Adjust the position of the button
                                         "left": "50%",  # Center horizontally
                                         "transform": "translateX(-50%)",  # Horizontal centering
-                                    }
+                                    }, target="_blank" 
                                 ),
                             ],
                             style={
