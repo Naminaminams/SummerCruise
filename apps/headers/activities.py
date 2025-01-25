@@ -359,6 +359,13 @@ familycard = html.Div(
                                 html.Li("Rental gear Php 2,500"), 
                                 html.Li("Includes Bait ✔"),   
                                 html.Li("Includes Boat ✔"),  
+                            ]), 
+
+                            html.P(html.B("BARBEQUE")), 
+                            html.P("""Grill your own catch or we can grill it for you."""), 
+                            html.Ul([
+                                html.Li("BBQ Meat Set (Pork, Chicken, Vegetables, Rice) P600/ head"),
+                                html.Li("BBQ Seafood Set (Fish, Mussels, Shrimp, Rice) P800/ head"),  
                             ]),  
 
                             html.P(html.B("ISLAND HOPPING")), 
