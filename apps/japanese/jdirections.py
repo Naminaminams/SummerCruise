@@ -59,26 +59,28 @@ map = html.Div(
             [ 
                 dbc.Col(
                     [
-                        dl.Map(
+                        html.Div(
                             [
-                                dl.TileLayer(),  
-                                dl.Marker(  # Marker for Manila
-                                    position=[14.5995124, 120.9842195],
-                                    children=dl.Tooltip("Manila, Metro Manila"),
+                                html.Img(
+                                    src="/assets/pictures/map_car.jpg", 
+                                    style={
+                                        "width": "100%", 
+                                        "height": "auto", 
+                                        "position": "relative"
+                                    }
                                 ),
-                                dl.Marker(  # Marker for Summer Cruise Diving Resort
-                                    position=[13.8234639, 120.9064561],
-                                    children=dl.Tooltip("Summer Cruise Diving Resort"),
-                                ),
+                                
                             ],
-                            style={"height": "50vh", "width": "100%"},
-                            center=[14.2, 120.7],  # Center the map between Manila and the resort
-                            zoom=9,
+                            style={
+                                "position": "relative",
+                                "text-align": "center"
+                            }
                         ),
-
-                    ], 
-                    xs=12, sm=12, md=10, lg=8,  # Adjust column size as needed
-                ), 
+                    ],
+                    width={"size": 12, "offset": 0},
+                    xs=12, sm=12, md=8, lg=4,
+                    className="d-flex justify-content-center align-items-center"
+                ),
             ],
             justify="center", 
             align="center",

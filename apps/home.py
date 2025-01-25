@@ -671,6 +671,53 @@ layout = html.Div(
             align='center',
             className="p-3"  # Small padding around the row
         ),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.Div(
+                        [
+                            html.H4("PADI Freediving Certification"),
+                            html.P("""Ready to take the next step in your freediving journey? 
+                                   Get certified today with out new Freediving Certification course. 
+                                   Reach new depths and last longer by training your static apnea, 
+                                   dynamic apnea, free immersion, and constant weight skills! 
+                                   """),
+                            dbc.Button("Learn More", color="light", href="/activities", 
+                                style={
+                                    "border": "1px solid black", 
+                                    "border-radius": "10px",      
+                                    "color": "black", 
+                                    "font-size": "14px",      
+                                    "width": "120px",
+                                    "margin": "20px 0"  
+                                }
+                            ), 
+                        ],
+                        className="d-flex flex-column align-items-left"   
+                    ),
+                    width={"size": 12},
+                    xs=12, sm=12, md=8, lg=4,
+                    className="d-flex justify-content-center align-items-center"
+                ),
+                dbc.Col(
+                    dbc.Carousel(
+                        items=[
+                            {"key": "1", "src": "assets/pictures/homepage/H1.png"},
+                            {"key": "2", "src": "assets/pictures/homepage/H2.png"},
+                            {"key": "3", "src": "assets/pictures/homepage/H3.png"}, 
+                        ],
+                        className="carousel-fade custom-carousel",
+                        style={"Height": "350px", "overflow": "hidden"}  
+                    ),
+                    width={"size": 12, "offset": 0}, # Default size for xs
+                    xs=12, sm=12, md=8, lg=4,  # Responsive sizes
+                    className="d-flex justify-content-center align-items-center"
+                ),
+            ],
+            justify='center',  # Center align the columns in the row
+            align='center',
+            className="p-3"  # Small padding around the row
+        ),
         html.Br(), 
         dbc.Row(
             [
