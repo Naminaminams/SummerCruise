@@ -147,9 +147,9 @@ commute = html.Div(
 
                         html.H4("レメリー ⇒ ナルダパーキング（トライシクル移動）"),
                         html.P("バスを降りたらトライシクルに乗り換えます。"),
-                        html.P("降車時に 150 ペソを支払います。乗車時間約 30 分"),
+                        html.P("降車時に 250 ペソを支払います。乗車時間約 30 分"),
                         html.P("トライシクル乗車前に携帯に連絡をください。"),
-                        html.P(html.B("Takagaki: 0928-554-9185")),
+                        html.P(html.B("0969-241-7880 TAKAGAKI")),
                     ],
                     className="text-center"  # Centers the text horizontally within the column
                 )
@@ -204,8 +204,8 @@ commute = html.Div(
 
                         html.H6("Paki dalhin ako sa Parking ni NARDA sa SanLuis Balite"),
                         html.P("バリテ村（ナルダパーキング）まで行けますか"),
-                        html.H6("Ang bayad ko simula Lemery hanggang SanLuis Balite 150 lamang."),
-                        html.P("バリテ村までの料金は 150 ペソでよいですか"),
+                        html.H6("Ang bayad ko simula Lemery hanggang SanLuis Balite 250 lamang."),
+                        html.P("バリテ村までの料金は 250 ペソでよいですか"),
                     ],
                     className="text-center"  # Centers the text horizontally within the column
                 )
@@ -253,7 +253,7 @@ commute = html.Div(
 
                         html.Br(),
 
-                        html.H6("ナダルパーキング⇒海の家"),
+                        html.H6("ビヌクボクパーキング⇒海の家"),
                         html.P("弊社スタッフが待機しております。ボートで海の家まで向かいます"), 
 
                         html.Br(),
