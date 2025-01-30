@@ -141,12 +141,12 @@ commute = html.Div(
                 dbc.Col(
                     [
                         html.P("Gil Puyat 駅(パサイ)降りてすぐのバスターミナルからレメリー行のバスが"),
-                        html.P("2 時間おきに出ています。運賃は 200 ペソ。3 時間程度の乗車。"),
+                        html.P("1 時間おきに出ています。運賃は 250 ペソ。3~時間程度の乗車。"),
                         html.P("※カウンターチケットでの事前購入は不要で運賃は発車後に車内で支払います。"),
                         html.Br(),
 
                         html.H4("レメリー ⇒ ナルダパーキング（トライシクル移動）"),
-                        html.P("パバスを降りたらトライシクルに乗り換えます。ドライバにこの紙を見せてください"),
+                        html.P("バスを降りたらトライシクルに乗り換えます。"),
                         html.P("降車時に 150 ペソを支払います。乗車時間約 30 分"),
                         html.P("トライシクル乗車前に携帯に連絡をください。"),
                         html.P(html.B("Takagaki: 0928-554-9185")),
@@ -199,7 +199,7 @@ commute = html.Div(
                         html.P("パバスを降りたらトライシクルに乗り換えます。ドライバにこの紙を見せてください"),
                         html.P("降車時に 150 ペソを支払います。乗車時間約 30 分"),
                         html.P("トライシクル乗車前に携帯に連絡をください。"),
-                        html.P("Takagaki 0928-554-9185"),
+                        html.P("0969-241-7880 TAKAGAKI"),
                         html.Br(),
 
                         html.H6("Paki dalhin ako sa Parking ni NARDA sa SanLuis Balite"),
@@ -288,7 +288,7 @@ layout = html.Div(
                             className="text-center my-3"),
                         html.P("駐車場に到着しましたら携帯にご連絡をください。",
                             className="text-center my-3"),
-                        html.P("バスでお越しになられる方はアクセス方法をまとめたPDFを印刷しご利用ください。",
+                        html.P("0969-241-7880 TAKAGAKI",
                             className="text-center my-3"),
                         
                         dbc.Button("地図を開く", color="light", href="https://www.google.com/maps/dir//RWF6%2BM5F+Binukbok+Parking+Area,+Batangas/@13.824083,120.9068588,814m/data=!3m1!1e3!4m17!1m7!3m6!1s0x33bd083a59a12ae7:0x3afeb59f11b3702c!2sBinukbok+Parking+Area!8m2!3d13.8241976!4d120.9104208!16s%2Fg%2F11dxl8t656!4m8!1m0!1m5!1m1!1s0x33bd083a59a12ae7:0x3afeb59f11b3702c!2m2!1d120.9104208!2d13.8241976!3e2?entry=ttu&g_ep=EgoyMDI0MTAwOS4wIKXMDSoASAFQAw%3D%3D",   

@@ -324,7 +324,7 @@ def generate_ja_navbar():
                             [
                                 dbc.NavItem(dbc.NavLink("ホームページ", href="/ja/home", id="ja-home-link")),
                                 dbc.NavItem(dbc.NavLink("ご宿泊", href="/ja/rooms", id="ja-about-us-link")),
-                                dbc.NavItem(dbc.NavLink("場所への行き方", href="/ja/directions", id="ja-rooms-link")),
+                                dbc.NavItem(dbc.NavLink("アクセス", href="/ja/directions", id="ja-rooms-link")),
                                 dbc.NavItem(dbc.NavLink("活動", href="/ja/activities", id="ja-activities-link")), 
                                 dbc.NavItem(dbc.NavLink("料金", href="/ja/packages", id="ja-packages-link")),   
                             ],
@@ -358,7 +358,7 @@ def generate_ja_navbar():
                                 html.Hr(),  
                                 dbc.NavItem(dbc.NavLink("ホームページ", href="/ja/home", style={'color': 'white', 'margin-right': '20px'})),
                                 dbc.NavItem(dbc.NavLink("ご宿泊", href="/ja/rooms", style={'color': 'white', 'margin-right': '20px'})),
-                                dbc.NavItem(dbc.NavLink("場所への行き方", href="/ja/directions", style={'color': 'white', 'margin-right': '20px'})), 
+                                dbc.NavItem(dbc.NavLink("アクセス", href="/ja/directions", style={'color': 'white', 'margin-right': '20px'})), 
                                 dbc.NavItem(dbc.NavLink("活動", href="/ja/activities", style={'color': 'white', 'margin-right': '20px'})), 
                                 dbc.NavItem(dbc.NavLink("料金", href="/ja/packages", style={'color': 'white', 'margin-right': '20px'})),  
                             ],
@@ -426,7 +426,7 @@ def generate_ja_footer():
                                     dbc.NavItem(dbc.NavLink("料金", href="/ja/packages", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
                                     dbc.NavItem(dbc.NavLink("ホームページ", href="/ja/home", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
                                     dbc.NavItem(dbc.NavLink("ご宿泊", href="/ja/rooms", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
-                                    dbc.NavItem(dbc.NavLink("場所への行き方", href="/ja/directions", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
+                                    dbc.NavItem(dbc.NavLink("アクセス", href="/ja/directions", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
                                     dbc.NavItem(dbc.NavLink("活動", href="/ja/activities", className="text-center text-sm-left", style={"color": "#C3C3C3"})),
                                     
                                 ],
@@ -505,14 +505,14 @@ def generate_ja_footer():
                                                             src=app.get_asset_url('icons/facebook_logo.png'),
                                                             style={'height': '2em', 'margin-right': '20px'}   
                                                         ),
-                                                        href="https://www.facebook.com/summercruiseresort"
+                                                        href="https://www.facebook.com/takagaki77"
                                                     ),
                                                     html.A(
                                                         html.Img(
-                                                            src=app.get_asset_url('icons/instagram_logo.png'),
+                                                            src=app.get_asset_url('icons/x_logo.png'),
                                                             style={'height': '2em'}
                                                         ),
-                                                        href="https://www.instagram.com/summercruiseresort/"
+                                                        href="https://x.com/SummerCruise88"
                                                     ),
                                                 ],
                                                 className="d-flex justify-content-start align-items-center"  

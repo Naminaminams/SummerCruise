@@ -118,7 +118,7 @@ ammenities_cards = html.Div(
                 ),
                 dbc.Col(
                     dbc.Card(
-                        content(images[5], "BBQ", "刺身とバーベキューをお楽しみください"),
+                        content(images[5], "フィッシング", "刺身とフライをお楽しみください"), #sashimi frying
                         style={"width": "18rem", "margin": "auto"}
                     ),
                     width="auto",  # Adjust column width to fit content
@@ -349,7 +349,7 @@ introinfo1 = html.Div(
                         html.Br(),
                         html.P("アクティビティー " , className="text-center", style={"font-size": "16px"}),
                         html.P("◆ダイビング講習PADIオープンウォーターからダイブマスターコース◆ファンダイブ（ビーチ＆ボート）◆体験ダイブ" , className="text-center", style={"font-size": "16px"}),
-                        html.P("◆スノーケリング◆海水浴◆プール◆BBQ（BBQテーブルレンタル可能）◆食材、飲むものの持込は自由です。" , className="text-center", style={"font-size": "16px"}),
+                        html.P("◆スノーケリング◆海水浴◆プール◆BBQ（BBQテーブルレンタル可能）◆食材、飲み,のの持込は自由です。" , className="text-center", style={"font-size": "16px"}),
                         html.P("◆ダイビング器材、スノーケリングセット、ライフジャケットレンタル可能。" , className="text-center", style={"font-size": "16px"}),
                         html.P("◆クレジットカード、デビットカード、Gcashご利用可能。" , className="text-center", style={"font-size": "16px"}),
                         

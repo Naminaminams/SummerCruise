@@ -6,7 +6,7 @@ from app import app
 from apps import dbconnect as db
 from apps import commonmodules as cm
   
-
+ 
 
 roombackground = html.Div(
     [
@@ -14,7 +14,7 @@ roombackground = html.Div(
             items=[
                 {
                     "key": "1",
-                    "src": "/assets/backgrounds/resortbg4.jpg",
+                    "src": "/assets/backgrounds/bg2.png",
                     "img_style": {"height": "500px", "object-fit": "cover"}  # Set height and scale images
                 }, 
             ],
@@ -27,7 +27,7 @@ roombackground = html.Div(
                         html.H2(html.B("Rooms"), className="card-title", style={'textAlign': 'center', 'fontFamily': "'Lobster'"}),
                         html.P(
                             [
-                                "マニラ近郊のアニラオ＆サンルイスでご宿泊！",
+                                "マニラ近郊サンルイスでご宿泊！",
                                 html.Br(),  
                                 "海の景色を眺めながらリラックス"
                             ], 
@@ -93,11 +93,11 @@ standard= html.Div(
                                         html.Tr([
                                             html.Td("スタンダード"),  
                                             html.Td( html.Ul([ 
-                                                    html.Li("クィーンサイズ x 1 + シングルサイズ x 1"),
+                                                    html.Li("クイーンサイズとシングルサイズのベッド"),
                                                     html.Li("ホットシャワー"),
                                                     html.Li("水洗トイレ"),
                                                     html.Li("プライベートテラス"), 
-                                                    html.Li("ルーム 3, 4, 5, 6 はエアコン付き。"), 
+                                                    html.Li("エアコンあり。"), 
                                                 ]))
                                             ]
                                         ),
@@ -147,11 +147,11 @@ economy = html.Div(
                                         html.Tr([
                                             html.Td("スタンダード"),  
                                             html.Td( html.Ul([ 
-                                                    html.Li("クィーンサイズ x 1 + シングルサイズ x 1"),
+                                                    html.Li("クイーンサイズとシングルサイズのベッド"),
                                                     html.Li("ホットシャワー"),
                                                     html.Li("水洗トイレ"),
                                                     html.Li("プライベートテラス"), 
-                                                    html.Li("ルーム 1, 2 は天井ファン。"), 
+                                                    html.Li("ファンルーム"), 
                                                 ]))
                                             ]
                                         ),
@@ -192,11 +192,6 @@ groupics = html.Div(
         dbc.Row(
             [
                 dbc.Col(
-                    dbc.CardImg(src="/assets/pictures/rooms/room8.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
-                    width="auto",  # Adjust column width to fit content
-                    style={"padding": "0.5rem"},  # Reduce padding between columns
-                ),
-                dbc.Col(
                     dbc.CardImg(src="/assets/pictures/rooms/room10.jpg", style={"maxHeight": "180px", "objectFit": "cover"}), 
                     width="auto",  # Adjust column width to fit content
                     style={"padding": "0.5rem"},  # Reduce padding between columns
@@ -223,13 +218,14 @@ group = html.Div(
                                 html.Tbody(
                                     [
                                         html.Tr([
-                                            html.Td("グループルーム"),  
+                                            html.Td("広い部屋"),  
                                             html.Td( html.Ul([ 
                                                     html.Li("クィーンサイズ x 1 + シングルサイズ x 1、ホットシャワー"),
                                                     html.Li("水洗トイレ"),
                                                     html.Li("プライベートテラス"),
                                                     html.Li("ロフトルーム"),   
-                                                    html.Li("ルーム 10, 11 はエアコン付きと扇風機。"), 
+                                                    html.Li("8人用"),  
+                                                    html.Li("ルーム 10, 11, 23 はエアコン付きと扇風機。"), 
                                                 ]))
                                             ]
                                         ),

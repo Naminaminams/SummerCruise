@@ -17,7 +17,7 @@ packbackground = html.Div(
             items=[
                 {
                     "key": "1",
-                    "src": "/assets/backgrounds/resortbg4.jpg",
+                    "src": "/assets/backgrounds/bg3.png",
                     "img_style": {"height": "500px", "object-fit": "cover"}  # Set height and scale images
                 }, 
             ],

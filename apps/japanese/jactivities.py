@@ -18,7 +18,7 @@ activitiesbackground = html.Div(
             items=[
                 {
                     "key": "1",
-                    "src": "/assets/backgrounds/resortbgwide.jpg",
+                    "src": "/assets/backgrounds/bg1.png",
                     "img_style": {"height": "500px", "object-fit": "cover"}  
                 }, 
             ],
@@ -126,14 +126,14 @@ familycard = html.Div(
                         [ 
                             html.P(html.B("釣り")), 
                             html.Ul([
-                                html.Li("ギアレンタル P2,500"), 
+                                html.Li("ギアレンタル P350/日"), 
                                 html.Li("餌を含む ✔"),   
                                 html.Li("ボートを含む ✔"),  
                             ]),  
 
                             html.P(html.B("アイランドホッピング")), 
                             html.Ul([
-                                html.Li("ボート代 1人当たり P400"), 
+                                html.Li("ボート代 1人当たり P450/人"), 
                             ]), 
                             html.Br(), 
                         ],
@@ -186,9 +186,7 @@ Introdivecard = html.Div(
                 dbc.Col(
                     html.Div(
                         [ 
-                            html.P("ダイビング経験不要、何方でも参加可能"),
-                            html.P(html.B("PADIオープンウォーター (認定コース) ")), 
-                            
+                            html.P("ダイビング経験不要、何方でも参加可能"),#intro
                             html.P(html.B("体験ダイビング")), 
                             html.Ul([ 
                                 html.Li("体験ダイビング（ビーチ）P1,800/人"), 
@@ -253,8 +251,8 @@ opendivecard = html.Div(
                             html.Ul([ 
                                 html.Li("オープンウォータ (ビーチエントリー) P16,800"),  
                                 html.Li("アカデミックレッスン5 回とオープンウォーターレッスン2回 ✔ "),  
-                                html.Li("ダイビング器材フルセット１日の費用 ✔ "), 
-                                html.Li("マニュアル・Ｃカード申請費含む ✔ "),  
+                                html.Li("ダイビング器材フルセット2日の費用 ✔ "), 
+                                html.Li("マニュアル・Ｃカード(オンライン)申請費含む ✔ "),  
                                 html.Li("参加資格（12歳以上）"),
                                 html.Li("食事は含まれません"),
                             ]),  
@@ -311,8 +309,8 @@ advanceddivecard = html.Div(
                             html.Ul([ 
                                 html.Li(" アドバンス （ビーチ）P16,800"),  
                                 html.Li("アカデミックレッスン5 回とオープンウォーターレッスン5回 ✔ "),  
-                                html.Li("ダイビング器材フルセット１日の費用 ✔ "), 
-                                html.Li("マニュアル・Ｃカード申請費含む ✔ "),  
+                                html.Li("ダイビング器材フルセット2日の費用 ✔ "), 
+                                html.Li("マニュアル・Ｃカード(オンライン)申請費含む ✔ "),  
                                 html.Li("参加資格（12歳以上）"),
                                 html.Li("食事は含まれません"),
                             ]),  
