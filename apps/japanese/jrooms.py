@@ -145,7 +145,7 @@ economy = html.Div(
                                 html.Tbody(
                                     [
                                         html.Tr([
-                                            html.Td("スタンダード"),  
+                                            html.Td("エコノミー"),  
                                             html.Td( html.Ul([ 
                                                     html.Li("クイーンサイズとシングルサイズのベッド"),
                                                     html.Li("ホットシャワー"),
