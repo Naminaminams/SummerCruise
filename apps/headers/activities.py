@@ -13,13 +13,13 @@ from apps import commonmodules as cm
 
 
 activitiesbackground = html.Div(
-    [
+    [ 
         dbc.Carousel(
             items=[
                 {
                     "key": "1",
                     "src": "/assets/backgrounds/bg1.png",
-                    "img_style": {"height": "500px", "object-fit": "cover"}  
+                    "img_style": {"height": "250px", "object-fit": "cover"}  
                 }, 
             ],
             style={"max-height": "500px"}   
@@ -364,8 +364,8 @@ familycard = html.Div(
                             html.P(html.B("BARBEQUE")), 
                             html.P("""Grill your own catch or we can grill it for you."""), 
                             html.Ul([
-                                html.Li("BBQ Meat Set (Pork, Chicken, Vegetables, Rice) P600/ head"),
-                                html.Li("BBQ Seafood Set (Fish, Mussels, Shrimp, Rice) P800/ head"),  
+                                html.Li("BBQ Meat Set (Pork, Chicken, Vegetables, Rice) P600/ head (ordered through booking)"),
+                                html.Li("BBQ Seafood Set (Fish, Mussels, Shrimp, Rice) P800/ head (ordered through booking)"),  
                             ]),  
 
                             html.P(html.B("ISLAND HOPPING")), 
@@ -375,7 +375,7 @@ familycard = html.Div(
                                    next islands where there are underwater caves, 
                                    huge schools of fishes, and sandy beaches."""), 
                             html.Ul([
-                                html.Li("Boat Fee per head Php 400"), 
+                                html.Li("Boat Fee per head Php 450"), 
                             ]), 
                             html.Br(), 
                             dbc.Button("Book Now", href="https://www.facebook.com/summercruiseresort", className="hover-btn me-2", target="_blank" ),

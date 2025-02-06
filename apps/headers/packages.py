@@ -18,7 +18,7 @@ packbackground = html.Div(
                 {
                     "key": "1",
                     "src": "/assets/backgrounds/bg3.png",
-                    "img_style": {"height": "500px", "object-fit": "cover"}  # Set height and scale images
+                    "img_style": {"height": "250px", "object-fit": "cover"}  # Set height and scale images
                 }, 
             ],
             style={"max-height": "500px"}  # Limit the height of the carousel
@@ -27,7 +27,7 @@ packbackground = html.Div(
             [ 
                 dbc.CardBody(
                     [
-                        html.H2(html.B("New Year Packages"), className="card-title", style={'textAlign': 'center', 'fontFamily': "'Lobster'"}),
+                        html.H2(html.B("February Packages"), className="card-title", style={'textAlign': 'center', 'fontFamily': "'Lobster'"}),
                         html.P(
                             [
                                 "Book Exclusive Deals Today ", 

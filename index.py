@@ -11,7 +11,7 @@ from apps import commonmodules as cm
 from apps import home
 from apps import blankpage
 
-from apps.headers import aboutus, rooms, activities, amenities, events, packages
+from apps.headers import FAQ, aboutus, rooms, activities, amenities, packages
 from apps.japanese import jhome, jrooms, jdirections, jactivities, jpackages
 from apps.admin import adminrooms, calendar
 
@@ -181,8 +181,8 @@ def displaypage(pathname, sessionlogout, user_id, accesstype, search):
             #     returnlayout = blankpage.layout
             # elif pathname == '/booking':
             #     returnlayout = calendar.layout
-            # elif pathname == '/events':
-            #     returnlayout = blankpage.layout
+            elif pathname == '/FAQs':
+                returnlayout = FAQ.layout
             elif pathname == '/packages':
                 returnlayout = packages.layout
             
@@ -204,7 +204,7 @@ def displaypage(pathname, sessionlogout, user_id, accesstype, search):
     return [returnlayout, sessionlogout]
  
 
-if __name__ == '__main__':   
+if __name__ == '__main__':    
     app.run_server(debug=True)
 
 

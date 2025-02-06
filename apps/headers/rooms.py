@@ -19,7 +19,7 @@ roombackground = html.Div(
                 {
                     "key": "1",
                     "src": "/assets/backgrounds/bg2.png",
-                    "img_style": {"height": "500px", "object-fit": "cover"}  # Set height and scale images
+                    "img_style": {"height": "250px", "object-fit": "cover"}  # Set height and scale images
                 }, 
             ],
             style={"max-height": "500px"}  # Limit the height of the carousel
@@ -70,8 +70,7 @@ room1_2card = html.Div(
                                    at the leftmost side of the resort. Feel the serenity with our bamboo and nipa rooms 
                                    as you wake up to a stunning view of the sea. 
                                    """), 
-                            html.P("Rooms can accommodate two adults."),
-                            html.Br(),
+                            html.P("Rooms can accommodate two (2) adults."), 
                                 html.P("FEATURES"),
                                     html.Ul([ 
                                         html.Li("With 2 single beds"),
@@ -189,8 +188,7 @@ room3_4card = html.Div(
                                    Relax in our nature-inspired rooms that blend bamboo 
                                    and local wood in its architecture.  
                                    """), 
-                            html.P("Rooms can accommodate two adults."),
-                            html.Br(),
+                            html.P("Rooms can accommodate two (2) adults."), 
                                 html.P("FEATURES"),
                                     html.Ul([ 
                                         html.Li("With 2 single beds"),
@@ -235,8 +233,7 @@ room5_6card = html.Div(
                             html.P("""Feel the calming rhythm of the ocean and escape to a rustic retreat 
                                    on our private veranda.                                    
                                    """), 
-                            html.P("Rooms can accommodate two adults."),
-                            html.Br(),
+                            html.P("Rooms can accommodate two (2) adults."), 
                                 html.P("FEATURES"),
                                     html.Ul([ 
                                         html.Li("With 2 single beds"),
@@ -343,35 +340,34 @@ room7_8card = html.Div(
                     xs=12, sm=12, md=8, lg=4,
                     className="d-flex justify-content-center align-items-center"
                 ),
-                dbc.Col(
-                    html.Div(
-                        [ 
-                            html.H4(html.B("Coral Cove")),
-                            html.P("""Coral Cove offers a unique blend of rustic and modern, 
-                                   with cemented walls and double-deck beds. These rooms are situated on the first floor, 
-                                   and it is the perfect stopover after a day at the sea.
-                                   """), 
-                            html.P("Rooms can accommodate two adults."),
-                            html.Br(),
-                                html.P("FEATURES"),
-                                    html.Ul([ 
-                                        html.Li("With 2 single beds"),
-                                        html.Li("Pool view"),
-                                        html.Li("Air Conditioning"),  
-                                    ]), 
-                                html.P("INCLUSIVE OF"),
-                                    html.Ul([
-                                        html.Li("Wireless internet access"),
-                                        html.Li("Free water and barako coffee"), 
-                                    ]),  
-                                html.Br(),  
-                        ],
-                        className="d-flex flex-column align-items-start"   
-                    ),
-                    width={"size": 12},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ),
+                # dbc.Col(
+                #     html.Div(
+                #         [ 
+                #             html.H4(html.B("Coral Cove")),
+                #             html.P("""Coral Cove offers a unique blend of rustic and modern, 
+                #                    with cemented walls and double-deck beds. These rooms are situated on the first floor, 
+                #                    and it is the perfect stopover after a day at the sea.
+                #                    """), 
+                #             html.P("Rooms can accommodate two (2) adults."), 
+                #                 html.P("FEATURES"),
+                #                     html.Ul([ 
+                #                         html.Li("With 2 single beds"),
+                #                         html.Li("Pool view"),
+                #                         html.Li("Air Conditioning"),  
+                #                     ]), 
+                #                 html.P("INCLUSIVE OF"),
+                #                     html.Ul([
+                #                         html.Li("Wireless internet access"),
+                #                         html.Li("Free water and barako coffee"), 
+                #                     ]),  
+                #                 html.Br(),  
+                #         ],
+                #         className="d-flex flex-column align-items-start"   
+                #     ),
+                #     width={"size": 12},
+                #     xs=12, sm=12, md=8, lg=4,
+                #     className="d-flex justify-content-center align-items-center"
+                # ),
 
             ],
             justify='center', 
@@ -399,8 +395,7 @@ room9card = html.Div(
                                    Oasis offers breathtaking views of the beach 
                                    and the side mountain just on the first floor.
                                    """), 
-                            html.P("Rooms can accommodate two adults."),
-                            html.Br(),
+                            html.P("Rooms can accommodate two (2) adults."), 
                                 html.P("FEATURES"),
                                     html.Ul([ 
                                         html.Li("With 2 single beds"),
@@ -512,8 +507,7 @@ room10_11card = html.Div(
                                    Cliffside Nest is perfect for large groups. 
                                    The private loft and bamboo-nipa design evoke a rustic charm, ideal for a memorable stay.
                                    """), 
-                            html.P("Rooms can accommodate ten adults."),
-                            html.Br(),
+                            html.P("Rooms can accommodate eight (8) adults."), 
                                 html.P("FEATURES"),
                                     html.Ul([ 
                                         html.Li("With 2 single beds"), 
@@ -566,8 +560,8 @@ layout = html.Div(
                         html.Br(),
                         room7_8card,
                         html.Br(), 
-                        room9card,
-                        html.Br(),
+                        # room9card,
+                        # html.Br(),
                         room10_11card,
                     ],  
                 ), 

@@ -15,7 +15,7 @@ roombackground = html.Div(
                 {
                     "key": "1",
                     "src": "/assets/backgrounds/bg2.png",
-                    "img_style": {"height": "500px", "object-fit": "cover"}  # Set height and scale images
+                    "img_style": {"height": "250px", "object-fit": "cover"}  # Set height and scale images
                 }, 
             ],
             style={"max-height": "500px"}  # Limit the height of the carousel

@@ -352,7 +352,7 @@ banner = dbc.Card(
                     html.Div(
                         [
                             html.H4(
-                                html.B("Book today and avail our January Promos"), 
+                                html.B("Book today and avail our February Promos"), 
                                 className="card-title text-center"
                             ),
                             dbc.Row(

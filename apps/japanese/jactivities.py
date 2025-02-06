@@ -19,7 +19,7 @@ activitiesbackground = html.Div(
                 {
                     "key": "1",
                     "src": "/assets/backgrounds/bg1.png",
-                    "img_style": {"height": "500px", "object-fit": "cover"}  
+                    "img_style": {"height": "250px", "object-fit": "cover"}  
                 }, 
             ],
             style={"max-height": "500px"}   
