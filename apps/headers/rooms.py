@@ -145,6 +145,36 @@ room3_4card = html.Div(
     [ 
         dbc.Row(
             [ 
+                
+                dbc.Col(
+                    html.Div(
+                        [ 
+                            html.H4(html.B("Seabreeze Nook")),
+                            html.P("""Located on the second floor of the Left Wing, these rooms are perfect for group outings. 
+                                   Relax in our nature-inspired rooms that blend bamboo 
+                                   and local wood in its architecture.  
+                                   """), 
+                            html.P("Rooms can accommodate two (2) adults."), 
+                                html.P("FEATURES"),
+                                    html.Ul([ 
+                                        html.Li("With 2 single beds"),
+                                        html.Li("Beach view"),
+                                        html.Li("Air Conditioning"), 
+                                        html.Li("Shared bathroom"),
+                                    ]), 
+                                html.P("INCLUSIVE OF"),
+                                    html.Ul([
+                                        html.Li("Wireless internet access"),
+                                        html.Li("Free water and barako coffee"), 
+                                    ]),  
+                                html.Br(),  
+                        ],
+                        className="d-flex flex-column align-items-start"   
+                    ),
+                    width={"size": 12},
+                    xs=12, sm=12, md=8, lg=4,
+                    className="d-flex justify-content-center align-items-center"
+                ),
                 dbc.Col(
                     [
                         html.Div(
@@ -177,35 +207,6 @@ room3_4card = html.Div(
                         ),
                     ],
                     width={"size": 12, "offset": 0},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ),
-                dbc.Col(
-                    html.Div(
-                        [ 
-                            html.H4(html.B("Seabreeze Nook")),
-                            html.P("""Located on the second floor of the Left Wing, these rooms are perfect for group outings. 
-                                   Relax in our nature-inspired rooms that blend bamboo 
-                                   and local wood in its architecture.  
-                                   """), 
-                            html.P("Rooms can accommodate two (2) adults."), 
-                                html.P("FEATURES"),
-                                    html.Ul([ 
-                                        html.Li("With 2 single beds"),
-                                        html.Li("Beach view"),
-                                        html.Li("Air Conditioning"), 
-                                        html.Li("Shared bathroom"),
-                                    ]), 
-                                html.P("INCLUSIVE OF"),
-                                    html.Ul([
-                                        html.Li("Wireless internet access"),
-                                        html.Li("Free water and barako coffee"), 
-                                    ]),  
-                                html.Br(),  
-                        ],
-                        className="d-flex flex-column align-items-start"   
-                    ),
-                    width={"size": 12},
                     xs=12, sm=12, md=8, lg=4,
                     className="d-flex justify-content-center align-items-center"
                 ),
