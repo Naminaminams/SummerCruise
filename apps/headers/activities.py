@@ -371,7 +371,7 @@ familycard = html.Div(
                             html.P(html.B("ISLAND HOPPING")), 
                             html.P("""Though the beach front is the rocky type that 
                                    doesn't mean there are no sandy beaches near Summer Cruise. 
-                                   For just P400 you can get a 20 min boat ride to explore the 
+                                   For just P450 you can get a 20 min boat ride to explore the 
                                    next islands where there are underwater caves, 
                                    huge schools of fishes, and sandy beaches."""), 
                             html.Ul([
@@ -1003,9 +1003,9 @@ layout = html.Div(
                         Introdivecard, 
                         html.Br(),
                         html.Br(),
-                        nightddivecard, 
-                        html.Br(),
-                        html.Br(),
+                        # nightddivecard, 
+                        # html.Br(),
+                        # html.Br(),
                         html.H3(html.B("SCUBA Diving Certification"), style={'textAlign': 'center'}),
                         opendivecard, 
                         html.Br(),
