@@ -543,10 +543,10 @@ layout = html.Div(
     [
         roombackground,
         html.Br(),
-        html.Div(
-                dbc.Button("View Map", color="primary"),
-                style={'display': 'flex', 'justify-content': 'center'}  # Center the button
-            ),
+        # html.Div(
+        #         dbc.Button("View Map", color="primary"),
+        #         style={'display': 'flex', 'justify-content': 'center'}  # Center the button
+        #     ),
         html.Br(),
         dbc.Row(
             [
@@ -558,8 +558,8 @@ layout = html.Div(
                         html.Br(),
                         room5_6card,
                         html.Br(),
-                        room7_8card,
-                        html.Br(), 
+                        # room7_8card,
+                        # html.Br(), 
                         # room9card,
                         # html.Br(),
                         room10_11card,
