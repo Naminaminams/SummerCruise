@@ -465,7 +465,37 @@ room9card = html.Div(
 room10_11card = html.Div(
     [ 
         dbc.Row(
-            [ 
+            [  
+                dbc.Col(
+                    html.Div(
+                        [ 
+                            html.H4(html.B("Cliffside Nest")),
+                            html.P("""High above the resort on the third floor, 
+                                   Cliffside Nest is perfect for large groups. 
+                                   The private loft and bamboo-nipa design evoke a rustic charm, ideal for a memorable stay.
+                                   """), 
+                            html.P("Rooms can accommodate eight (8) adults."), 
+                                html.P("FEATURES"),
+                                    html.Ul([ 
+                                        html.Li("With 2 single beds"), 
+                                        html.Li("Loft style"),
+                                        html.Li("Pool view"),
+                                        html.Li("Air Conditioning"), 
+                                        html.Li("Shared bathroom"), 
+                                    ]), 
+                                html.P("INCLUSIVE OF"),
+                                    html.Ul([
+                                        html.Li("Wireless internet access"),
+                                        html.Li("Free water and barako coffee"), 
+                                    ]),  
+                                html.Br(),  
+                        ],
+                        className="d-flex flex-column align-items-start"   
+                    ),
+                    width={"size": 12},
+                    xs=12, sm=12, md=8, lg=4,
+                    className="d-flex justify-content-center align-items-center"
+                ),
                 dbc.Col(
                     [
                         html.Div(
@@ -497,36 +527,6 @@ room10_11card = html.Div(
                         ),
                     ],
                     width={"size": 12, "offset": 0},
-                    xs=12, sm=12, md=8, lg=4,
-                    className="d-flex justify-content-center align-items-center"
-                ),
-                dbc.Col(
-                    html.Div(
-                        [ 
-                            html.H4(html.B("Cliffside Nest")),
-                            html.P("""High above the resort on the third floor, 
-                                   Cliffside Nest is perfect for large groups. 
-                                   The private loft and bamboo-nipa design evoke a rustic charm, ideal for a memorable stay.
-                                   """), 
-                            html.P("Rooms can accommodate eight (8) adults."), 
-                                html.P("FEATURES"),
-                                    html.Ul([ 
-                                        html.Li("With 2 single beds"), 
-                                        html.Li("Loft style"),
-                                        html.Li("Pool view"),
-                                        html.Li("Air Conditioning"), 
-                                        html.Li("Shared bathroom"), 
-                                    ]), 
-                                html.P("INCLUSIVE OF"),
-                                    html.Ul([
-                                        html.Li("Wireless internet access"),
-                                        html.Li("Free water and barako coffee"), 
-                                    ]),  
-                                html.Br(),  
-                        ],
-                        className="d-flex flex-column align-items-start"   
-                    ),
-                    width={"size": 12},
                     xs=12, sm=12, md=8, lg=4,
                     className="d-flex justify-content-center align-items-center"
                 ),
